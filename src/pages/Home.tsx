@@ -94,8 +94,12 @@ export default function Home() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-green-500/20 to-blue-500/20 backdrop-blur-sm border border-gray-800 flex items-center justify-center">
-                <Shield size={200} className="text-green-500/30" />
+              <div className="aspect-square rounded-2xl overflow-hidden border border-gray-800">
+                <img 
+                  src="/images/profile.png" 
+                  alt="Eddie L. Barlow - Senior Cyber Security Engineer" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
