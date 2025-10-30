@@ -1,5 +1,5 @@
 import './App.css'
-import { Linkedin, Mail, MapPin, Phone, Calendar, Flag, Briefcase, GraduationCap, Award, Shield, Server, Cloud, Code, Network, Database, Lock } from 'lucide-react'
+import { Linkedin, Mail, MapPin, Phone, Calendar, Flag, Briefcase, GraduationCap, Award, Shield, Server, Cloud, Code, Network, Database, Lock, Github, Instagram, Twitter } from 'lucide-react'
 import TypedText from './components/TypedText'
 
 function App() {
@@ -13,11 +13,17 @@ function App() {
               Eddie <span className="text-green-500">Barlow</span>
             </a>
             <div className="flex gap-4">
-              <a href="https://www.linkedin.com/in/eddie-barlow-jr-68802716" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-green-500 transition-colors">
+              <a href="https://github.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Github" className="hover:text-green-500 transition-colors">
+                <Github size={20} />
+              </a>
+              <a href="https://www.linkedin.com/in/eddie-barlow-jr-cism-68802716/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-green-500 transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="mailto:eddiebarlowjr@gmail.com" aria-label="Email" className="hover:text-green-500 transition-colors">
-                <Mail size={20} />
+              <a href="http://instagram.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-green-500 transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="https://x.com/mrcyber334?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-green-500 transition-colors">
+                <Twitter size={20} />
               </a>
             </div>
           </div>
@@ -56,11 +62,17 @@ function App() {
               </div>
               <h1 className="text-5xl font-bold mb-4">Eddie L. Barlow</h1>
               <div className="flex gap-4 mb-6">
-                <a href="https://www.linkedin.com/in/eddie-barlow-jr-68802716" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-green-500 transition-colors">
+                <a href="https://github.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Github" className="hover:text-green-500 transition-colors">
+                  <Github size={24} />
+                </a>
+                <a href="https://www.linkedin.com/in/eddie-barlow-jr-cism-68802716/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-green-500 transition-colors">
                   <Linkedin size={24} />
                 </a>
-                <a href="mailto:eddiebarlowjr@gmail.com" aria-label="Email" className="hover:text-green-500 transition-colors">
-                  <Mail size={24} />
+                <a href="http://instagram.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-green-500 transition-colors">
+                  <Instagram size={24} />
+                </a>
+                <a href="https://x.com/mrcyber334?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-green-500 transition-colors">
+                  <Twitter size={24} />
                 </a>
               </div>
               <p className="text-lg text-gray-300 mb-8">
@@ -529,11 +541,17 @@ function App() {
             © 2025 Eddie Barlow
           </div>
           <div className="flex gap-4">
-            <a href="https://www.linkedin.com/in/eddie-barlow-jr-68802716" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-green-500 transition-colors">
+            <a href="https://github.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Github" className="text-gray-400 hover:text-green-500 transition-colors">
+              <Github size={20} />
+            </a>
+            <a href="https://www.linkedin.com/in/eddie-barlow-jr-cism-68802716/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-green-500 transition-colors">
               <Linkedin size={20} />
             </a>
-            <a href="mailto:eddiebarlowjr@gmail.com" aria-label="Email" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Mail size={20} />
+            <a href="http://instagram.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-400 hover:text-green-500 transition-colors">
+              <Instagram size={20} />
+            </a>
+            <a href="https://x.com/mrcyber334?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-gray-400 hover:text-green-500 transition-colors">
+              <Twitter size={20} />
             </a>
           </div>
         </div>
