@@ -1,5 +1,6 @@
 import './App.css'
 import { Linkedin, Mail, MapPin, Phone, Calendar, Flag, Briefcase, GraduationCap, Award, Shield, Server, Cloud, Code, Network, Database, Lock } from 'lucide-react'
+import TypedText from './components/TypedText'
 
 function App() {
   return (
@@ -32,7 +33,23 @@ function App() {
                 <code className="text-green-500 text-sm font-mono">
                   &lt;code&gt; I secure and optimize
                   <br />
-                  <span className="inline-block animate-pulse">IT infrastructures</span>
+                  <span className="inline-flex items-baseline">
+                    <TypedText
+                      phrases={[
+                        'IT infrastructures',
+                        'cloud-native environments',
+                        'security postures',
+                        'Linux & Windows systems',
+                        'Azure and AWS platforms',
+                      ]}
+                      typeSpeed={50}
+                      backSpeed={30}
+                      backDelay={1600}
+                      startDelay={200}
+                      loop
+                      cursorChar="|"
+                    />
+                  </span>
                   <br />
                   &lt;/code&gt;
                 </code>
