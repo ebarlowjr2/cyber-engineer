@@ -127,79 +127,103 @@ export default function Portfolio() {
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Project 1: Enterprise Security Stack Implementation */}
+            {/* Project 1: McAfee HBSS VSE Air Force Outage Resolution */}
             <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 hover:border-green-500 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex items-center justify-center w-12 h-12 bg-green-500/20 rounded-lg">
                   <Shield className="text-green-500" size={24} />
                 </div>
-                <h3 className="text-2xl font-bold">Enterprise Security Stack Implementation</h3>
+                <h3 className="text-2xl font-bold">Mission-Critical Air Force HBSS Outage Resolution</h3>
               </div>
               <p className="text-gray-300 mb-4">
-                Administered comprehensive security for 12 security stacks for DISA implementations across Army, Air Force, and Navy. Managed 24 VMware environments consisting of 300 RHEL Servers and administered a host-based security system in a mixed virtual and physical environment for 1500+ hosts and appliances.
+                Resolved a mission-critical enterprise outage affecting over 90% of Linux servers across the U.S. Air Force caused by improper tuning of McAfee HBSS VirusScan Enterprise (VSE). Diagnosed and corrected the configuration at the 26th Network Operations Squadron (26th NOS), restoring full endpoint protection functionality and preventing widespread degradation of cybersecurity readiness.
+              </p>
+              <p className="text-gray-300 mb-4">
+                After implementing the fix locally, the solution was rapidly adopted across all Air Force Network Operations Centers (AFNETs) and disseminated through the 24th Air Force, becoming the official remediation standard.
+              </p>
+              <p className="text-gray-300 mb-4">
+                In recognition of the impact, I was flown to Lackland Air Force Base to brief Maj. Gen. Suzanne M. "Zan" Vautrinot, Commander of 24th Air Force, Air Forces Cyber, and Air Force Network Operations, on the resolution strategy and system optimization techniques that stabilized the HBSS platform Air Force–wide.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">DISA</span>
-                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">VMware</span>
-                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">RHEL</span>
-                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">HBSS</span>
+                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">McAfee HBSS</span>
+                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">24th Air Force</span>
+                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Enterprise Security</span>
+                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Crisis Resolution</span>
               </div>
             </div>
 
-            {/* Project 2: Cloud Infrastructure Migration */}
+            {/* Project 2: JRSS IL6 Deployment */}
             <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 hover:border-green-500 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex items-center justify-center w-12 h-12 bg-green-500/20 rounded-lg">
                   <Network className="text-green-500" size={24} />
                 </div>
-                <h3 className="text-2xl font-bold">Cloud Infrastructure Migration</h3>
+                <h3 className="text-2xl font-bold">Joint Regional Security Stacks (JRSS) IL6 Deployment</h3>
               </div>
               <p className="text-gray-300 mb-4">
-                Spearheaded enterprise infrastructure services for 700 users across four teams leveraging Oracle Cloud, Azure, and AWS. Led cloud workflow automation across eight zones, reducing process times by 25% and improving deployment efficiency. Conducted performance evaluations and system migrations for over 800 systems transitioning from on-premise to cloud environments.
+                Served as the Lead Cybersecurity Engineer for the deployment of the Joint Regional Security Stacks (JRSS) into the Impact Level 6 (IL6) enclave of the Department of Defense (DoD) network — a pivotal modernization effort under the Joint Information Environment (JIE) initiative. Oversaw the secure integration of firewall, IPS, web proxy, and routing services into a unified security architecture designed to consolidate and harden network defenses across multiple combatant commands.
+              </p>
+              <p className="text-gray-300 mb-4">
+                Led cross-functional teams across DISA, 24th Air Force, and AFINC to validate configurations, apply STIG-compliant baselines, and ensure full interoperability with classified systems and existing enclave security policies. Authored and executed comprehensive test plans and migration runbooks, mitigating risks during transition and maintaining continuous mission operations.
+              </p>
+              <p className="text-gray-300 mb-4">
+                The successful IL6 JRSS deployment significantly enhanced visibility, threat correlation, and real-time response capabilities across Air Force Cyber Command. The implementation set the model for subsequent JRSS rollouts in other high-side DoD networks and reinforced the Air Force's posture under the Cybersecurity Service Provider (CSSP) framework.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">AWS</span>
-                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Azure</span>
-                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Oracle Cloud</span>
-                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Automation</span>
+                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">JRSS</span>
+                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">IL6</span>
+                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">DISA</span>
+                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">JIE</span>
               </div>
             </div>
 
-            {/* Project 3: SASE Framework Development */}
+            {/* Project 3: Prince George's County Cyber Lab */}
             <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 hover:border-green-500 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex items-center justify-center w-12 h-12 bg-green-500/20 rounded-lg">
                   <Lock className="text-green-500" size={24} />
                 </div>
-                <h3 className="text-2xl font-bold">SASE Framework with Zero-Trust Architecture</h3>
+                <h3 className="text-2xl font-bold">Prince George's County Cyber Lab Development</h3>
               </div>
               <p className="text-gray-300 mb-4">
-                Developed a Secure Access Service Edge (SASE) framework with a zero-trust architecture, aligning with FedRAMP and NIST frameworks. Designed and implemented security systems aligning with SABSA and NIST 800-53, leading to a 50% reduction in security incidents.
+                Served as the Principal Engineer for the design and development of the Prince George's County Cyber Lab — a next-generation, AI-driven cybersecurity training environment engineered to bridge the gap between academic simulation and enterprise-grade infrastructure.
+              </p>
+              <p className="text-gray-300 mb-4">
+                Led the end-to-end architecture of the lab, integrating real-world enterprise systems, network segmentation, threat emulation, and AI-assisted analysis tools to create a fully functional cyber range supporting defensive and offensive training scenarios. Designed progressive, role-based labs that evolve from foundational security concepts to complex, real-world incident response and threat-hunting exercises.
+              </p>
+              <p className="text-gray-300 mb-4">
+                The platform delivers hands-on, immersive training for students and professionals, incorporating automated lab orchestration, virtual machine provisioning, and real-time monitoring dashboards. Its innovative design established a scalable model for regional cyber education and workforce development, helping to strengthen local talent pipelines and support DoD-aligned cyber readiness initiatives.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">SASE</span>
-                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Zero-Trust</span>
-                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">FedRAMP</span>
-                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">NIST 800-53</span>
+                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">AI-Driven Training</span>
+                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Cyber Range</span>
+                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Workforce Development</span>
+                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Lab Architecture</span>
               </div>
             </div>
 
-            {/* Project 4: Cybersecurity Tools Integration */}
+            {/* Project 4: AFINC Weapon System */}
             <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 hover:border-green-500 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex items-center justify-center w-12 h-12 bg-green-500/20 rounded-lg">
                   <AlertTriangle className="text-green-500" size={24} />
                 </div>
-                <h3 className="text-2xl font-bold">Cybersecurity Tools Integration & Customization</h3>
+                <h3 className="text-2xl font-bold">Air Force Intranet Control (AFINC) Weapon System</h3>
               </div>
               <p className="text-gray-300 mb-4">
-                Led the development and customization of cybersecurity tools and platforms, including integrations with Splunk, Armis, SentinelOne, and Microsoft IRM. Designed and implemented custom dashboards, alert logic, and data ingestion pipelines within Splunk to improve threat hunting capabilities.
+                Served as the Lead Cybersecurity Architect for the Air Force Intranet Control (AFINC) Weapon System — the first-ever cyberspace weapon system formally designated by the U.S. Air Force and a cornerstone capability of the Air Force Network Operations (AFNETOPS) mission. The AFINC Weapon System is responsible for operating, defending, and controlling the flow of all network traffic into and out of the Air Force's enterprise network, serving as the primary gateway protecting the .mil and .gov domains.
+              </p>
+              <p className="text-gray-300 mb-4">
+                Led architectural design, security engineering, and compliance validation across the system's core components, including boundary defense, proxy services, IDS/IPS integration, and traffic management. Collaborated closely with DISA, 24th Air Force, and U.S. Cyber Command to align system configurations with evolving DoD directives and the Cybersecurity Service Provider (CSSP) framework.
+              </p>
+              <p className="text-gray-300 mb-4">
+                My efforts directly contributed to the AFINC Weapon System achieving Full Operational Capability (FOC) status, enabling continuous network defense, centralized visibility, and cyber threat mitigation for the entire Department of Defense Information Network (DoDIN). This milestone represented a historic advancement in the Air Force's ability to conduct, command, and sustain operations within cyberspace as a recognized warfighting domain.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Splunk</span>
-                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">SentinelOne</span>
-                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Microsoft IRM</span>
-                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Armis</span>
+                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">AFINC</span>
+                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Weapon System</span>
+                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">AFNETOPS</span>
+                <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">DoDIN</span>
               </div>
             </div>
           </div>
