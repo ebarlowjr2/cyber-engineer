@@ -46,7 +46,7 @@ export default function MSISeniorCyberSecurityEngineer() {
               MSI (via USPO) – Montgomery, AL (Remote)
             </div>
             <div className="text-gray-400 text-lg">
-              March 2025 – Present
+              January 2025 – June 2025
             </div>
           </div>
 

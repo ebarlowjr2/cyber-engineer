@@ -354,6 +354,29 @@ export default function Home() {
             <span className="text-green-500">Professional</span> Experience
           </h2>
           <div className="space-y-8">
+            {/* Senior Cyber Security Engineer - 3 Squared Technologies */}
+            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
+              <div className="flex flex-wrap justify-between items-start mb-4">
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">Senior Cyber Security Engineer</h3>
+                  <div className="text-green-500 font-semibold">3 Squared Technologies – Montgomery, AL (Remote)</div>
+                </div>
+                <div className="text-gray-400">June 2025 – Present</div>
+              </div>
+              <ul className="space-y-2 text-gray-300">
+                <li className="flex gap-2"><span className="text-green-500">•</span> Manage five classified environments — three IL4 and two IL6 — ensuring full compliance with DoD Cloud SRG, STIG, and RMF security standards</li>
+                <li className="flex gap-2"><span className="text-green-500">•</span> Lead daily operations for RHEL-based systems including kernel tuning, SELinux configuration, system patching, and advanced hardening for mission-critical applications</li>
+                <li className="flex gap-2"><span className="text-green-500">•</span> Support the migration of IL6 workloads to AWS IL6 (Cloud One), validating enclave configurations, cross-domain data flows, and secure automation baselines</li>
+                <li className="flex gap-2"><span className="text-green-500">•</span> Participate in Agile sprints and Technical Interchange Meetings (TIMs) to coordinate migration milestones, sprint deliverables, and system accreditation artifacts</li>
+                <li className="flex gap-2"><span className="text-green-500">•</span> Administer and secure Trend Micro Deep Security / Deep Visibility for intrusion detection, real-time monitoring, and forensic data analysis within IL6 boundaries</li>
+              </ul>
+              <div className="mt-6">
+                <Link to="/jobs/3squared-senior-cyber-security-engineer" className="text-green-500 hover:text-green-400 transition-colors font-semibold">
+                  View Full Role Details →
+                </Link>
+              </div>
+            </div>
+
             {/* Senior Cyber Security Engineer - MSI */}
             <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
               <div className="flex flex-wrap justify-between items-start mb-4">
@@ -361,7 +384,7 @@ export default function Home() {
                   <h3 className="text-2xl font-bold mb-2">Senior Cyber Security Engineer</h3>
                   <div className="text-green-500 font-semibold">MSI (via USPO) – Montgomery, AL (Remote)</div>
                 </div>
-                <div className="text-gray-400">March 2025 – Present</div>
+                <div className="text-gray-400">January 2025 – June 2025</div>
               </div>
               <ul className="space-y-2 text-gray-300">
                 <li className="flex gap-2"><span className="text-green-500">•</span> Lead the development and customization of cybersecurity tools and platforms, including integrations with Splunk, Armis, SentinelOne, and Microsoft IRM</li>
