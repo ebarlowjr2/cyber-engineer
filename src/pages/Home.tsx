@@ -370,6 +370,11 @@ export default function Home() {
                 <li className="flex gap-2"><span className="text-green-500">•</span> Customized and automated workflows within ServiceNow for streamlined vulnerability management and incident tracking</li>
                 <li className="flex gap-2"><span className="text-green-500">•</span> Mentored junior engineers and contributed to knowledge-sharing initiatives for improved cyber tool lifecycle support</li>
               </ul>
+              <div className="mt-6">
+                <Link to="/jobs/msi-senior-cyber-security-engineer" className="text-green-500 hover:text-green-400 transition-colors font-semibold">
+                  View Full Role Details →
+                </Link>
+              </div>
             </div>
 
             {/* Cyber Security Engineer - TCecure */}
@@ -388,6 +393,11 @@ export default function Home() {
                 <li className="flex gap-2"><span className="text-green-500">•</span> Conducted vulnerability assessments and remediation using Nessus and Rapid7 InsightVM</li>
                 <li className="flex gap-2"><span className="text-green-500">•</span> Automated security tasks using Ansible and Bash, ensuring compliance with STIGs</li>
               </ul>
+              <div className="mt-6">
+                <Link to="/jobs/tcecure-cyber-security-engineer" className="text-green-500 hover:text-green-400 transition-colors font-semibold">
+                  View Full Role Details →
+                </Link>
+              </div>
             </div>
 
             {/* Network Engineering SME - Astrion */}
@@ -406,6 +416,11 @@ export default function Home() {
                 <li className="flex gap-2"><span className="text-green-500">•</span> Conducted performance evaluations and system migrations for over 800 systems transitioning from on-premise to cloud environments</li>
                 <li className="flex gap-2"><span className="text-green-500">•</span> Engineered cloud management strategies achieving a 20% reduction in annual IT spending</li>
               </ul>
+              <div className="mt-6">
+                <Link to="/jobs/astrion-network-engineering-sme" className="text-green-500 hover:text-green-400 transition-colors font-semibold">
+                  View Full Role Details →
+                </Link>
+              </div>
             </div>
 
             {/* Sr. Cyber Security Engineer - SMS Data Solutions */}
@@ -424,6 +439,11 @@ export default function Home() {
                 <li className="flex gap-2"><span className="text-green-500">•</span> Led vulnerability management processes for 300+ Red Hat Enterprise Linux and Windows hosts</li>
                 <li className="flex gap-2"><span className="text-green-500">•</span> Developed a SASE framework with a zero-trust architecture, aligning with FedRAMP and NIST frameworks</li>
               </ul>
+              <div className="mt-6">
+                <Link to="/jobs/sms-data-solutions-sr-cyber-security-engineer" className="text-green-500 hover:text-green-400 transition-colors font-semibold">
+                  View Full Role Details →
+                </Link>
+              </div>
             </div>
           </div>
         </div>
