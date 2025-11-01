@@ -77,7 +77,7 @@ export default function Home() {
                 </a>
               </div>
               <p className="text-lg text-gray-300 mb-8">
-                I'm a Montgomery, AL based <strong className="text-green-500">Senior Cyber Security Engineer</strong>, currently working at <strong className="text-green-500">MSI (via USPO)</strong> securing and optimizing IT infrastructures in highly regulated environments.
+                I'm a Montgomery, AL based <strong className="text-green-500">Senior Cyber Security Engineer</strong>, currently working at <strong className="text-green-500">3 Squared Technologies</strong> securing and optimizing IT infrastructures in highly regulated environments.
               </p>
               <p className="text-lg text-gray-300 mb-8">
                 With over 20 years of experience in cybersecurity and systems administration, I specialize in <strong className="text-green-500">vulnerability management</strong>, <strong className="text-green-500">incident response</strong>, and implementing compliance frameworks like <strong className="text-green-500">NIST</strong> and <strong className="text-green-500">FedRAMP</strong>.
@@ -153,7 +153,7 @@ export default function Home() {
                 <li className="flex items-start gap-3">
                   <Briefcase className="text-green-500 mt-1 flex-shrink-0" size={20} />
                   <div>
-                    <span className="font-semibold">Employment:</span> MSI (via USPO)
+                    <span className="font-semibold">Employment:</span> 3 Squared Technologies
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
