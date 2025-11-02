@@ -169,12 +169,15 @@ export default function Portfolio() {
               <p className="text-gray-300 mb-4">
                 The successful IL6 JRSS deployment significantly enhanced visibility, threat correlation, and real-time response capabilities across Air Force Cyber Command. The implementation set the model for subsequent JRSS rollouts in other high-side DoD networks and reinforced the Air Force's posture under the Cybersecurity Service Provider (CSSP) framework.
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-4">
                 <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">JRSS</span>
                 <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">IL6</span>
                 <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">DISA</span>
                 <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">JIE</span>
               </div>
+              <a href="https://disa.mil/-/media/Files/DISA/News/Events/Symposium/2---Griffin_JRSS-PANEL_approved_FINAL.pdf" target="_blank" rel="noopener noreferrer" className="text-green-500 hover:text-green-400 transition-colors font-semibold">
+                Learn More About JRSS →
+              </a>
             </div>
 
             {/* Project 3: Prince George's County Cyber Lab */}
@@ -219,12 +222,15 @@ export default function Portfolio() {
               <p className="text-gray-300 mb-4">
                 My efforts directly contributed to the AFINC Weapon System achieving Full Operational Capability (FOC) status, enabling continuous network defense, centralized visibility, and cyber threat mitigation for the entire Department of Defense Information Network (DoDIN). This milestone represented a historic advancement in the Air Force's ability to conduct, command, and sustain operations within cyberspace as a recognized warfighting domain.
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-4">
                 <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">AFINC</span>
                 <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Weapon System</span>
                 <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">AFNETOPS</span>
                 <span className="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">DoDIN</span>
               </div>
+              <a href="https://www.hanscom.af.mil/News/Article-Display/Article/846805/first-cyberspace-weapon-system-attains-full-operational-capability-status/" target="_blank" rel="noopener noreferrer" className="text-green-500 hover:text-green-400 transition-colors font-semibold">
+                Learn More About AFINC →
+              </a>
             </div>
           </div>
         </div>
