@@ -6,13 +6,13 @@ import { MobileNav } from '../components/MobileNav'
 
 const activeProjects = [
   {
-    title: 'Enterprise SIEM Dashboard',
-    description: 'Building a custom security information and event management dashboard that aggregates logs from multiple sources, provides real-time threat detection, and generates automated incident reports. The platform integrates with Splunk, ELK Stack, and custom data sources.',
+    title: 'Starkid Command',
+    description: 'A STEM-focused mobile and web application centered on space exploration and astronomy. Starkid Command allows users to track objects in space, monitor rocket launches in real-time, view moon phases, explore constellations, and learn about the equipment used in space exploration. The app aims to make astronomy accessible and engaging for students and space enthusiasts alike.',
     status: 'Active Development',
-    team: '3 Engineers',
-    startDate: 'November 2025',
-    technologies: ['React', 'Python', 'Elasticsearch', 'Kafka', 'Docker'],
-    progress: 70,
+    team: '2 Engineers',
+    startDate: 'October 2025',
+    technologies: ['React Native', 'TypeScript', 'Node.js', 'NASA API', 'SpaceX API'],
+    progress: 65,
     link: '#'
   },
   {
