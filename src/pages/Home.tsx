@@ -82,7 +82,7 @@ export default function Home() {
               <p className="text-lg text-gray-300 mb-8">
                 With over 20 years of experience in cybersecurity and systems administration, I specialize in <strong className="text-green-500">vulnerability management</strong>, <strong className="text-green-500">incident response</strong>, and implementing compliance frameworks like <strong className="text-green-500">NIST</strong> and <strong className="text-green-500">FedRAMP</strong>.
               </p>
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-4">
                 <a href="#contact" className="inline-flex items-center gap-2 bg-green-500 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-green-400 transition-colors">
                   <Mail size={20} />
                   Contact Me
@@ -90,6 +90,11 @@ export default function Home() {
                 <Link to="/portfolio" className="inline-flex items-center gap-2 bg-green-500 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-green-400 transition-colors">
                   <Folder size={20} />
                   Portfolio
+                </Link>
+              </div>
+              <div className="mt-6">
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors">
+                  Available for Remote Work
                 </Link>
               </div>
             </div>
