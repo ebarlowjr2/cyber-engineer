@@ -11,7 +11,9 @@ const defaultLinks = [
   { href: '/', label: 'Home' },
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/advocacy', label: 'Advocacy' },
-  { href: '/projects-in-development', label: 'Projects' },
+  { href: '/projects-in-development', label: 'Projects in Dev' },
+  { href: '/active-projects', label: 'Active Projects' },
+  { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
 ]
 
