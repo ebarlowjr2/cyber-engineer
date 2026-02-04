@@ -1,18 +1,20 @@
 import '../App.css'
 import { Linkedin, Github, Instagram, Twitter, MessageCircle, MapPin, Mail, ArrowLeft } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { ThemeToggle } from '../components/ThemeToggle'
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {/* Header/Nav */}
-      <nav className="fixed top-0 left-0 right-0 bg-gray-900/95 backdrop-blur-sm z-50 border-b border-gray-800">
+      <nav className="fixed top-0 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <Link to="/" className="text-xl font-bold">
               Eddie <span className="text-green-500">Barlow</span>
             </Link>
-            <div className="flex gap-4">
+            <div className="flex items-center gap-4">
+              <ThemeToggle />
               <a href="https://github.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Github" className="hover:text-green-500 transition-colors">
                 <Github size={20} />
               </a>
