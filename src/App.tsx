@@ -9,11 +9,13 @@ import TCecureCyberSecurityEngineer from './pages/jobs/TCecureCyberSecurityEngin
 import AstrionNetworkEngineeringSME from './pages/jobs/AstrionNetworkEngineeringSME'
 import SMSDataSolutionsSrCyberSecurityEngineer from './pages/jobs/SMSDataSolutionsSrCyberSecurityEngineer'
 import ScrollToTop from './components/ScrollToTop'
+import Blox from './components/Blox'
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
+      <Blox />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
