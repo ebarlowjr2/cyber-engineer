@@ -1,8 +1,9 @@
 import '../App.css'
-import { Linkedin, Mail, MapPin, Phone, Calendar, Flag, Briefcase, GraduationCap, Award, Shield, Server, Cloud, Code, Network, Database, Lock, Github, Instagram, Twitter, Folder } from 'lucide-react'
+import { Linkedin, Mail, MapPin, Phone, Calendar, Flag, Briefcase, GraduationCap, Award, Shield, Server, Cloud, Code, Network, Database, Lock, Github, Instagram, Twitter, Folder, Download } from 'lucide-react'
 import TypedText from '../components/TypedText'
 import { Link } from 'react-router-dom'
 import { ThemeToggle } from '../components/ThemeToggle'
+import { MobileNav } from '../components/MobileNav'
 
 export default function Home() {
   return (
@@ -14,7 +15,8 @@ export default function Home() {
             <a href="#" className="text-xl font-bold">
               Eddie <span className="text-green-500">Barlow</span>
             </a>
-            <div className="flex items-center gap-4">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-4">
               <ThemeToggle />
               <a href="https://github.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Github" className="hover:text-green-500 transition-colors">
                 <Github size={20} />
@@ -29,6 +31,8 @@ export default function Home() {
                 <Twitter size={20} />
               </a>
             </div>
+            {/* Mobile Navigation */}
+            <MobileNav />
           </div>
         </div>
       </nav>
@@ -93,6 +97,10 @@ export default function Home() {
                   <Folder size={20} />
                   Portfolio
                 </Link>
+                <a href="/resume/Eddie_Barlow_Resume.pdf" download className="inline-flex items-center gap-2 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors border border-gray-300 dark:border-gray-700">
+                  <Download size={20} />
+                  Download Resume
+                </a>
               </div>
               <div className="flex flex-wrap gap-4 mt-4">
                 <Link to="/advocacy" className="inline-flex items-center gap-2 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors border border-gray-300 dark:border-gray-700">
