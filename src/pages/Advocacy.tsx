@@ -1,50 +1,26 @@
 import '../App.css'
-import { Linkedin, Mail, Github, Instagram, Twitter, Heart, Users, GraduationCap, Shield, Globe, Lightbulb, Atom } from 'lucide-react'
+import { Linkedin, Mail, Github, Instagram, Twitter, GraduationCap, Atom, DollarSign } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { ThemeToggle } from '../components/ThemeToggle'
 
 const advocacyItems = [
   {
-    icon: Shield,
-    title: 'Cybersecurity Education',
-    description: 'Advocating for accessible cybersecurity education and training programs to help bridge the skills gap in the industry. I believe everyone should have the opportunity to learn how to protect themselves and their organizations in the digital age.',
-    initiatives: ['Free workshops for underserved communities', 'Mentorship programs for aspiring security professionals', 'Open-source learning resources']
-  },
-  {
-    icon: Users,
-    title: 'Diversity in Tech',
-    description: 'Championing diversity and inclusion in the technology and cybersecurity sectors. A diverse workforce brings different perspectives and approaches to solving complex security challenges.',
-    initiatives: ['Supporting minority-focused tech organizations', 'Speaking at diversity in tech events', 'Advocating for inclusive hiring practices']
-  },
-  {
-    icon: GraduationCap,
-    title: 'STEM Education for Youth',
-    description: 'Promoting STEM education, particularly in underrepresented communities. Early exposure to technology and security concepts can inspire the next generation of cybersecurity professionals.',
-    initiatives: ['School outreach programs', 'Coding bootcamps for teenagers', 'Career day presentations']
-  },
-  {
-    icon: Globe,
-    title: 'Veteran Transition to Tech',
-    description: 'Supporting military veterans in their transition to civilian cybersecurity careers. Veterans bring unique skills, discipline, and security clearances that are invaluable to the industry.',
-    initiatives: ['Resume workshops for veterans', 'Connecting veterans with tech employers', 'Certification preparation assistance']
-  },
-  {
-    icon: Heart,
-    title: 'Mental Health in Tech',
-    description: 'Raising awareness about mental health challenges in the high-stress cybersecurity field. Burnout and stress are real issues that need to be addressed openly in our industry.',
-    initiatives: ['Promoting work-life balance', 'Destigmatizing mental health discussions', 'Advocating for employer mental health resources']
-  },
-  {
-    icon: Lightbulb,
-    title: 'Open Source Security',
-    description: 'Supporting and contributing to open-source security tools and projects. Open source democratizes access to security tools and allows the community to collectively improve our defenses.',
-    initiatives: ['Contributing to open-source projects', 'Advocating for open-source adoption', 'Security audits for community projects']
-  },
-  {
     icon: Atom,
     title: 'Nuclear Energy Advocacy',
     description: 'Advocating for nuclear energy as a clean, reliable, and essential part of our energy future. Nuclear power is one of the safest and most efficient forms of energy generation, yet remains misunderstood by many.',
     initiatives: ['Nuclear produces zero carbon emissions during operation', 'A single uranium fuel pellet contains as much energy as 17,000 cubic feet of natural gas', 'Nuclear plants have the highest capacity factor of any energy source at 93%', 'France generates over 70% of its electricity from nuclear power', 'Modern reactor designs are passively safe and cannot melt down like older designs']
+  },
+  {
+    icon: DollarSign,
+    title: 'Financial Literacy Education',
+    description: 'Promoting financial literacy and education to help individuals and communities build wealth, understand investing, and achieve financial independence. Financial knowledge is a powerful tool for breaking cycles of poverty and creating generational wealth.',
+    initiatives: ['Teaching budgeting and saving fundamentals', 'Educating on investing and compound interest', 'Promoting understanding of credit scores and debt management', 'Advocating for financial education in schools', 'Supporting programs that teach entrepreneurship and business skills']
+  },
+  {
+    icon: GraduationCap,
+    title: 'STEM Education',
+    description: 'Promoting STEM education, particularly in underrepresented communities. Early exposure to science, technology, engineering, and mathematics can inspire the next generation of innovators, engineers, and problem solvers.',
+    initiatives: ['School outreach programs and workshops', 'Coding bootcamps for youth', 'Mentorship programs connecting students with STEM professionals', 'Advocating for increased STEM funding in schools', 'Supporting hands-on learning through robotics and maker spaces']
   }
 ]
 
