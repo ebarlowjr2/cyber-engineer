@@ -1,5 +1,5 @@
 import '../App.css'
-import { Linkedin, Mail, Github, Instagram, Twitter, Heart, Users, GraduationCap, Shield, Globe, Lightbulb } from 'lucide-react'
+import { Linkedin, Mail, Github, Instagram, Twitter, Heart, Users, GraduationCap, Shield, Globe, Lightbulb, Atom } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { ThemeToggle } from '../components/ThemeToggle'
 
@@ -39,6 +39,12 @@ const advocacyItems = [
     title: 'Open Source Security',
     description: 'Supporting and contributing to open-source security tools and projects. Open source democratizes access to security tools and allows the community to collectively improve our defenses.',
     initiatives: ['Contributing to open-source projects', 'Advocating for open-source adoption', 'Security audits for community projects']
+  },
+  {
+    icon: Atom,
+    title: 'Nuclear Energy Advocacy',
+    description: 'Advocating for nuclear energy as a clean, reliable, and essential part of our energy future. Nuclear power is one of the safest and most efficient forms of energy generation, yet remains misunderstood by many.',
+    initiatives: ['Nuclear produces zero carbon emissions during operation', 'A single uranium fuel pellet contains as much energy as 17,000 cubic feet of natural gas', 'Nuclear plants have the highest capacity factor of any energy source at 93%', 'France generates over 70% of its electricity from nuclear power', 'Modern reactor designs are passively safe and cannot melt down like older designs']
   }
 ]
 
