@@ -125,12 +125,13 @@ export default function CarinaOS() {
             </p>
           </div>
 
-          <div className="text-center mb-8">
-            <p className="text-gray-500 dark:text-gray-400 italic">Screenshot coming soon</p>
-            <div className="mt-4 bg-gray-200 dark:bg-gray-800 border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-lg h-64 flex items-center justify-center">
-              <span className="text-gray-400 dark:text-gray-500">CARINA OS Screenshot Placeholder</span>
-            </div>
-          </div>
+                    <div className="mb-8">
+                      <img 
+                        src="/images/projects/carina-os-banner.png" 
+                        alt="CARINA Linux" 
+                        className="w-full rounded-lg shadow-lg"
+                      />
+                    </div>
         </div>
       </section>
 
