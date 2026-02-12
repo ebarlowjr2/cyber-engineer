@@ -6,6 +6,7 @@ import Contact from './pages/Contact'
 import Advocacy from './pages/Advocacy'
 import ProjectsInDevelopment from './pages/ProjectsInDevelopment'
 import Blog from './pages/Blog'
+import BlogPost from './pages/BlogPost'
 import ActiveProjects from './pages/ActiveProjects'
 import CarinaOS from './pages/projects/CarinaOS'
 import ThreeSquaredSeniorCyberSecurityEngineer from './pages/jobs/ThreeSquaredSeniorCyberSecurityEngineer'
@@ -27,8 +28,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/advocacy" element={<Advocacy />} />
         <Route path="/projects-in-development" element={<ProjectsInDevelopment />} />
-                <Route path="/blog" element={<Blog />} />
-                                <Route path="/active-projects" element={<ActiveProjects />} />
+                                <Route path="/blog" element={<Blog />} />
+                        <Route path="/blog/:slug" element={<BlogPost />} />
+                        <Route path="/active-projects" element={<ActiveProjects />} />
                         <Route path="/projects/carina-os" element={<CarinaOS />} />
                         <Route path="/jobs/3squared-senior-cyber-security-engineer" element={<ThreeSquaredSeniorCyberSecurityEngineer />} />
         <Route path="/jobs/msi-senior-cyber-security-engineer" element={<MSISeniorCyberSecurityEngineer />} />
