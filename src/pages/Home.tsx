@@ -266,29 +266,78 @@ export default function Home() {
                       <div className="mt-2 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
                     </div>
 
-                    {/* Development & Automation Tools */}
-                    <div>
-                      <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-4">Development & Automation</h3>
-                      <div className="flex flex-wrap gap-4">
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Ansible</span>
-                        </div>
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Terraform</span>
-                        </div>
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Python</span>
-                        </div>
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Bash</span>
-                        </div>
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Git</span>
-                        </div>
-                      </div>
-                      <div className="mt-2 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
-                    </div>
-                  </div>
+                                      {/* Development & Automation Tools */}
+                                      <div>
+                                        <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-4">Development & Automation</h3>
+                                        <div className="flex flex-wrap gap-4">
+                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
+                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Ansible</span>
+                                          </div>
+                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
+                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Terraform</span>
+                                          </div>
+                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
+                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Python</span>
+                                          </div>
+                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
+                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Bash</span>
+                                          </div>
+                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
+                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Git</span>
+                                          </div>
+                                        </div>
+                                        <div className="mt-2 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
+                                      </div>
+
+                                      {/* Project Management */}
+                                      <div>
+                                        <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-4">Project Management</h3>
+                                        <div className="flex flex-wrap gap-4">
+                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
+                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Jira</span>
+                                          </div>
+                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
+                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Confluence</span>
+                                          </div>
+                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
+                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">ServiceNow</span>
+                                          </div>
+                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
+                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Trello</span>
+                                          </div>
+                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
+                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Asana</span>
+                                          </div>
+                                        </div>
+                                        <div className="mt-2 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
+                                      </div>
+
+                                      {/* AI Tools */}
+                                      <div>
+                                        <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-4">AI Tools</h3>
+                                        <div className="flex flex-wrap gap-4">
+                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
+                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">ChatGPT</span>
+                                          </div>
+                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
+                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Claude</span>
+                                          </div>
+                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
+                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">GitHub Copilot</span>
+                                          </div>
+                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
+                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Gemini</span>
+                                          </div>
+                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
+                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Devin</span>
+                                          </div>
+                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
+                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Midjourney</span>
+                                          </div>
+                                        </div>
+                                        <div className="mt-2 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
+                                      </div>
+                                    </div>
 
                   {/* Right side - Description */}
                   <div className="flex flex-col justify-center">
