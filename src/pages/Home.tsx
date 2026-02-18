@@ -194,164 +194,167 @@ export default function Home() {
               </div>
             </section>
 
-            {/* Cyber Security Tools Section */}
-            <section className="py-20 px-4 sm:px-6 lg:px-8">
-              <div className="max-w-7xl mx-auto">
-                <div className="grid lg:grid-cols-2 gap-12">
-                  {/* Left side - Tool Categories */}
-                  <div className="space-y-8">
-                    {/* Endpoint Security */}
-                    <div>
-                      <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-4">Endpoint Security</h3>
-                      <div className="flex flex-wrap gap-4">
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">SentinelOne</span>
+                        {/* Cyber Security Tools Section */}
+                  <section className="py-16 px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-7xl mx-auto">
+                      <div className="grid lg:grid-cols-2 gap-8">
+                        {/* Left side - Tool Categories */}
+                        <div className="space-y-6">
+                          {/* Endpoint Security */}
+                          <div>
+                            <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-3">Endpoint Security</h3>
+                            <div className="flex flex-wrap gap-3">
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">SentinelOne</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Trellix</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">CrowdStrike</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Carbon Black</span>
+                              </div>
+                            </div>
+                            <div className="mt-2 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
+                          </div>
+
+                          {/* SIEM & Log Management */}
+                          <div>
+                            <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-3">SIEM & Log Management</h3>
+                            <div className="flex flex-wrap gap-3">
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Splunk</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">ELK Stack</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Wazuh</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Armis</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Pureview</span>
+                              </div>
+                            </div>
+                            <div className="mt-2 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
+                          </div>
+
+                          {/* Cloud & Containers */}
+                          <div>
+                            <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-3">Cloud & Containers</h3>
+                            <div className="flex flex-wrap gap-3">
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Docker</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">OpenShift</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Kubernetes</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">AWS</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Azure</span>
+                              </div>
+                            </div>
+                            <div className="mt-2 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
+                          </div>
+
+                          {/* Development & Automation Tools */}
+                          <div>
+                            <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-3">Development & Automation</h3>
+                            <div className="flex flex-wrap gap-3">
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Ansible</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Terraform</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Python</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Bash</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Git</span>
+                              </div>
+                            </div>
+                            <div className="mt-2 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
+                          </div>
                         </div>
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Trellix</span>
-                        </div>
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">CrowdStrike</span>
-                        </div>
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Carbon Black</span>
+
+                        {/* Right side - Description + Project Management & AI Tools */}
+                        <div className="space-y-6">
+                          {/* Description at top */}
+                          <div>
+                            <p className="text-green-500 text-sm font-semibold tracking-wider uppercase mb-3">SECURING ENTERPRISE NETWORKS</p>
+                            <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+                              Where <span className="text-green-500">Security</span> Meets <span className="text-green-500">Innovation</span>
+                            </h2>
+                            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                              As a cyber security engineer, I design and build solutions to secure enterprise networks and critical infrastructure. I focus on threat detection, vulnerability management, and compliance frameworks that protect organizations from evolving cyber threats.
+                            </p>
+                          </div>
+
+                          {/* Project Management */}
+                          <div>
+                            <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-3">Project Management</h3>
+                            <div className="flex flex-wrap gap-3">
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Jira</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Confluence</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">ServiceNow</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Trello</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Asana</span>
+                              </div>
+                            </div>
+                            <div className="mt-2 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
+                          </div>
+
+                          {/* AI Tools */}
+                          <div>
+                            <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-3">AI Tools</h3>
+                            <div className="flex flex-wrap gap-3">
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">ChatGPT</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Claude</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">GitHub Copilot</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Gemini</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Devin</span>
+                              </div>
+                              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg px-4 py-2 border border-gray-200 dark:border-gray-700">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Midjourney</span>
+                              </div>
+                            </div>
+                            <div className="mt-2 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
+                          </div>
                         </div>
                       </div>
-                      <div className="mt-2 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
                     </div>
-
-                    {/* SIEM & Log Management */}
-                    <div>
-                      <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-4">SIEM & Log Management</h3>
-                      <div className="flex flex-wrap gap-4">
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Splunk</span>
-                        </div>
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">ELK Stack</span>
-                        </div>
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Wazuh</span>
-                        </div>
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Armis</span>
-                        </div>
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Pureview</span>
-                        </div>
-                      </div>
-                      <div className="mt-2 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
-                    </div>
-
-                    {/* Cloud & Containers */}
-                    <div>
-                      <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-4">Cloud & Containers</h3>
-                      <div className="flex flex-wrap gap-4">
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Docker</span>
-                        </div>
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">OpenShift</span>
-                        </div>
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Kubernetes</span>
-                        </div>
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">AWS</span>
-                        </div>
-                        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Azure</span>
-                        </div>
-                      </div>
-                      <div className="mt-2 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
-                    </div>
-
-                                      {/* Development & Automation Tools */}
-                                      <div>
-                                        <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-4">Development & Automation</h3>
-                                        <div className="flex flex-wrap gap-4">
-                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Ansible</span>
-                                          </div>
-                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Terraform</span>
-                                          </div>
-                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Python</span>
-                                          </div>
-                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Bash</span>
-                                          </div>
-                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Git</span>
-                                          </div>
-                                        </div>
-                                        <div className="mt-2 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
-                                      </div>
-
-                                      {/* Project Management */}
-                                      <div>
-                                        <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-4">Project Management</h3>
-                                        <div className="flex flex-wrap gap-4">
-                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Jira</span>
-                                          </div>
-                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Confluence</span>
-                                          </div>
-                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">ServiceNow</span>
-                                          </div>
-                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Trello</span>
-                                          </div>
-                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Asana</span>
-                                          </div>
-                                        </div>
-                                        <div className="mt-2 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
-                                      </div>
-
-                                      {/* AI Tools */}
-                                      <div>
-                                        <h3 className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-4">AI Tools</h3>
-                                        <div className="flex flex-wrap gap-4">
-                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">ChatGPT</span>
-                                          </div>
-                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Claude</span>
-                                          </div>
-                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">GitHub Copilot</span>
-                                          </div>
-                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Gemini</span>
-                                          </div>
-                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Devin</span>
-                                          </div>
-                                          <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 flex items-center justify-center min-w-[80px] border border-gray-200 dark:border-gray-700">
-                                            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Midjourney</span>
-                                          </div>
-                                        </div>
-                                        <div className="mt-2 h-px bg-gradient-to-r from-green-500 to-transparent"></div>
-                                      </div>
-                                    </div>
-
-                  {/* Right side - Description */}
-                  <div className="flex flex-col justify-center">
-                    <p className="text-green-500 text-sm font-semibold tracking-wider uppercase mb-4">SECURING ENTERPRISE NETWORKS</p>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                      Where <span className="text-green-500">Security</span> Meets <span className="text-green-500">Innovation</span>
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                      As a cyber security engineer, I design and build solutions to secure enterprise networks and critical infrastructure. I focus on threat detection, vulnerability management, and compliance frameworks that protect organizations from evolving cyber threats. Whether implementing SIEM solutions, hardening endpoints, or automating security workflows, I engineer defenses that are robust, scalable, and mission-ready.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
+                  </section>
 
             {/* Stats Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
