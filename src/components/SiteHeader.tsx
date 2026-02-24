@@ -1,11 +1,11 @@
-import type { ComponentType } from 'react'
+import type { LucideIcon } from 'lucide-react'
 import { Github, Instagram, Linkedin, Twitter } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { ThemeToggle } from './ThemeToggle'
 import { MobileNav } from './MobileNav'
 import { socialLinks } from '../data/site'
 
-const socialIconMap: Record<string, ComponentType<{ size?: number }>> = {
+const socialIconMap: Record<string, LucideIcon> = {
   Github,
   LinkedIn: Linkedin,
   Instagram,
