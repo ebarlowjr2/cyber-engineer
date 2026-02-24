@@ -1,33 +1,11 @@
 import '../../App.css'
-import { Linkedin, Github, Instagram, Twitter, ArrowLeft, Briefcase, Users, Clock, Target, CheckCircle } from 'lucide-react'
+import { ArrowLeft, Briefcase, Users, Clock, Target, CheckCircle } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { PageLayout } from '../../components/PageLayout'
 
 export default function SMSDataSolutionsSrCyberSecurityEngineer() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-sm border-b border-gray-800 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <Link to="/" className="text-xl font-bold">
-            Eddie <span className="text-green-500">Barlow</span>
-          </Link>
-          <div className="flex gap-4">
-            <a href="https://github.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Github" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Github size={20} />
-            </a>
-            <a href="https://www.linkedin.com/in/eddie-barlow-jr-cism-68802716/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Linkedin size={20} />
-            </a>
-            <a href="http://instagram.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Instagram size={20} />
-            </a>
-            <a href="https://x.com/mrcyber334?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Twitter size={20} />
-            </a>
-          </div>
-        </div>
-      </nav>
-
+    <PageLayout className="min-h-screen bg-gray-900 text-white">
       {/* Main Content */}
       <div className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
@@ -280,26 +258,6 @@ export default function SMSDataSolutionsSrCyberSecurityEngineer() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="border-t border-gray-800 py-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="text-gray-400">© 2025 Eddie Barlow</div>
-          <div className="flex gap-4">
-            <a href="https://github.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Github" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Github size={20} />
-            </a>
-            <a href="https://www.linkedin.com/in/eddie-barlow-jr-cism-68802716/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Linkedin size={20} />
-            </a>
-            <a href="http://instagram.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Instagram size={20} />
-            </a>
-            <a href="https://x.com/mrcyber334?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Twitter size={20} />
-            </a>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </PageLayout>
   )
 }

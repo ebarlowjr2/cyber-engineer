@@ -1,42 +1,14 @@
 import '../App.css'
-import { Linkedin, Mail, MapPin, Phone, Calendar, Flag, Briefcase, GraduationCap, Award, Shield, Server, Cloud, Code, Network, Database, Lock, Github, Instagram, Twitter, Folder, Download } from 'lucide-react'
+import { Mail, MapPin, Phone, Flag, Briefcase, GraduationCap, Shield, Github, Instagram, Twitter, Folder, Download, Linkedin } from 'lucide-react'
 import TypedText from '../components/TypedText'
 import { Link } from 'react-router-dom'
-import { ThemeToggle } from '../components/ThemeToggle'
-import { MobileNav } from '../components/MobileNav'
+import { PageLayout } from '../components/PageLayout'
+import { ContactForm } from '../components/ContactForm'
+import { certifications, experience, stats, techStack } from '../data/resume'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      {/* Header/Nav */}
-      <nav className="fixed top-0 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <a href="#" className="text-xl font-bold">
-              Eddie <span className="text-green-500">Barlow</span>
-            </a>
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-4">
-              <ThemeToggle />
-              <a href="https://github.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Github" className="hover:text-green-500 transition-colors">
-                <Github size={20} />
-              </a>
-              <a href="https://www.linkedin.com/in/eddie-barlow-jr-cism-68802716/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-green-500 transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="http://instagram.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-green-500 transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="https://x.com/mrcyber334?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-green-500 transition-colors">
-                <Twitter size={20} />
-              </a>
-            </div>
-            {/* Mobile Navigation */}
-            <MobileNav />
-          </div>
-        </div>
-      </nav>
-
+    <PageLayout>
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -201,26 +173,16 @@ export default function Home() {
             <span className="text-green-500">Stats</span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 text-center border border-gray-200 dark:border-gray-700 hover:border-green-500 transition-colors">
-              <Calendar className="text-green-500 mx-auto mb-4" size={40} />
-              <h3 className="text-sm text-gray-500 dark:text-gray-400 mb-2">Years of experience</h3>
-              <div className="text-4xl font-bold">20+</div>
-            </div>
-            <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 text-center border border-gray-200 dark:border-gray-700 hover:border-green-500 transition-colors">
-              <Award className="text-green-500 mx-auto mb-4" size={40} />
-              <h3 className="text-sm text-gray-500 dark:text-gray-400 mb-2">Certifications</h3>
-              <div className="text-4xl font-bold">7</div>
-            </div>
-            <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 text-center border border-gray-200 dark:border-gray-700 hover:border-green-500 transition-colors">
-              <Server className="text-green-500 mx-auto mb-4" size={40} />
-              <h3 className="text-sm text-gray-500 dark:text-gray-400 mb-2">Systems Secured</h3>
-              <div className="text-4xl font-bold">1500+</div>
-            </div>
-            <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 text-center border border-gray-200 dark:border-gray-700 hover:border-green-500 transition-colors">
-              <Shield className="text-green-500 mx-auto mb-4" size={40} />
-              <h3 className="text-sm text-gray-500 dark:text-gray-400 mb-2">Security Stacks</h3>
-              <div className="text-4xl font-bold">12</div>
-            </div>
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 text-center border border-gray-200 dark:border-gray-700 hover:border-green-500 transition-colors"
+              >
+                <stat.icon className="text-green-500 mx-auto mb-4" size={40} />
+                <h3 className="text-sm text-gray-500 dark:text-gray-400 mb-2">{stat.label}</h3>
+                <div className="text-4xl font-bold">{stat.value}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -232,36 +194,16 @@ export default function Home() {
             <span className="text-green-500">Certifications</span>
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-green-500 transition-colors">
-              <Award className="text-green-500 mb-4" size={32} />
-              <h3 className="font-bold text-lg mb-2">ISACA CISM</h3>
-              <p className="text-gray-500 dark:text-gray-400 text-sm">Certified Information Security Manager</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-green-500 transition-colors">
-              <Award className="text-green-500 mb-4" size={32} />
-              <h3 className="font-bold text-lg mb-2">Azure Associate AZ-104</h3>
-              <p className="text-gray-500 dark:text-gray-400 text-sm">Microsoft Azure Administrator</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-green-500 transition-colors">
-              <Award className="text-green-500 mb-4" size={32} />
-              <h3 className="font-bold text-lg mb-2">CompTIA Security+ CE</h3>
-              <p className="text-gray-500 dark:text-gray-400 text-sm">Security+ Certification</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-green-500 transition-colors">
-              <Award className="text-green-500 mb-4" size={32} />
-              <h3 className="font-bold text-lg mb-2">MCSA Windows Server</h3>
-              <p className="text-gray-500 dark:text-gray-400 text-sm">Microsoft Certified Solutions Associate</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-green-500 transition-colors">
-              <Award className="text-green-500 mb-4" size={32} />
-              <h3 className="font-bold text-lg mb-2">DISA HBSS</h3>
-              <p className="text-gray-500 dark:text-gray-400 text-sm">Certificates 201, 301, and 501</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-green-500 transition-colors">
-              <Award className="text-green-500 mb-4" size={32} />
-              <h3 className="font-bold text-lg mb-2">NARTE Class III</h3>
-              <p className="text-gray-500 dark:text-gray-400 text-sm">Certified Technician</p>
-            </div>
+            {certifications.map((cert) => (
+              <div
+                key={cert.title}
+                className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-green-500 transition-colors"
+              >
+                <Shield className="text-green-500 mb-4" size={32} />
+                <h3 className="font-bold text-lg mb-2">{cert.title}</h3>
+                <p className="text-gray-500 dark:text-gray-400 text-sm">{cert.subtitle}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -273,102 +215,21 @@ export default function Home() {
             <span className="text-green-500">Core</span> tech stack
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Server className="text-green-500" size={24} />
-                <h3 className="text-xl font-bold">Operating Systems</h3>
+            {techStack.map((stack) => (
+              <div key={stack.title}>
+                <div className="flex items-center gap-2 mb-4">
+                  <stack.icon className="text-green-500" size={24} />
+                  <h3 className="text-xl font-bold">{stack.title}</h3>
+                </div>
+                <div className="space-y-2">
+                  {stack.items.map((item) => (
+                    <div key={item} className="text-gray-600 dark:text-gray-300">
+                      {item}
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="space-y-2">
-                <div className="text-gray-600 dark:text-gray-300">RHEL</div>
-                <div className="text-gray-600 dark:text-gray-300">CentOS</div>
-                <div className="text-gray-600 dark:text-gray-300">Ubuntu Server</div>
-                <div className="text-gray-600 dark:text-gray-300">Windows Server</div>
-              </div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Cloud className="text-green-500" size={24} />
-                <h3 className="text-xl font-bold">Cloud Platforms</h3>
-              </div>
-              <div className="space-y-2">
-                <div className="text-gray-600 dark:text-gray-300">AWS</div>
-                <div className="text-gray-600 dark:text-gray-300">Azure</div>
-                <div className="text-gray-600 dark:text-gray-300">Google Cloud</div>
-                <div className="text-gray-600 dark:text-gray-300">Oracle Cloud</div>
-              </div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Code className="text-green-500" size={24} />
-                <h3 className="text-xl font-bold">DevOps & Automation</h3>
-              </div>
-              <div className="space-y-2">
-                <div className="text-gray-600 dark:text-gray-300">Ansible</div>
-                <div className="text-gray-600 dark:text-gray-300">Docker</div>
-                <div className="text-gray-600 dark:text-gray-300">Terraform</div>
-                <div className="text-gray-600 dark:text-gray-300">Bash Scripting</div>
-              </div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Lock className="text-green-500" size={24} />
-                <h3 className="text-xl font-bold">Security Tools</h3>
-              </div>
-              <div className="space-y-2">
-                <div className="text-gray-600 dark:text-gray-300">Splunk</div>
-                <div className="text-gray-600 dark:text-gray-300">Nessus</div>
-                <div className="text-gray-600 dark:text-gray-300">Qualys</div>
-                <div className="text-gray-600 dark:text-gray-300">SentinelOne</div>
-              </div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Network className="text-green-500" size={24} />
-                <h3 className="text-xl font-bold">Network & Security</h3>
-              </div>
-              <div className="space-y-2">
-                <div className="text-gray-600 dark:text-gray-300">Firewall Management</div>
-                <div className="text-gray-600 dark:text-gray-300">IDS/IPS</div>
-                <div className="text-gray-600 dark:text-gray-300">EDR/XDR</div>
-                <div className="text-gray-600 dark:text-gray-300">SIEM</div>
-              </div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Database className="text-green-500" size={24} />
-                <h3 className="text-xl font-bold">Monitoring Tools</h3>
-              </div>
-              <div className="space-y-2">
-                <div className="text-gray-600 dark:text-gray-300">ELK Stack</div>
-                <div className="text-gray-600 dark:text-gray-300">Nagios</div>
-                <div className="text-gray-600 dark:text-gray-300">ServiceNow</div>
-                <div className="text-gray-600 dark:text-gray-300">JIRA</div>
-              </div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Server className="text-green-500" size={24} />
-                <h3 className="text-xl font-bold">Configuration</h3>
-              </div>
-              <div className="space-y-2">
-                <div className="text-gray-600 dark:text-gray-300">Apache</div>
-                <div className="text-gray-600 dark:text-gray-300">Git</div>
-                <div className="text-gray-600 dark:text-gray-300">Puppet</div>
-                <div className="text-gray-600 dark:text-gray-300">Chef</div>
-              </div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Shield className="text-green-500" size={24} />
-                <h3 className="text-xl font-bold">Compliance</h3>
-              </div>
-              <div className="space-y-2">
-                <div className="text-gray-600 dark:text-gray-300">NIST 800-53</div>
-                <div className="text-gray-600 dark:text-gray-300">FedRAMP</div>
-                <div className="text-gray-600 dark:text-gray-300">STIGs</div>
-                <div className="text-gray-600 dark:text-gray-300">RMF</div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -380,120 +241,30 @@ export default function Home() {
             <span className="text-green-500">Professional</span> Experience
           </h2>
           <div className="space-y-8">
-            {/* Senior Cyber Security Engineer - 3 Squared Technologies */}
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
-              <div className="flex flex-wrap justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Senior Cyber Security Engineer</h3>
-                  <div className="text-green-500 font-semibold">3 Squared Technologies – Montgomery, AL (Remote)</div>
+            {experience.map((role) => (
+              <div key={`${role.title}-${role.company}`} className="bg-gray-800 rounded-xl p-8 border border-gray-700">
+                <div className="flex flex-wrap justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2">{role.title}</h3>
+                    <div className="text-green-500 font-semibold">{role.company} – {role.location}</div>
+                  </div>
+                  <div className="text-gray-400">{role.dates}</div>
                 </div>
-                <div className="text-gray-400">June 2025 – Present</div>
-              </div>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                <li className="flex gap-2"><span className="text-green-500">•</span> Manage five classified environments — three IL4 and two IL6 — ensuring full compliance with DoD Cloud SRG, STIG, and RMF security standards</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Lead daily operations for RHEL-based systems including kernel tuning, SELinux configuration, system patching, and advanced hardening for mission-critical applications</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Support the migration of IL6 workloads to AWS IL6 (Cloud One), validating enclave configurations, cross-domain data flows, and secure automation baselines</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Participate in Agile sprints and Technical Interchange Meetings (TIMs) to coordinate migration milestones, sprint deliverables, and system accreditation artifacts</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Administer and secure Trend Micro Deep Security / Deep Visibility for intrusion detection, real-time monitoring, and forensic data analysis within IL6 boundaries</li>
-              </ul>
-              <div className="mt-6">
-                <Link to="/jobs/3squared-senior-cyber-security-engineer" className="text-green-500 hover:text-green-400 transition-colors font-semibold">
-                  View Full Role Details →
-                </Link>
-              </div>
-            </div>
-
-            {/* Senior Cyber Security Engineer - MSI */}
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
-              <div className="flex flex-wrap justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Senior Cyber Security Engineer</h3>
-                  <div className="text-green-500 font-semibold">MSI (via USPO) – Montgomery, AL (Remote)</div>
+                <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                  {role.bullets.map((bullet) => (
+                    <li key={bullet} className="flex gap-2">
+                      <span className="text-green-500">•</span>
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6">
+                  <Link to={role.link} className="text-green-500 hover:text-green-400 transition-colors font-semibold">
+                    View Full Role Details →
+                  </Link>
                 </div>
-                <div className="text-gray-400">January 2025 – June 2025</div>
               </div>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                <li className="flex gap-2"><span className="text-green-500">•</span> Lead the development and customization of cybersecurity tools and platforms, including integrations with Splunk, Armis, SentinelOne, and Microsoft IRM</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Designed and implemented custom dashboards, alert logic, and data ingestion pipelines within Splunk to improve threat hunting</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Engineered modifications to Azure-native tools and Microsoft IRM configurations, strengthening cloud and data security posture</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Customized and automated workflows within ServiceNow for streamlined vulnerability management and incident tracking</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Mentored junior engineers and contributed to knowledge-sharing initiatives for improved cyber tool lifecycle support</li>
-              </ul>
-              <div className="mt-6">
-                <Link to="/jobs/msi-senior-cyber-security-engineer" className="text-green-500 hover:text-green-400 transition-colors font-semibold">
-                  View Full Role Details →
-                </Link>
-              </div>
-            </div>
-
-            {/* Cyber Security Engineer - TCecure */}
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
-              <div className="flex flex-wrap justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Cyber Security Engineer</h3>
-                  <div className="text-green-500 font-semibold">TCecure, LLC – Baltimore, MD</div>
-                </div>
-                <div className="text-gray-400">May 2022 – March 2025</div>
-              </div>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                <li className="flex gap-2"><span className="text-green-500">•</span> Managed and secured RHEL-based systems by implementing robust configurations and patch management</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Integrated and maintained ELK Stack for real-time log analysis and monitoring critical systems</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Automated deployment and configuration processes for network assets, reducing manual errors and deployment time by 30%</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Conducted vulnerability assessments and remediation using Nessus and Rapid7 InsightVM</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Automated security tasks using Ansible and Bash, ensuring compliance with STIGs</li>
-              </ul>
-              <div className="mt-6">
-                <Link to="/jobs/tcecure-cyber-security-engineer" className="text-green-500 hover:text-green-400 transition-colors font-semibold">
-                  View Full Role Details →
-                </Link>
-              </div>
-            </div>
-
-            {/* Network Engineering SME - Astrion */}
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
-              <div className="flex flex-wrap justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Network Engineering SME</h3>
-                  <div className="text-green-500 font-semibold">Astrion US – Maxwell-AFB Gunter Annex, Montgomery AL</div>
-                </div>
-                <div className="text-gray-400">March 2021 – May 2022</div>
-              </div>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                <li className="flex gap-2"><span className="text-green-500">•</span> Spearheaded enterprise infrastructure services for 700 users across four teams leveraging Oracle Cloud, Azure, and AWS</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Led cloud workflow automation across eight zones, reducing process times by 25% and improving deployment efficiency</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Designed and implemented security systems aligning with SABSA and NIST 800-53, leading to a 50% reduction in security incidents</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Conducted performance evaluations and system migrations for over 800 systems transitioning from on-premise to cloud environments</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Engineered cloud management strategies achieving a 20% reduction in annual IT spending</li>
-              </ul>
-              <div className="mt-6">
-                <Link to="/jobs/astrion-network-engineering-sme" className="text-green-500 hover:text-green-400 transition-colors font-semibold">
-                  View Full Role Details →
-                </Link>
-              </div>
-            </div>
-
-            {/* Sr. Cyber Security Engineer - SMS Data Solutions */}
-            <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
-              <div className="flex flex-wrap justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Sr. Cyber Security Engineer</h3>
-                  <div className="text-green-500 font-semibold">SMS Data Solutions / Cyber Defenses Inc. – Maxwell-AFB Gunter Annex, Montgomery AL</div>
-                </div>
-                <div className="text-gray-400">October 2015 – March 2021</div>
-              </div>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                <li className="flex gap-2"><span className="text-green-500">•</span> Administered comprehensive security for 12 security stacks for DISA implementations across Army, Air Force, and Navy</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Managed and supported 24 VMware environments consisting of 300 RHEL Servers</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Administered a host-based security system in a mixed virtual and physical environment for 1500+ hosts and appliances</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Led vulnerability management processes for 300+ Red Hat Enterprise Linux and Windows hosts</li>
-                <li className="flex gap-2"><span className="text-green-500">•</span> Developed a SASE framework with a zero-trust architecture, aligning with FedRAMP and NIST frameworks</li>
-              </ul>
-              <div className="mt-6">
-                <Link to="/jobs/sms-data-solutions-sr-cyber-security-engineer" className="text-green-500 hover:text-green-400 transition-colors font-semibold">
-                  View Full Role Details →
-                </Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -571,71 +342,17 @@ export default function Home() {
               </dl>
             </div>
             <div>
-              <form className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Your name"
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-100 placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="your.email@example.com"
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-100 placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={6}
-                    placeholder="Your message..."
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-100 placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors resize-none"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-green-500 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-green-400 transition-colors"
-                >
-                  Send Message
-                </button>
-              </form>
+              <ContactForm
+                inputClassName="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-100 placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors"
+                textareaClassName="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-100 placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors resize-none"
+                buttonClassName="w-full bg-green-500 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-green-400 transition-colors"
+                statusClassName="text-sm text-gray-500 dark:text-gray-400"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
-          <div className="text-gray-400">
-            © 2025 Eddie Barlow
-          </div>
-          <div className="flex gap-4">
-            <a href="https://github.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Github" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Github size={20} />
-            </a>
-            <a href="https://www.linkedin.com/in/eddie-barlow-jr-cism-68802716/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Linkedin size={20} />
-            </a>
-            <a href="http://instagram.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Instagram size={20} />
-            </a>
-            <a href="https://x.com/mrcyber334?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Twitter size={20} />
-            </a>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </PageLayout>
   )
 }

@@ -1,75 +1,10 @@
 import '../App.css'
-import { Linkedin, Mail, Github, Instagram, Twitter, Code, Cpu, Cloud, Lock, Rocket, Zap, Monitor, ArrowRight } from 'lucide-react'
+import { Mail, Github, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { ThemeToggle } from '../components/ThemeToggle'
+import { PageLayout } from '../components/PageLayout'
+import { featuredProject, projectsInDevelopment } from '../data/projects'
 
-const featuredProject = {
-  icon: Monitor,
-  title: 'CARINA OS',
-  status: 'In Development',
-  progress: 45,
-  description: 'A mission-grade, Debian-based operating system designed for engineers, scientists, and builders working in STEM, embedded systems, robotics, AI, and space-adjacent domains. Built around safe experimentation, hardware interaction, and reproducible workflows.',
-  technologies: ['Debian', 'Linux', 'Containers', 'Embedded Systems', 'Robotics'],
-  expectedRelease: 'Q3 2026',
-  detailPage: '/projects/carina-os'
-}
-
-const projects = [
-  {
-    icon: Lock,
-    title: 'SecureVault Pro',
-    status: 'In Development',
-    progress: 65,
-    description: 'A next-generation password manager with zero-knowledge encryption and biometric authentication. Built with security-first principles and designed for both personal and enterprise use.',
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'WebAuthn', 'AES-256'],
-    expectedRelease: 'Q2 2026'
-  },
-  {
-    icon: Cpu,
-    title: 'ThreatHunter AI',
-    status: 'Alpha Testing',
-    progress: 40,
-    description: 'An AI-powered threat detection system that uses machine learning to identify and respond to security threats in real-time. Integrates with existing SIEM solutions.',
-    technologies: ['Python', 'TensorFlow', 'Elasticsearch', 'Kafka', 'Docker'],
-    expectedRelease: 'Q3 2026'
-  },
-  {
-    icon: Cloud,
-    title: 'CloudGuard Scanner',
-    status: 'Planning',
-    progress: 15,
-    description: 'Automated cloud security posture management tool that scans AWS, Azure, and GCP environments for misconfigurations and compliance violations.',
-    technologies: ['Go', 'Terraform', 'AWS SDK', 'Azure SDK', 'GCP SDK'],
-    expectedRelease: 'Q4 2026'
-  },
-  {
-    icon: Code,
-    title: 'DevSecOps Pipeline Kit',
-    status: 'In Development',
-    progress: 55,
-    description: 'A comprehensive toolkit for integrating security into CI/CD pipelines. Includes SAST, DAST, and dependency scanning with customizable policies.',
-    technologies: ['GitHub Actions', 'Jenkins', 'SonarQube', 'OWASP ZAP', 'Trivy'],
-    expectedRelease: 'Q2 2026'
-  },
-  {
-    icon: Rocket,
-    title: 'CyberRange Platform',
-    status: 'Beta',
-    progress: 80,
-    description: 'A virtual cybersecurity training environment with realistic attack scenarios and hands-on labs. Perfect for training security teams and conducting exercises.',
-    technologies: ['Kubernetes', 'Ansible', 'Proxmox', 'Caldera', 'ELK Stack'],
-    expectedRelease: 'Q1 2026'
-  },
-  {
-    icon: Zap,
-    title: 'Incident Response Automator',
-    status: 'Concept',
-    progress: 5,
-    description: 'SOAR platform for automating incident response workflows. Integrates with ticketing systems, communication tools, and security infrastructure.',
-    technologies: ['Python', 'FastAPI', 'Redis', 'Celery', 'GraphQL'],
-    expectedRelease: 'TBD'
-  }
-]
+const projects = projectsInDevelopment
 
 function getStatusColor(status: string) {
   switch (status) {
@@ -90,32 +25,7 @@ function getStatusColor(status: string) {
 
 export default function ProjectsInDevelopment() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      <nav className="fixed top-0 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <Link to="/" className="text-xl font-bold">
-              Eddie <span className="text-green-500">Barlow</span>
-            </Link>
-            <div className="flex items-center gap-4">
-              <ThemeToggle />
-              <a href="https://github.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Github" className="hover:text-green-500 transition-colors">
-                <Github size={20} />
-              </a>
-              <a href="https://www.linkedin.com/in/eddie-barlow-jr-cism-68802716/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-green-500 transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="http://instagram.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-green-500 transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="https://x.com/mrcyber334?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-green-500 transition-colors">
-                <Twitter size={20} />
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
+    <PageLayout>
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-6">
@@ -262,27 +172,6 @@ export default function ProjectsInDevelopment() {
         </div>
       </section>
 
-      <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
-          <div className="text-gray-400">
-            © 2025 Eddie Barlow
-          </div>
-          <div className="flex gap-4">
-            <a href="https://github.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Github" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Github size={20} />
-            </a>
-            <a href="https://www.linkedin.com/in/eddie-barlow-jr-cism-68802716/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Linkedin size={20} />
-            </a>
-            <a href="http://instagram.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Instagram size={20} />
-            </a>
-            <a href="https://x.com/mrcyber334?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Twitter size={20} />
-            </a>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </PageLayout>
   )
 }

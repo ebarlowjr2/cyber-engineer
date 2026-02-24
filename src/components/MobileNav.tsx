@@ -2,22 +2,9 @@ import { useState } from 'react'
 import { Menu, X, Github, Linkedin, Instagram, Twitter } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { ThemeToggle } from './ThemeToggle'
+import { navLinks, socialLinks } from '../data/site'
 
-interface MobileNavProps {
-  links?: { href: string; label: string; isExternal?: boolean }[]
-}
-
-const defaultLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/portfolio', label: 'Portfolio' },
-  { href: '/advocacy', label: 'Advocacy' },
-  { href: '/projects-in-development', label: 'Projects in Dev' },
-  { href: '/active-projects', label: 'Active Projects' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/contact', label: 'Contact' },
-]
-
-export function MobileNav({ links = defaultLinks }: MobileNavProps) {
+export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -33,7 +20,7 @@ export function MobileNav({ links = defaultLinks }: MobileNavProps) {
       {isOpen && (
         <div className="absolute top-full left-0 right-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shadow-lg">
           <div className="px-4 py-6 space-y-4">
-            {links.map((link) => (
+            {navLinks.map((link) => (
               link.isExternal ? (
                 <a
                   key={link.href}
@@ -66,18 +53,28 @@ export function MobileNav({ links = defaultLinks }: MobileNavProps) {
 
             <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
               <div className="flex gap-4">
-                <a href="https://github.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Github" className="hover:text-green-500 transition-colors">
-                  <Github size={24} />
-                </a>
-                <a href="https://www.linkedin.com/in/eddie-barlow-jr-cism-68802716/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-green-500 transition-colors">
-                  <Linkedin size={24} />
-                </a>
-                <a href="http://instagram.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-green-500 transition-colors">
-                  <Instagram size={24} />
-                </a>
-                <a href="https://x.com/mrcyber334?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-green-500 transition-colors">
-                  <Twitter size={24} />
-                </a>
+                {socialLinks.map((link) => {
+                  const Icon =
+                    link.label === 'LinkedIn'
+                      ? Linkedin
+                      : link.label === 'Instagram'
+                      ? Instagram
+                      : link.label === 'Twitter'
+                      ? Twitter
+                      : Github
+                  return (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={link.label}
+                      className="hover:text-green-500 transition-colors"
+                    >
+                      <Icon size={24} />
+                    </a>
+                  )
+                })}
               </div>
             </div>
           </div>

@@ -1,8 +1,7 @@
 import '../../App.css'
-import { Linkedin, Github, Instagram, Twitter, Monitor, Shield, Cpu, Terminal, Users, CheckCircle, ArrowLeft } from 'lucide-react'
+import { Monitor, Shield, Cpu, Terminal, Users, CheckCircle, ArrowLeft } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { ThemeToggle } from '../../components/ThemeToggle'
-import { MobileNav } from '../../components/MobileNav'
+import { PageLayout } from '../../components/PageLayout'
 
 const keyProblems = [
   'Linux systems becoming polluted by experiments and ad-hoc installs',
@@ -67,33 +66,7 @@ const targetAudience = [
 
 export default function CarinaOS() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      <nav className="fixed top-0 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <Link to="/" className="text-xl font-bold">
-              Eddie <span className="text-green-500">Barlow</span>
-            </Link>
-            <div className="hidden md:flex items-center gap-4">
-              <ThemeToggle />
-              <a href="https://github.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Github" className="hover:text-green-500 transition-colors">
-                <Github size={20} />
-              </a>
-              <a href="https://www.linkedin.com/in/eddie-barlow-jr-cism-68802716/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-green-500 transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="http://instagram.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-green-500 transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="https://x.com/mrcyber334?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-green-500 transition-colors">
-                <Twitter size={20} />
-              </a>
-            </div>
-            <MobileNav />
-          </div>
-        </div>
-      </nav>
-
+    <PageLayout>
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <Link to="/projects-in-development" className="inline-flex items-center gap-2 text-green-500 hover:text-green-400 transition-colors mb-8">
@@ -205,27 +178,6 @@ export default function CarinaOS() {
         </div>
       </section>
 
-      <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-200 dark:border-gray-800">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
-          <div className="text-gray-500 dark:text-gray-400">
-            &copy; 2025 Eddie Barlow
-          </div>
-          <div className="flex gap-4">
-            <a href="https://github.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Github" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Github size={20} />
-            </a>
-            <a href="https://www.linkedin.com/in/eddie-barlow-jr-cism-68802716/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Linkedin size={20} />
-            </a>
-            <a href="http://instagram.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Instagram size={20} />
-            </a>
-            <a href="https://x.com/mrcyber334?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-gray-400 hover:text-green-500 transition-colors">
-              <Twitter size={20} />
-            </a>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </PageLayout>
   )
 }
