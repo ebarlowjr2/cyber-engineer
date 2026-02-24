@@ -1,5 +1,3 @@
-import matter from 'gray-matter'
-
 export interface BlogPost {
   slug: string
   title: string
@@ -23,8 +21,36 @@ function deriveSlug(path: string) {
   return filename.replace(/\.md$/, '')
 }
 
+function parseFrontmatter(raw: string) {
+  if (!raw.startsWith('---')) {
+    return { data: {}, content: raw }
+  }
+
+  const endIndex = raw.indexOf('\n---', 3)
+  if (endIndex === -1) {
+    return { data: {}, content: raw }
+  }
+
+  const frontmatterBlock = raw.slice(3, endIndex).trim()
+  const content = raw.slice(endIndex + 4).trim()
+  const data: Record<string, string> = {}
+
+  frontmatterBlock.split('\n').forEach((line) => {
+    const separatorIndex = line.indexOf(':')
+    if (separatorIndex === -1) return
+
+    const key = line.slice(0, separatorIndex).trim()
+    const value = line.slice(separatorIndex + 1).trim()
+    if (!key) return
+
+    data[key] = value.replace(/^\"|\"$/g, '').replace(/^'|'$/g, '')
+  })
+
+  return { data, content }
+}
+
 function normalizePost(path: string, raw: string): BlogPost {
-  const { data, content } = matter(raw)
+  const { data, content } = parseFrontmatter(raw)
   const frontmatter = data as Partial<Frontmatter>
   const slug = frontmatter.slug ?? deriveSlug(path)
 
