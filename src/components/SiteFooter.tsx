@@ -34,6 +34,14 @@ export function SiteFooter() {
           })}
         </div>
       </div>
+      <div className="max-w-7xl mx-auto mt-4 flex justify-end">
+        <a
+          href="/danger-zone"
+          className="text-xs uppercase tracking-widest text-gray-400 hover:text-red-500 transition-colors"
+        >
+          Danger Zone
+        </a>
+      </div>
     </footer>
   )
 }

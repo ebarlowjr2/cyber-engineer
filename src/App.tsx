@@ -14,6 +14,8 @@ import MSISeniorCyberSecurityEngineer from './pages/jobs/MSISeniorCyberSecurityE
 import TCecureCyberSecurityEngineer from './pages/jobs/TCecureCyberSecurityEngineer'
 import AstrionNetworkEngineeringSME from './pages/jobs/AstrionNetworkEngineeringSME'
 import SMSDataSolutionsSrCyberSecurityEngineer from './pages/jobs/SMSDataSolutionsSrCyberSecurityEngineer'
+import SecretGate from './pages/SecretGate'
+import InterviewChecksheet from './pages/InterviewChecksheet'
 import ScrollToTop from './components/ScrollToTop'
 import Blox from './components/Blox'
 
@@ -37,6 +39,8 @@ function App() {
         <Route path="/jobs/tcecure-cyber-security-engineer" element={<TCecureCyberSecurityEngineer />} />
         <Route path="/jobs/astrion-network-engineering-sme" element={<AstrionNetworkEngineeringSME />} />
         <Route path="/jobs/sms-data-solutions-sr-cyber-security-engineer" element={<SMSDataSolutionsSrCyberSecurityEngineer />} />
+        <Route path="/danger-zone" element={<SecretGate />} />
+        <Route path="/interview-checksheet" element={<InterviewChecksheet />} />
       </Routes>
     </Router>
   )
