@@ -51,7 +51,7 @@ export default function Portfolio() {
           
           <div className="grid md:grid-cols-2 gap-8">
             {majorProjects.map((project) => (
-              <div key={project.title} className="bg-gray-800 border border-gray-700 rounded-lg p-8 hover:border-green-500 transition-colors">
+              <div key={project.title} className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg p-8 hover:border-green-500 transition-colors">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex items-center justify-center w-12 h-12 bg-green-500/20 rounded-lg">
                     <project.icon className="text-green-500" size={24} />
