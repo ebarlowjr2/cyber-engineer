@@ -2,7 +2,7 @@ import '../App.css'
 import { Mail, Github, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { PageLayout } from '../components/PageLayout'
-import { featuredProject, projectsInDevelopment } from '../data/projects'
+import { featuredProjects, projectsInDevelopment } from '../data/projects'
 
 const projects = projectsInDevelopment
 
@@ -39,58 +39,65 @@ export default function ProjectsInDevelopment() {
 
             <section className="py-12 px-4 sm:px-6 lg:px-8">
               <div className="max-w-7xl mx-auto">
-                <h2 className="text-2xl font-bold mb-6">Featured Project</h2>
-                <div className="bg-white dark:bg-gray-900 border-2 border-green-500 rounded-lg p-6 hover:shadow-lg hover:shadow-green-500/10 transition-all">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="flex items-center justify-center w-14 h-14 bg-green-500/20 rounded-lg">
-                        <featuredProject.icon className="text-green-500" size={28} />
+                <h2 className="text-2xl font-bold mb-6">Featured Projects</h2>
+                <div className="grid lg:grid-cols-2 gap-8">
+                  {featuredProjects.map((featuredProject) => (
+                    <div
+                      key={featuredProject.title}
+                      className="bg-white dark:bg-gray-900 border-2 border-green-500 rounded-lg p-6 hover:shadow-lg hover:shadow-green-500/10 transition-all"
+                    >
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-center gap-3">
+                          <div className="flex items-center justify-center w-14 h-14 bg-green-500/20 rounded-lg">
+                            <featuredProject.icon className="text-green-500" size={28} />
+                          </div>
+                          <div>
+                            <h3 className="text-2xl font-bold">{featuredProject.title}</h3>
+                            <span className={`inline-block px-2 py-1 rounded text-xs font-medium ${getStatusColor(featuredProject.status)}`}>
+                              {featuredProject.status}
+                            </span>
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="text-2xl font-bold">{featuredProject.title}</h3>
-                        <span className={`inline-block px-2 py-1 rounded text-xs font-medium ${getStatusColor(featuredProject.status)}`}>
-                          {featuredProject.status}
-                        </span>
+                
+                      <p className="text-gray-600 dark:text-gray-300 mb-4">{featuredProject.description}</p>
+                
+                      <div className="mb-4">
+                        <div className="flex justify-between text-sm mb-1">
+                          <span className="text-gray-500 dark:text-gray-400">Progress</span>
+                          <span className="text-green-500">{featuredProject.progress}%</span>
+                        </div>
+                        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                          <div 
+                            className="bg-green-500 h-2 rounded-full transition-all duration-300"
+                            style={{ width: `${featuredProject.progress}%` }}
+                          ></div>
+                        </div>
+                      </div>
+
+                      <div className="mb-4">
+                        <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">Technologies</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {featuredProject.technologies.map((tech, idx) => (
+                            <span key={idx} className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-xs">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap justify-between items-center pt-4 border-t border-gray-200 dark:border-gray-800 gap-4">
+                        <div>
+                          <span className="text-sm text-gray-500 dark:text-gray-400">Expected Release: </span>
+                          <span className="text-sm text-green-500 font-medium">{featuredProject.expectedRelease}</span>
+                        </div>
+                        <Link to={featuredProject.detailPage} className="inline-flex items-center gap-2 bg-green-500 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-green-400 transition-colors text-sm">
+                          Learn More & Download
+                          <ArrowRight size={16} />
+                        </Link>
                       </div>
                     </div>
-                  </div>
-            
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">{featuredProject.description}</p>
-            
-                  <div className="mb-4">
-                    <div className="flex justify-between text-sm mb-1">
-                      <span className="text-gray-500 dark:text-gray-400">Progress</span>
-                      <span className="text-green-500">{featuredProject.progress}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                      <div 
-                        className="bg-green-500 h-2 rounded-full transition-all duration-300"
-                        style={{ width: `${featuredProject.progress}%` }}
-                      ></div>
-                    </div>
-                  </div>
-
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">Technologies</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {featuredProject.technologies.map((tech, idx) => (
-                        <span key={idx} className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-xs">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap justify-between items-center pt-4 border-t border-gray-200 dark:border-gray-800 gap-4">
-                    <div>
-                      <span className="text-sm text-gray-500 dark:text-gray-400">Expected Release: </span>
-                      <span className="text-sm text-green-500 font-medium">{featuredProject.expectedRelease}</span>
-                    </div>
-                    <Link to={featuredProject.detailPage} className="inline-flex items-center gap-2 bg-green-500 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-green-400 transition-colors text-sm">
-                      Learn More & Download
-                      <ArrowRight size={16} />
-                    </Link>
-                  </div>
+                  ))}
                 </div>
               </div>
             </section>

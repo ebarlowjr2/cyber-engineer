@@ -3,16 +3,30 @@ import type { ComponentType } from 'react'
 
 export type IconType = ComponentType<{ size?: number; className?: string }>
 
-export const featuredProject = {
-  icon: Monitor,
-  title: 'CARINA OS',
-  status: 'In Development',
-  progress: 45,
-  description: 'A mission-grade, Debian-based operating system designed for engineers, scientists, and builders working in STEM, embedded systems, robotics, AI, and space-adjacent domains. Built around safe experimentation, hardware interaction, and reproducible workflows.',
-  technologies: ['Debian', 'Linux', 'Containers', 'Embedded Systems', 'Robotics'],
-  expectedRelease: 'Q3 2026',
-  detailPage: '/projects/carina-os',
-}
+export const featuredProjects = [
+  {
+    icon: Monitor,
+    title: 'CARINA OS',
+    status: 'In Development',
+    progress: 45,
+    description:
+      'A mission-grade, Debian-based operating system designed for engineers, scientists, and builders working in STEM, embedded systems, robotics, AI, and space-adjacent domains. Built around safe experimentation, hardware interaction, and reproducible workflows.',
+    technologies: ['Debian', 'Linux', 'Containers', 'Embedded Systems', 'Robotics'],
+    expectedRelease: 'Q3 2026',
+    detailPage: '/projects/carina-os',
+  },
+  {
+    icon: Monitor,
+    title: 'StarKid Command',
+    status: 'In Development',
+    progress: 55,
+    description:
+      'StarKid Command is an AI-powered space and STEM learning platform that turns real-world space events into interactive missions and training experiences for students, educators, and enthusiasts.',
+    technologies: ['React', 'React Native', 'AI/ML', 'Real-Time Data', 'STEM'],
+    expectedRelease: 'Q2 2026',
+    detailPage: '/projects/starkid-command',
+  },
+]
 
 export const projectsInDevelopment = [
   {
