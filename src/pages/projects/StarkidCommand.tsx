@@ -141,15 +141,20 @@ export default function StarkidCommand() {
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-6">Screenshots</h2>
           <p className="text-gray-600 dark:text-gray-300 mb-8">
-            Add screenshots to `public/images/projects/` and update the filenames below to showcase the UI.
+            A quick look at the StarKid Command experience.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {screenshots.map((shot) => (
-              <div key={shot.label} className="border border-dashed border-gray-400/60 dark:border-gray-600 rounded-lg p-4 bg-white/60 dark:bg-gray-900/60">
-                <div className="aspect-video rounded-md bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-xs text-gray-500 dark:text-gray-400">
-                  {shot.label}
+              <div key={shot.label} className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden bg-white dark:bg-gray-900">
+                <div className="aspect-video bg-gray-100 dark:bg-gray-800">
+                  <img
+                    src={shot.file}
+                    alt={shot.label}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-300 mt-3">{shot.file}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300 px-4 py-3">{shot.label}</p>
               </div>
             ))}
           </div>
