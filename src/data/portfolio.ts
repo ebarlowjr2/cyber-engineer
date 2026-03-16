@@ -7,32 +7,52 @@ export const expertiseAreas = [
   {
     icon: Shield,
     title: 'Defensive Cyber Operations (DCO)',
-    description: 'Defensive Security refers to protecting computer systems and networks from attack by identifying and mitigating vulnerabilities and implementing measures to prevent or detect unauthorized access or activity.',
+    description: 'I have over 18 years of experience in defensive cyber operations across public and private sectors, protecting systems by identifying vulnerabilities, hardening configurations, and detecting unauthorized activity across enterprise networks.',
   },
   {
     icon: FileCheck,
     title: 'STIGs and SRG',
-    description: 'Security Technical Implementation Guides are configuration standards developed by the Defense Information Systems Agency (DISA). They are designed to make device hardware and software as secure as possible.',
+    description: 'I have led STIG and SRG compliance efforts for DoD-aligned environments, using DISA baselines to harden systems and document remediation plans while maintaining ATO readiness.',
   },
   {
     icon: Network,
     title: 'Experienced SysAdmin',
-    description: 'My experience as a System Administrator has allowed me to develop strong problem-solving skills and knowledge of software and hardware across Linux and Windows environments.',
+    description: 'I have 20+ years of Linux and Windows systems administration experience, managing patching, configuration management, automation, and uptime for mission-critical environments.',
   },
   {
     icon: Lock,
     title: 'Risk Management Framework, A&A, and ATO',
-    description: 'The Risk Management Framework, presented in NIST SP 800-37, provides a disciplined and structured 6-step process that integrates information security and risk management activities into the system development life cycle. The A&A process establishes the extent to which a particular design and implementation meet a set of specified security requirements. ATO is the official management decision to authorize operation of an information system and explicitly accept the risk.',
+    description: 'I have delivered RMF packages and A&A documentation aligned to NIST SP 800-37, driving systems through assessment and ATO while balancing mission needs and risk posture.',
   },
   {
     icon: AlertTriangle,
     title: 'ACAS and Nessus',
-    description: 'Assured Compliance Assessment Solution (ACAS) vulnerability scanning is the mandated enterprise vulnerability scanning capability for network and components owned or operated by the DoD. Nessus is a remote security scanning tool that scans computers and identifies vulnerabilities by scanning the system registry, files, ports, missing patches, misconfigurations, and software flaws.',
+    description: 'I have managed enterprise vulnerability scanning with ACAS/Nessus, prioritizing findings, validating fixes, and coordinating remediation across Linux and Windows fleets.',
   },
   {
     icon: Eye,
     title: 'Cyber Threat Intelligence (CTI)',
-    description: 'Cyber Threat Intelligence (CTI) helps organizations stay informed about new threats so they can protect themselves. Cyber security experts organize, analyze, and refine the information they gather about attacks to learn from and use it to protect businesses better.',
+    description: 'I build actionable CTI by correlating indicators, reviewing alerts, and translating threat data into defensive controls for SOC and engineering teams.',
+  },
+  {
+    icon: Shield,
+    title: 'Incident Response & Forensics',
+    description: 'I have led incident response across regulated environments, coordinating containment, root-cause analysis, and recovery while documenting lessons learned.',
+  },
+  {
+    icon: Network,
+    title: 'Security Architecture & Zero Trust',
+    description: 'I design layered security architectures, segment networks, and apply zero-trust principles to reduce attack surface and enforce least privilege.',
+  },
+  {
+    icon: Lock,
+    title: 'Identity & Access Management (IAM)',
+    description: 'I implement role-based access controls, MFA policies, and access reviews to ensure identity governance aligns with compliance requirements.',
+  },
+  {
+    icon: FileCheck,
+    title: 'Compliance Audits & Reporting',
+    description: 'I translate technical controls into audit-ready evidence, build POA&Ms, and support continuous monitoring for compliance assessments.',
   },
 ]
 

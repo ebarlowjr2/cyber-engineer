@@ -39,7 +39,15 @@ export default function Home() {
                   &lt;/code&gt;
                 </code>
               </div>
-              <h1 className="text-5xl font-bold mb-4">Eddie L. Barlow</h1>
+              <div className="flex flex-wrap items-center gap-3 mb-4">
+                <h1 className="text-5xl font-bold">Eddie L. Barlow</h1>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
+                >
+                  Available for Remote Work
+                </Link>
+              </div>
               <div className="flex gap-4 mb-6">
                 <a href="https://github.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Github" className="hover:text-green-500 transition-colors">
                   <Github size={24} />
@@ -69,10 +77,6 @@ export default function Home() {
                   <Folder size={20} />
                   Portfolio
                 </Link>
-                <a href="/resume/Eddie_Barlow_Resume.pdf" download className="inline-flex items-center gap-2 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors border border-gray-300 dark:border-gray-700">
-                  <Download size={20} />
-                  Download Resume
-                </a>
               </div>
                             <div className="flex flex-wrap gap-4 mt-4">
                               <Link to="/advocacy" className="inline-flex items-center gap-2 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors border border-gray-300 dark:border-gray-700">
@@ -85,11 +89,6 @@ export default function Home() {
                                 Blog
                               </Link>
                             </div>
-              <div className="mt-6">
-                <Link to="/contact" className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors">
-                  Available for Remote Work
-                </Link>
-              </div>
             </div>
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800">
@@ -158,6 +157,18 @@ export default function Home() {
                   <GraduationCap className="text-green-500 mt-1 flex-shrink-0" size={20} />
                   <div>
                     <span className="font-semibold">Education:</span> Trenholm Technical College
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Download className="text-green-500 mt-1 flex-shrink-0" size={20} />
+                  <div>
+                    <a
+                      href="/resume/Eddie_Barlow_Resume.pdf"
+                      download
+                      className="font-semibold text-green-500 hover:text-green-400 transition-colors"
+                    >
+                      Download Resume
+                    </a>
                   </div>
                 </li>
               </ul>
