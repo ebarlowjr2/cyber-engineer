@@ -1,7 +1,9 @@
 import '../../App.css'
-import { ArrowLeft, Cpu, Globe, Radar, Rocket, Shield, Sparkles, Users } from 'lucide-react'
+import { ArrowLeft, Cpu, Globe, Maximize2, Radar, Rocket, Shield, Sparkles, Users } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { PageLayout } from '../../components/PageLayout'
+import { useState } from 'react'
+import { Dialog, DialogContent } from '../../components/ui/dialog'
 
 const highlights = [
   {
@@ -56,6 +58,8 @@ const screenshots = [
 ]
 
 export default function StarkidCommand() {
+  const [activeShot, setActiveShot] = useState<(typeof screenshots)[number] | null>(null)
+
   return (
     <PageLayout>
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
@@ -145,21 +149,43 @@ export default function StarkidCommand() {
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {screenshots.map((shot) => (
-              <div key={shot.label} className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden bg-white dark:bg-gray-900">
-                <div className="aspect-video bg-gray-100 dark:bg-gray-800">
+              <button
+                key={shot.label}
+                type="button"
+                onClick={() => setActiveShot(shot)}
+                className="group border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden bg-white dark:bg-gray-900 text-left transition hover:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/50"
+                aria-label={`Open ${shot.label} screenshot`}
+              >
+                <div className="relative aspect-video bg-gray-100 dark:bg-gray-800 overflow-hidden">
                   <img
                     src={shot.file}
                     alt={shot.label}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
                     loading="lazy"
                   />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition duration-300" />
+                  <div className="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-full bg-black/60 px-3 py-1 text-xs text-white opacity-0 group-hover:opacity-100 transition">
+                    <Maximize2 size={14} />
+                    View
+                  </div>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300 px-4 py-3">{shot.label}</p>
-              </div>
+              </button>
             ))}
           </div>
         </div>
       </section>
+
+      <Dialog open={Boolean(activeShot)} onOpenChange={(open) => setActiveShot(open ? activeShot : null)}>
+        <DialogContent className="max-w-4xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-0">
+          {activeShot ? (
+            <div className="flex flex-col">
+              <img src={activeShot.file} alt={activeShot.label} className="w-full h-auto" />
+              <div className="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">{activeShot.label}</div>
+            </div>
+          ) : null}
+        </DialogContent>
+      </Dialog>
     </PageLayout>
   )
 }
