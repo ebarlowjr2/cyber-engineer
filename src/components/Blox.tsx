@@ -9,13 +9,13 @@ interface Message {
 const bloxResponses: Record<string, string> = {
   greeting: `Greetings! I am B.L.O.X. - Barlow Logic Operations Xecutive. I'm Eddie's digital assistant, here to help you learn more about his extensive experience, skills, hobbies, and business ventures. Feel free to ask me anything!`,
   
-  experience: `Eddie has over 20 years of experience in cybersecurity and systems administration. He's worked with the U.S. Air Force, DISA, and various defense contractors securing classified environments at IL4 and IL6 levels. He's managed over 1,500 systems, led enterprise-wide security initiatives, and even briefed a Major General on critical security solutions. His expertise spans RHEL, AWS, Azure, vulnerability management, and compliance frameworks like NIST and FedRAMP.`,
+  experience: `Eddie has over 20 years of experience in cybersecurity and systems administration. He is the owner of One Circle Solutions, a managed security services provider, and has worked with the U.S. Air Force, DISA, and defense contractors securing classified and regulated environments. His expertise spans MSSP operations, CMMC, RMF, NIST, RHEL, AWS, Azure, vulnerability management, penetration testing, and incident response.`,
   
   skills: `Eddie's technical arsenal includes: Linux administration (RHEL, CentOS, Ubuntu), cloud platforms (AWS, Azure, Oracle Cloud, GCP), security tools (Splunk, Nessus, Qualys, SentinelOne, Trend Micro), automation (Ansible, Terraform, Bash, Docker), and compliance frameworks (NIST 800-53, FedRAMP, STIGs, RMF). He holds certifications including CISM, Azure AZ-104, Security+, and MCSA.`,
   
   hobbies: `Beyond cybersecurity, Eddie is passionate about technology innovation and continuous learning. He enjoys exploring emerging technologies, building personal tech projects, and staying current with the latest developments in AI and cloud computing. He's also interested in mentoring the next generation of cybersecurity professionals.`,
   
-  business: `Eddie has entrepreneurial ventures in the technology space. He's involved in developing innovative solutions that bridge the gap between enterprise security and emerging technologies. His business interests include cybersecurity consulting, technology education, and building tools that help organizations strengthen their security posture.`,
+  business: `Eddie owns One Circle Solutions, a managed security services provider focused on cybersecurity consulting, vulnerability management, penetration testing, CMMC and NIST readiness, cloud security, and infrastructure hardening for commercial and regulated customers.`,
   
   projects: `Some of Eddie's notable projects include: resolving a mission-critical Air Force HBSS outage affecting 90% of Linux servers, leading the JRSS IL6 deployment for the DoD, designing the Prince George's County Cyber Lab for AI-driven cybersecurity training, and serving as Lead Cybersecurity Architect for the AFINC Weapon System - the first cyberspace weapon system designated by the U.S. Air Force.`,
   

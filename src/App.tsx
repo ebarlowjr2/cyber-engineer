@@ -10,11 +10,6 @@ import BlogPost from './pages/BlogPost'
 import ActiveProjects from './pages/ActiveProjects'
 import CarinaOS from './pages/projects/CarinaOS'
 import StarkidCommand from './pages/projects/StarkidCommand'
-import ThreeSquaredSeniorCyberSecurityEngineer from './pages/jobs/ThreeSquaredSeniorCyberSecurityEngineer'
-import MSISeniorCyberSecurityEngineer from './pages/jobs/MSISeniorCyberSecurityEngineer'
-import TCecureCyberSecurityEngineer from './pages/jobs/TCecureCyberSecurityEngineer'
-import AstrionNetworkEngineeringSME from './pages/jobs/AstrionNetworkEngineeringSME'
-import SMSDataSolutionsSrCyberSecurityEngineer from './pages/jobs/SMSDataSolutionsSrCyberSecurityEngineer'
 import SecretGate from './pages/SecretGate'
 import InterviewChecksheet from './pages/InterviewChecksheet'
 import ScrollToTop from './components/ScrollToTop'
@@ -36,11 +31,6 @@ function App() {
                         <Route path="/active-projects" element={<ActiveProjects />} />
         <Route path="/projects/carina-os" element={<CarinaOS />} />
         <Route path="/projects/starkid-command" element={<StarkidCommand />} />
-                        <Route path="/jobs/3squared-senior-cyber-security-engineer" element={<ThreeSquaredSeniorCyberSecurityEngineer />} />
-        <Route path="/jobs/msi-senior-cyber-security-engineer" element={<MSISeniorCyberSecurityEngineer />} />
-        <Route path="/jobs/tcecure-cyber-security-engineer" element={<TCecureCyberSecurityEngineer />} />
-        <Route path="/jobs/astrion-network-engineering-sme" element={<AstrionNetworkEngineeringSME />} />
-        <Route path="/jobs/sms-data-solutions-sr-cyber-security-engineer" element={<SMSDataSolutionsSrCyberSecurityEngineer />} />
         <Route path="/danger-zone" element={<SecretGate />} />
         <Route path="/interview-checksheet" element={<InterviewChecksheet />} />
       </Routes>

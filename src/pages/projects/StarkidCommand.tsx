@@ -1,9 +1,8 @@
 import '../../App.css'
-import { ArrowLeft, Cpu, Globe, Maximize2, Radar, Rocket, Shield, Sparkles, Users } from 'lucide-react'
+import { ArrowLeft, Cpu, Globe, Maximize2, Radar, Rocket, Shield, Sparkles, Users, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { PageLayout } from '../../components/PageLayout'
 import { useState } from 'react'
-import { Dialog, DialogContent } from '../../components/ui/dialog'
 
 const highlights = [
   {
@@ -176,16 +175,31 @@ export default function StarkidCommand() {
         </div>
       </section>
 
-      <Dialog open={Boolean(activeShot)} onOpenChange={(open) => setActiveShot(open ? activeShot : null)}>
-        <DialogContent className="max-w-4xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-0">
-          {activeShot ? (
-            <div className="flex flex-col">
-              <img src={activeShot.file} alt={activeShot.label} className="w-full h-auto" />
-              <div className="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">{activeShot.label}</div>
-            </div>
-          ) : null}
-        </DialogContent>
-      </Dialog>
+      {activeShot ? (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/75 px-4 py-8"
+          role="dialog"
+          aria-modal="true"
+          aria-label={activeShot.label}
+          onClick={() => setActiveShot(null)}
+        >
+          <div
+            className="relative w-full max-w-4xl overflow-hidden rounded-lg border border-gray-200 bg-white shadow-2xl dark:border-gray-700 dark:bg-gray-900"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setActiveShot(null)}
+              className="absolute right-3 top-3 z-10 rounded-full bg-black/70 p-2 text-white transition hover:bg-black"
+              aria-label="Close screenshot"
+            >
+              <X size={18} />
+            </button>
+            <img src={activeShot.file} alt={activeShot.label} className="w-full h-auto" />
+            <div className="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">{activeShot.label}</div>
+          </div>
+        </div>
+      ) : null}
     </PageLayout>
   )
 }
