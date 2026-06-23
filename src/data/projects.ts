@@ -1,4 +1,4 @@
-import { Cloud, Code, Cpu, Lock, Monitor, Rocket, Zap } from 'lucide-react'
+import { Cloud, Code, Cpu, Lock, Monitor, Rocket, Shield, Zap } from 'lucide-react'
 import type { ComponentType } from 'react'
 
 export type IconType = ComponentType<{ size?: number; className?: string }>
@@ -25,6 +25,17 @@ export const featuredProjects = [
     technologies: ['React', 'React Native', 'AI/ML', 'Real-Time Data', 'STEM'],
     expectedRelease: 'Q2 2026',
     detailPage: '/projects/starkid-command',
+  },
+  {
+    icon: Shield,
+    title: 'Organic Security Framework',
+    status: 'In Development',
+    progress: 30,
+    description:
+      'Organic Security Framework (OSF) is a practical, layered approach to cybersecurity designed to help organizations build security that grows with their business. It moves beyond compliance checklists by focusing on visibility, identity, access control, device security, monitoring, response readiness, and continuous improvement.',
+    technologies: ['Security Framework', 'Cyber Hygiene', 'Identity', 'Monitoring', 'Response Readiness'],
+    expectedRelease: 'Q4 2026',
+    detailPage: '/projects/organic-security-framework',
   },
 ]
 
