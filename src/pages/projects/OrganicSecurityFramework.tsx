@@ -48,8 +48,8 @@ export default function OrganicSecurityFramework() {
               <p className="text-sm uppercase tracking-wide text-gray-500 dark:text-gray-400">Featured Project</p>
               <h1 className="text-4xl md:text-5xl font-bold mt-3">Organic Security Framework</h1>
               <p className="text-gray-600 dark:text-gray-300 mt-4 text-lg leading-relaxed">
-                Organic Security Framework (OSF) is a practical, layered approach to cybersecurity designed to help
-                organizations build security that grows with their business.
+                The Organic Security Framework (OSF) is a practical cybersecurity model designed to help organizations
+                build security that grows naturally alongside their people, processes, and technology.
               </p>
             </div>
 
@@ -72,15 +72,27 @@ export default function OrganicSecurityFramework() {
 
           <div className="mt-12 space-y-6 text-gray-600 dark:text-gray-300 leading-relaxed">
             <p>
-              Rather than focusing solely on compliance checklists, OSF emphasizes visibility, identity, access control,
-              device security, monitoring, response readiness, and continuous improvement. The framework provides a
-              clear path from foundational cyber hygiene to mature security operations, making cybersecurity easier to
-              understand, implement, and sustain for organizations of any size.
+              Many organizations struggle with cybersecurity because traditional frameworks can be complex,
+              compliance-focused, or difficult to translate into everyday operations. The Organic Security Framework was
+              created to bridge that gap by providing a clear, understandable approach to cybersecurity that focuses on
+              real-world protection, operational readiness, and continuous improvement.
             </p>
             <p>
-              The goal is to help teams build security in layers. Each layer strengthens the next, allowing
-              organizations to start with practical improvements and grow into mature security operations without
-              overengineering the environment too early.
+              At its core, OSF recognizes that effective cybersecurity is not a single product, policy, or project.
+              Instead, it is a living system made up of interconnected layers that work together to reduce risk, improve
+              visibility, and strengthen resilience over time.
+            </p>
+            <p>
+              The framework begins with the Fabric Core—the foundational security capabilities every organization should
+              understand and implement. These include identity management, access control, device awareness, monitoring
+              and visibility, baseline protections, incident response readiness, and continuous improvement. Together,
+              these elements form the security foundation upon which more advanced capabilities can be built.
+            </p>
+            <p>
+              As organizations mature, the framework expands to incorporate additional layers such as security awareness
+              training, operational processes, automation, vulnerability management, governance, and advanced security
+              operations. This allows organizations to improve their security posture at a pace that aligns with their
+              resources, business objectives, and risk profile.
             </p>
           </div>
         </div>
@@ -111,8 +123,10 @@ export default function OrganicSecurityFramework() {
             <p className="text-sm uppercase tracking-wide text-green-500">Implementation Model</p>
             <h2 className="text-3xl font-bold mt-2 mb-4">From Hygiene to Operations</h2>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              OSF is designed to meet organizations where they are. It can support small teams building their first
-              security baseline or larger environments moving toward formalized security operations.
+              Unlike many cybersecurity approaches that focus solely on technical controls, the Organic Security
+              Framework emphasizes the relationship between people, technology, and operational practices. The goal is to
+              create security that becomes part of normal business operations rather than an isolated compliance
+              exercise.
             </p>
           </div>
 
@@ -135,6 +149,13 @@ export default function OrganicSecurityFramework() {
             <Wrench className="text-green-500" size={26} />
             <h2 className="text-2xl font-bold">Built for Practical Adoption</h2>
           </div>
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+            The Organic Security Framework is designed to support organizations of all sizes—from small businesses
+            taking their first cybersecurity steps to larger organizations seeking a structured path toward security
+            maturity. Whether the objective is protecting sensitive information, improving cyber awareness, preparing for
+            compliance requirements, or strengthening operational resilience, OSF provides a practical roadmap for
+            achieving meaningful security outcomes.
+          </p>
           <div className="grid md:grid-cols-2 gap-4">
             {[
               'Simple enough for leaders to understand.',
@@ -148,6 +169,10 @@ export default function OrganicSecurityFramework() {
               </div>
             ))}
           </div>
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed mt-8">
+            Security is not a destination. It is a continuous process of learning, adapting, and improving. The Organic
+            Security Framework provides the structure to help organizations make that journey with confidence.
+          </p>
         </div>
       </section>
     </PageLayout>
