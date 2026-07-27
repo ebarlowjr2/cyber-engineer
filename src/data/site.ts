@@ -11,7 +11,8 @@ export type SocialLink = {
 
 export const navLinks: NavLink[] = [
   { href: '/', label: 'Home' },
-  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/portfolio', label: 'Areas of Expertise' },
+  { href: '/major-projects', label: 'Major Projects' },
   { href: '/advocacy', label: 'Advocacy' },
   { href: '/projects-in-development', label: 'Projects in Dev' },
   { href: '/active-projects', label: 'Active Projects' },

@@ -5,6 +5,7 @@ import Portfolio from './pages/Portfolio'
 import Contact from './pages/Contact'
 import Advocacy from './pages/Advocacy'
 import ProjectsInDevelopment from './pages/ProjectsInDevelopment'
+import MajorProjects from './pages/MajorProjects'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import ActiveProjects from './pages/ActiveProjects'
@@ -26,6 +27,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/advocacy" element={<Advocacy />} />
+        <Route path="/major-projects" element={<MajorProjects />} />
         <Route path="/projects-in-development" element={<ProjectsInDevelopment />} />
                                 <Route path="/blog" element={<Blog />} />
                         <Route path="/blog/:slug" element={<BlogPost />} />

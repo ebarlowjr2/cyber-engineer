@@ -1,11 +1,11 @@
 import '../App.css'
-import { ArrowRight, ExternalLink, Mail, Terminal } from 'lucide-react'
+import { ArrowRight, Mail, Terminal } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PageLayout } from '../components/PageLayout'
-import { expertiseAreas, majorProjects } from '../data/portfolio'
+import { expertiseAreas } from '../data/portfolio'
 
-const filters = ['All', 'Cyber Ops', 'Compliance', 'Architecture', 'Vulnerability', 'Intelligence', 'Systems', 'Major Projects']
+const filters = ['All', 'Cyber Ops', 'Compliance', 'Architecture', 'Vulnerability', 'Intelligence', 'Systems']
 
 const expertiseCategories: Record<string, string> = {
   'Defensive Cyber Operations (DCO)': 'Cyber Ops',
@@ -30,22 +30,11 @@ export default function Portfolio() {
         category: expertiseCategories[area.title] ?? 'Cyber Ops',
         type: 'Capability',
         featured: ['Defensive Cyber Operations (DCO)', 'Risk Management Framework, A&A, and ATO', 'Security Architecture & Zero Trust'].includes(area.title),
-        link: undefined as string | undefined,
-        linkLabel: undefined as string | undefined,
         tags: area.title
           .replace(/[(),&]/g, '')
           .split(' ')
           .filter((word) => word.length > 2)
           .slice(0, 4),
-      })),
-      ...majorProjects.map((project) => ({
-        ...project,
-        category: 'Major Projects',
-        type: 'Operation',
-        featured: true,
-        description: project.summary[0],
-        link: project.link,
-        linkLabel: project.linkLabel,
       })),
     ],
     [],
@@ -61,12 +50,13 @@ export default function Portfolio() {
             <div>
               <p className="text-green-500 font-mono text-sm mb-4">Engineering, Defense & Mission Readiness</p>
               <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6">
-                The Cyber <span className="text-green-500">Forge</span>
+                Areas of <span className="text-green-500">Expertise</span>
               </h1>
-              <p className="font-mono text-sm text-gray-500 dark:text-gray-400 mb-5">[ PORTFOLIO_AND_ARTIFACTS ]</p>
+              <p className="font-mono text-sm text-gray-500 dark:text-gray-400 mb-5">[ CYBER_CAPABILITY_ARCHIVE ]</p>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl leading-relaxed">
-                A mission archive of cybersecurity operations, security engineering capabilities, compliance leadership,
-                and high-impact projects built across DoD, public-sector, and private-sector environments.
+                A focused mission archive of cybersecurity operations, security engineering capabilities, compliance
+                leadership, and enterprise defense experience built across DoD, public-sector, and private-sector
+                environments.
               </p>
             </div>
 
@@ -123,7 +113,7 @@ export default function Portfolio() {
           <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="font-mono text-sm text-green-500">Mission Archive</p>
-              <h2 className="text-4xl font-bold">Capabilities & Operations</h2>
+              <h2 className="text-4xl font-bold">Cybersecurity Capabilities</h2>
             </div>
             <p className="text-sm text-gray-500 dark:text-gray-400">{visibleItems.length} artifacts shown</p>
           </div>
@@ -170,17 +160,6 @@ export default function Portfolio() {
                   </div>
 
                   <div className="flex flex-wrap gap-4">
-                    {item.link ? (
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-bold text-green-600 transition hover:text-green-500 dark:text-green-400"
-                      >
-                        {item.linkLabel ?? 'View Source'}
-                        <ExternalLink size={16} />
-                      </a>
-                    ) : null}
                     <Link
                       to="/contact"
                       className="inline-flex items-center gap-2 text-sm font-bold text-gray-700 transition hover:text-green-500 dark:text-gray-300"

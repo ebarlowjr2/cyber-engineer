@@ -75,7 +75,11 @@ export default function Home() {
                 </a>
                 <Link to="/portfolio" className="inline-flex items-center gap-2 bg-green-500 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-green-400 transition-colors">
                   <Folder size={20} />
-                  Portfolio
+                  Areas of Expertise
+                </Link>
+                <Link to="/major-projects" className="inline-flex items-center gap-2 bg-green-500 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-green-400 transition-colors">
+                  <Briefcase size={20} />
+                  Major Projects
                 </Link>
               </div>
                             <div className="flex flex-wrap gap-4 mt-4">
