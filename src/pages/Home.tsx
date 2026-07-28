@@ -1,12 +1,15 @@
 import '../App.css'
-import { Mail, MapPin, Phone, Flag, Briefcase, GraduationCap, Shield, Github, Instagram, Twitter, Folder, Download, Linkedin } from 'lucide-react'
+import { ArrowRight, Mail, MapPin, Phone, Flag, Briefcase, GraduationCap, Shield, Github, Instagram, Twitter, Folder, Download, Linkedin } from 'lucide-react'
 import TypedText from '../components/TypedText'
 import { Link } from 'react-router-dom'
 import { PageLayout } from '../components/PageLayout'
 import { ContactForm } from '../components/ContactForm'
-import { certifications, experience, stats, techStack } from '../data/resume'
+import { certifications, stats, techStack } from '../data/resume'
+import { getAllBlogPosts } from '../lib/blog'
 
 export default function Home() {
+  const latestPosts = getAllBlogPosts().slice(0, 3)
+
   return (
     <PageLayout>
       {/* Hero Section */}
@@ -86,6 +89,9 @@ export default function Home() {
                               <Link to="/advocacy" className="inline-flex items-center gap-2 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors border border-gray-300 dark:border-gray-700">
                                 Advocacy
                               </Link>
+                              <Link to="/professional-experience" className="inline-flex items-center gap-2 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors border border-gray-300 dark:border-gray-700">
+                                Professional Experience
+                              </Link>
                               <Link to="/projects-in-development" className="inline-flex items-center gap-2 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors border border-gray-300 dark:border-gray-700">
                                 Projects in Development
                               </Link>
@@ -103,6 +109,59 @@ export default function Home() {
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Intelligence Briefs Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-100 dark:bg-gray-950/60">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="mb-5 font-mono text-sm font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">
+                &gt; SYSTEM_LOGS
+              </p>
+              <h2 className="text-4xl font-black tracking-tight text-slate-900 dark:text-white">
+                Intelligence <span className="text-green-500">Briefs</span>
+              </h2>
+            </div>
+            <Link
+              to="/blog"
+              className="inline-flex w-fit items-center gap-2 rounded border border-slate-200 bg-white px-6 py-4 font-bold text-slate-900 shadow-sm transition hover:border-green-500 hover:text-green-500 dark:border-gray-800 dark:bg-gray-900 dark:text-white"
+            >
+              Archive
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            {latestPosts.map((post) => (
+              <Link
+                key={post.slug}
+                to={`/blog/${post.slug}`}
+                className="group relative min-h-72 overflow-hidden rounded border border-slate-200 bg-white p-7 shadow-xl shadow-slate-900/5 transition hover:-translate-y-1 hover:border-sky-500 dark:border-gray-800 dark:bg-gray-900"
+              >
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-sky-500 via-green-400 to-cyan-400" />
+                <div className="absolute inset-x-6 bottom-0 h-1 bg-gradient-to-r from-slate-800 via-sky-500 to-green-400 opacity-80 dark:from-gray-700" />
+                <p className="mb-4 font-mono text-sm font-bold text-slate-500 dark:text-gray-400">
+                  {new Date(post.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit',
+                  })}
+                </p>
+                <h3 className="mb-5 text-2xl font-black leading-tight text-slate-900 transition group-hover:text-sky-600 dark:text-white dark:group-hover:text-sky-400">
+                  {post.title}
+                </h3>
+                <p className="mb-10 line-clamp-3 text-lg leading-relaxed text-slate-600 dark:text-gray-300">
+                  {post.excerpt}
+                </p>
+                <span className="absolute bottom-7 left-7 inline-flex items-center gap-2 font-mono text-sm font-bold uppercase text-sky-600 dark:text-sky-400">
+                  Read Log
+                  <ArrowRight size={15} className="transition group-hover:translate-x-1" />
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -243,43 +302,6 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12">
-            <span className="text-green-500">Professional</span> Experience
-          </h2>
-          <div className="space-y-8">
-            {experience.map((role) => (
-              <div key={`${role.title}-${role.company}`} className="bg-gray-800 rounded-xl p-8 border border-gray-700">
-                <div className="flex flex-wrap justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2">{role.title}</h3>
-                    <div className="text-green-500 font-semibold">{role.company} – {role.location}</div>
-                  </div>
-                  <div className="text-gray-400">{role.dates}</div>
-                </div>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                  {role.bullets.map((bullet) => (
-                    <li key={bullet} className="flex gap-2">
-                      <span className="text-green-500">•</span>
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
-                {'link' in role && role.link ? (
-                  <div className="mt-6">
-                    <Link to={role.link} className="text-green-500 hover:text-green-400 transition-colors font-semibold">
-                      View Full Role Details →
-                    </Link>
-                  </div>
-                ) : null}
               </div>
             ))}
           </div>

@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Portfolio from './pages/Portfolio'
 import Contact from './pages/Contact'
 import Advocacy from './pages/Advocacy'
+import ProfessionalExperience from './pages/ProfessionalExperience'
 import ProjectsInDevelopment from './pages/ProjectsInDevelopment'
 import MajorProjects from './pages/MajorProjects'
 import Blog from './pages/Blog'
@@ -27,6 +28,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/advocacy" element={<Advocacy />} />
+        <Route path="/professional-experience" element={<ProfessionalExperience />} />
         <Route path="/major-projects" element={<MajorProjects />} />
         <Route path="/projects-in-development" element={<ProjectsInDevelopment />} />
                                 <Route path="/blog" element={<Blog />} />
