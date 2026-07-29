@@ -13,44 +13,66 @@ export default function Home() {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="mb-6">
-                <code className="text-green-500 text-sm font-mono">
-                  &lt;code&gt; I secure and optimize
-                  <br />
-                  <span className="inline-flex items-baseline">
-                    <TypedText
-                      phrases={[
-                        'IT infrastructures',
-                        'cloud-native environments',
-                        'security postures',
-                        'Linux & Windows systems',
-                        'Azure and AWS platforms',
-                      ]}
-                      typeSpeed={50}
-                      backSpeed={30}
-                      backDelay={1600}
-                      startDelay={200}
-                      loop
-                      cursorChar="|"
-                    />
-                  </span>
-                  <br />
-                  &lt;/code&gt;
-                </code>
+      <section className="relative overflow-hidden pt-36 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_20%,rgba(34,197,94,0.12),transparent_28%),radial-gradient(circle_at_85%_10%,rgba(14,165,233,0.10),transparent_25%)]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(14,165,233,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(14,165,233,0.05)_1px,transparent_1px)] bg-[size:42px_42px]" />
+        <div className="max-w-5xl mx-auto">
+          <div>
+            <div className="mb-6">
+              <code className="text-green-500 text-sm font-mono">
+                &lt;code&gt; I secure and optimize
+                <br />
+                <span className="inline-flex items-baseline">
+                  <TypedText
+                    phrases={[
+                      'IT infrastructures',
+                      'cloud-native environments',
+                      'security postures',
+                      'Linux & Windows systems',
+                      'Azure and AWS platforms',
+                    ]}
+                    typeSpeed={50}
+                    backSpeed={30}
+                    backDelay={1600}
+                    startDelay={200}
+                    loop
+                    cursorChar="|"
+                  />
+                </span>
+                <br />
+                &lt;/code&gt;
+              </code>
+            </div>
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <h1 className="text-5xl font-bold md:text-7xl">
+                Hey <span className="text-green-500">friend!</span>
+              </h1>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-300 transition-colors dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+              >
+                Available for Remote Work
+              </Link>
+            </div>
+
+            <div className="mb-8 flex flex-col gap-5 sm:flex-row sm:items-center">
+              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border-4 border-white shadow-xl shadow-green-500/20 ring-2 ring-green-500 dark:border-gray-900">
+                <img
+                  src="/images/profile.png"
+                  alt="Eddie L. Barlow - Senior Cyber Security Engineer"
+                  className="h-full w-full object-cover"
+                />
               </div>
-              <div className="flex flex-wrap items-center gap-3 mb-4">
-                <h1 className="text-5xl font-bold">Eddie L. Barlow</h1>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
-                >
-                  Available for Remote Work
-                </Link>
+              <div>
+                <p className="text-xl font-bold text-gray-900 dark:text-white">
+                  I'm Eddie L. Barlow.
+                </p>
+                <p className="text-xl text-gray-600 dark:text-gray-300">
+                  I'm building secure systems, cyber programs, and resilient infrastructure.
+                </p>
               </div>
+            </div>
+
               <div className="flex gap-4 mb-6">
                 <a href="https://github.com/ebarlowjr2" target="_blank" rel="noopener noreferrer" aria-label="Github" className="hover:text-green-500 transition-colors">
                   <Github size={24} />
@@ -96,16 +118,6 @@ export default function Home() {
                                 Projects in Development
                               </Link>
                             </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-square rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800">
-                <img 
-                  src="/images/profile.png" 
-                  alt="Eddie L. Barlow - Senior Cyber Security Engineer" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </section>
