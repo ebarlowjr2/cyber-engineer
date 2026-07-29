@@ -1,170 +1,161 @@
 import '../App.css'
-import { Mail, Github, ArrowRight } from 'lucide-react'
+import { ArrowRight, Github, Mail, Sparkles } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { PageLayout } from '../components/PageLayout'
-import { featuredProjects, projectsInDevelopment } from '../data/projects'
+import { featuredProjects } from '../data/projects'
 
-const projects = projectsInDevelopment
-
-function getStatusColor(status: string) {
-  switch (status) {
-    case 'Beta':
-      return 'bg-blue-500/20 text-blue-400'
-    case 'Alpha Testing':
-      return 'bg-purple-500/20 text-purple-400'
-    case 'In Development':
-      return 'bg-green-500/20 text-green-400'
-    case 'Planning':
-      return 'bg-yellow-500/20 text-yellow-400'
-    case 'Concept':
-      return 'bg-gray-500/20 text-gray-400'
-    default:
-      return 'bg-gray-500/20 text-gray-400'
-  }
+const projectVisuals: Record<string, { category: string; image?: string; accent: string; tags: string[] }> = {
+  'CARINA OS': {
+    category: 'Systems',
+    image: '/images/projects/carina-os-banner.png',
+    accent: 'from-green-500 via-cyan-400 to-sky-500',
+    tags: ['Linux', 'Sandboxing', 'Engineering OS'],
+  },
+  'StarKid Command': {
+    category: 'Education',
+    image: '/images/projects/starkid-command-1.png',
+    accent: 'from-sky-500 via-indigo-400 to-green-500',
+    tags: ['STEM', 'Space Data', 'AI Missions'],
+  },
+  'Organic Security Framework': {
+    category: 'Security Framework',
+    accent: 'from-amber-400 via-green-500 to-cyan-400',
+    tags: ['Cyber Hygiene', 'Identity', 'Operations'],
+  },
 }
+
+const forgeFilters = ['All', 'Systems', 'Education', 'Security Framework']
 
 export default function ProjectsInDevelopment() {
   return (
     <PageLayout>
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl font-bold mb-6">
-            Projects in <span className="text-green-500">Development</span>
+      <section className="pt-36 pb-14 px-4 sm:px-6 lg:px-8 bg-slate-100 dark:bg-gray-950/60">
+        <div className="max-w-7xl mx-auto">
+          <p className="mb-5 font-mono text-sm uppercase tracking-[0.24em] text-gray-500 dark:text-gray-400">
+            [ PORTFOLIO_AND_ARTIFACTS ]
+          </p>
+          <h1 className="mb-8 text-6xl font-black tracking-tight md:text-7xl">
+            The <span className="text-sky-600 dark:text-sky-400">Forge</span>
           </h1>
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            A glimpse into the cybersecurity tools and platforms I'm currently building. These projects represent my vision for making security more accessible and effective.
+          <p className="max-w-3xl text-xl leading-relaxed text-slate-600 dark:text-gray-300">
+            From mission-ready operating systems to space-powered STEM learning and practical cybersecurity frameworks,
+            this archive features systems built for traceability, resilience, and real-world impact.
           </p>
         </div>
       </section>
 
-            <section className="py-12 px-4 sm:px-6 lg:px-8">
-              <div className="max-w-7xl mx-auto">
-                <h2 className="text-2xl font-bold mb-6">Featured Projects</h2>
-                <div className="grid lg:grid-cols-2 gap-8">
-                  {featuredProjects.map((featuredProject) => (
-                    <div
-                      key={featuredProject.title}
-                      className="bg-white dark:bg-gray-900 border-2 border-green-500 rounded-lg p-6 hover:shadow-lg hover:shadow-green-500/10 transition-all"
-                    >
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex items-center gap-3">
-                          <div className="flex items-center justify-center w-14 h-14 bg-green-500/20 rounded-lg">
-                            <featuredProject.icon className="text-green-500" size={28} />
-                          </div>
-                          <div>
-                            <h3 className="text-2xl font-bold">{featuredProject.title}</h3>
-                            <span className={`inline-block px-2 py-1 rounded text-xs font-medium ${getStatusColor(featuredProject.status)}`}>
-                              {featuredProject.status}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <p className="text-gray-600 dark:text-gray-300 mb-4">{featuredProject.description}</p>
-                
-                      <div className="mb-4">
-                        <div className="flex justify-between text-sm mb-1">
-                          <span className="text-gray-500 dark:text-gray-400">Progress</span>
-                          <span className="text-green-500">{featuredProject.progress}%</span>
-                        </div>
-                        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                          <div 
-                            className="bg-green-500 h-2 rounded-full transition-all duration-300"
-                            style={{ width: `${featuredProject.progress}%` }}
-                          ></div>
-                        </div>
-                      </div>
-
-                      <div className="mb-4">
-                        <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">Technologies</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {featuredProject.technologies.map((tech, idx) => (
-                            <span key={idx} className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-xs">
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="flex flex-wrap justify-between items-center pt-4 border-t border-gray-200 dark:border-gray-800 gap-4">
-                        <div>
-                          <span className="text-sm text-gray-500 dark:text-gray-400">Expected Release: </span>
-                          <span className="text-sm text-green-500 font-medium">{featuredProject.expectedRelease}</span>
-                        </div>
-                        <Link to={featuredProject.detailPage} className="inline-flex items-center gap-2 bg-green-500 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-green-400 transition-colors text-sm">
-                          Learn More & Download
-                          <ArrowRight size={16} />
-                        </Link>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800/50">
-              <div className="max-w-7xl mx-auto">
-                <h2 className="text-2xl font-bold mb-6">Other Projects</h2>
-                <div className="grid md:grid-cols-2 gap-8">
-                  {projects.map((project, index) => (
-              <div key={index} className="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-green-500 transition-colors">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="flex items-center justify-center w-12 h-12 bg-green-500/20 rounded-lg">
-                      <project.icon className="text-green-500" size={24} />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold">{project.title}</h3>
-                      <span className={`inline-block px-2 py-1 rounded text-xs font-medium ${getStatusColor(project.status)}`}>
-                        {project.status}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                
-                <p className="text-gray-300 mb-4">{project.description}</p>
-                
-                <div className="mb-4">
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-400">Progress</span>
-                    <span className="text-green-500">{project.progress}%</span>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div 
-                      className="bg-green-500 h-2 rounded-full transition-all duration-300"
-                      style={{ width: `${project.progress}%` }}
-                    ></div>
-                  </div>
-                </div>
-
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-400 mb-2">Technologies</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, idx) => (
-                      <span key={idx} className="px-2 py-1 bg-gray-800 text-gray-300 rounded text-xs">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex justify-between items-center pt-4 border-t border-gray-800">
-                  <span className="text-sm text-gray-400">Expected Release</span>
-                  <span className="text-sm text-green-500 font-medium">{project.expectedRelease}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+      <section className="border-y border-gray-200 bg-white px-4 py-4 dark:border-gray-800 dark:bg-gray-900 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-wrap gap-3">
+          {forgeFilters.map((filter, index) => (
+            <span
+              key={filter}
+              className={`rounded-full border px-5 py-2 text-sm font-bold ${
+                index === 0
+                  ? 'border-slate-950 bg-slate-950 text-white dark:border-green-500 dark:bg-green-500 dark:text-gray-950'
+                  : 'border-gray-300 bg-white text-gray-600 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300'
+              }`}
+            >
+              {filter}
+            </span>
+          ))}
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto space-y-8">
+          {featuredProjects.map((project, index) => {
+            const visual = projectVisuals[project.title]
+            const Icon = project.icon
+
+            return (
+              <Link
+                key={project.title}
+                to={project.detailPage}
+                className="group block overflow-hidden rounded-xl border border-gray-200 bg-slate-50 shadow-xl shadow-gray-950/5 transition hover:-translate-y-1 hover:border-sky-500 hover:shadow-sky-500/10 dark:border-gray-800 dark:bg-gray-900"
+              >
+                <article className="grid gap-0 lg:grid-cols-[0.54fr_0.46fr]">
+                  <div className="relative min-h-80 p-6 sm:p-10">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${visual.accent} opacity-10`} />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(14,165,233,0.16),transparent_28%),linear-gradient(rgba(15,23,42,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.04)_1px,transparent_1px)] bg-[size:auto,34px_34px,34px_34px]" />
+                    <div className="relative flex h-full min-h-72 items-center justify-center">
+                      <div className="w-full max-w-2xl overflow-hidden rounded-xl border-4 border-slate-950 bg-slate-950 shadow-2xl shadow-slate-950/30 dark:border-green-500/30">
+                        <div className="flex items-center gap-2 border-b border-slate-800 bg-slate-950 px-4 py-3">
+                          <span className="h-3 w-3 rounded-full bg-red-400" />
+                          <span className="h-3 w-3 rounded-full bg-amber-400" />
+                          <span className="h-3 w-3 rounded-full bg-green-400" />
+                          <span className="ml-auto font-mono text-xs text-slate-400">forge_node_{String(index + 1).padStart(2, '0')}</span>
+                        </div>
+                        {visual.image ? (
+                          <div className="aspect-video bg-slate-900">
+                            <img src={visual.image} alt={`${project.title} preview`} className="h-full w-full object-cover" />
+                          </div>
+                        ) : (
+                          <div className="relative aspect-video overflow-hidden bg-slate-950 p-8">
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,197,94,0.35),transparent_28%),radial-gradient(circle_at_70%_70%,rgba(14,165,233,0.25),transparent_28%)]" />
+                            <div className="relative flex h-full flex-col justify-between rounded-lg border border-green-500/30 bg-slate-950/70 p-6">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-500/20">
+                                  <Icon className="text-green-400" size={26} />
+                                </div>
+                                <span className="font-mono text-sm uppercase tracking-widest text-green-300">OSF</span>
+                              </div>
+                              <p className="max-w-sm text-2xl font-black text-white">Layered security that matures naturally.</p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col justify-center p-7 sm:p-10">
+                    <div className="mb-8 flex items-center justify-between gap-4">
+                      <p className="font-mono text-sm font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">
+                        {visual.category}
+                      </p>
+                      <p className="font-mono text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                        Featured_Mission
+                      </p>
+                    </div>
+
+                    <h2 className="mb-6 text-4xl font-black leading-tight tracking-tight text-slate-950 transition group-hover:text-sky-600 dark:text-white dark:group-hover:text-sky-400">
+                      {project.title}
+                    </h2>
+                    <p className="mb-8 text-xl leading-relaxed text-slate-600 dark:text-gray-300">{project.description}</p>
+
+                    <div className="mb-10 flex flex-wrap gap-3">
+                      {visual.tags.map((tag) => (
+                        <span key={tag} className="rounded border border-gray-200 bg-white px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-gray-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-5">
+                      <span className="inline-flex items-center gap-2 rounded bg-slate-950 px-6 py-3 font-bold text-white transition group-hover:bg-sky-600 dark:bg-green-500 dark:text-gray-950 dark:group-hover:bg-green-400">
+                        See Details
+                        <ArrowRight size={18} className="transition group-hover:translate-x-1" />
+                      </span>
+                      <span className="inline-flex items-center gap-2 font-mono text-sm font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                        <Sparkles size={16} />
+                        {project.status} · {project.progress}%
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </Link>
+            )
+          })}
+        </div>
+      </section>
+
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800/50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">
-            Interested in <span className="text-green-500">Collaborating?</span>
+            Want to <span className="text-green-500">collaborate?</span>
           </h2>
-          <p className="text-lg text-gray-300 mb-8">
-            I'm always looking for talented individuals to collaborate on these projects. Whether you're a developer, security researcher, or just passionate about cybersecurity, let's connect!
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+            These are the three primary systems currently shaping the portfolio. If one of them aligns with your mission,
+            let’s connect.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contact" className="inline-flex items-center gap-2 bg-green-500 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-green-400 transition-colors">
@@ -178,7 +169,6 @@ export default function ProjectsInDevelopment() {
           </div>
         </div>
       </section>
-
     </PageLayout>
   )
 }
