@@ -95,9 +95,6 @@ export default function Home() {
                               <Link to="/projects-in-development" className="inline-flex items-center gap-2 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors border border-gray-300 dark:border-gray-700">
                                 Projects in Development
                               </Link>
-                              <Link to="/blog" className="inline-flex items-center gap-2 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors border border-gray-300 dark:border-gray-700">
-                                Blog
-                              </Link>
                             </div>
             </div>
             <div className="relative">
@@ -129,7 +126,7 @@ export default function Home() {
               to="/blog"
               className="inline-flex w-fit items-center gap-2 rounded border border-slate-200 bg-white px-6 py-4 font-bold text-slate-900 shadow-sm transition hover:border-green-500 hover:text-green-500 dark:border-gray-800 dark:bg-gray-900 dark:text-white"
             >
-              Archive
+              See Full Blog
               <ArrowRight size={16} />
             </Link>
           </div>
