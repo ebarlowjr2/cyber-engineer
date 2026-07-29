@@ -42,8 +42,9 @@ export function SiteHeader() {
             </Link>
 
             <div className="hidden lg:flex items-center gap-8 text-sm font-bold text-gray-600 dark:text-gray-300">
-              <Link to="/#about" className="hover:text-green-500 transition-colors">About</Link>
+              <Link to="/about" className="hover:text-green-500 transition-colors">About</Link>
               <Link to="/portfolio" className="hover:text-green-500 transition-colors">Expertise</Link>
+              <Link to="/projects-in-development" className="hover:text-green-500 transition-colors">The Forge</Link>
               <Link to="/professional-experience" className="hover:text-green-500 transition-colors">Experience</Link>
               <Link to="/major-projects" className="hover:text-green-500 transition-colors">Major Projects</Link>
               <Link to="/blog" className="hover:text-green-500 transition-colors">AI Blog</Link>

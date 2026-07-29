@@ -1,11 +1,78 @@
 import '../App.css'
-import { ArrowRight, Mail, MapPin, Phone, Flag, Briefcase, GraduationCap, Shield, Github, Instagram, Twitter, Folder, Download, Linkedin } from 'lucide-react'
+import { ArrowRight, Check, Mail, MapPin, Phone, Shield, Github, Instagram, Twitter, Linkedin, Trophy } from 'lucide-react'
 import TypedText from '../components/TypedText'
 import { Link } from 'react-router-dom'
 import { PageLayout } from '../components/PageLayout'
 import { ContactForm } from '../components/ContactForm'
 import { certifications, stats, techStack } from '../data/resume'
 import { getAllBlogPosts } from '../lib/blog'
+
+const homeFeaturePanels = [
+  {
+    eyebrow: 'COMMUNITY, POLICY, CYBER IMPACT',
+    title: 'Advocacy',
+    typed: ['mentor future defenders', 'translate cyber risk', 'build safer communities'],
+    problem: 'Cybersecurity can feel inaccessible to students, small businesses, and non-technical leaders.',
+    solutions: [
+      'Make cyber concepts practical and approachable.',
+      'Support education, mentorship, and community readiness.',
+      'Connect technical security decisions to real-world outcomes.',
+    ],
+    primaryLabel: 'Explore Advocacy',
+    primaryHref: '/advocacy',
+    secondaryLabel: 'Contact Me',
+    secondaryHref: '/contact',
+    visual: 'ADV',
+  },
+  {
+    eyebrow: 'SYSTEMS, AI, SECURITY FRAMEWORKS',
+    title: 'The Forge',
+    typed: ['ship mission-ready tools', 'prototype cyber systems', 'build resilient platforms'],
+    problem: 'Great ideas need a place to become real systems, not just notes in a backlog.',
+    solutions: [
+      'CARINA OS for safe engineering workflows.',
+      'StarKid Command for space-powered STEM learning.',
+      'Organic Security Framework for practical cyber maturity.',
+    ],
+    primaryLabel: 'Open The Forge',
+    primaryHref: '/projects-in-development',
+    secondaryLabel: 'Major Projects',
+    secondaryHref: '/major-projects',
+    visual: 'FORGE',
+  },
+  {
+    eyebrow: 'STRATEGY, PATTERN RECOGNITION, FUN',
+    title: 'Play Me in Chess',
+    typed: ['practice strategic thinking', 'sharpen pattern recognition', 'make the next move'],
+    problem: 'Cybersecurity and chess both reward patience, pattern recognition, and calm decision-making under pressure.',
+    solutions: [
+      'Chess.com username coming soon.',
+      'QR code slot reserved for quick challenges.',
+      'Friendly games welcome; brilliant sacrifices not guaranteed.',
+    ],
+    primaryLabel: 'Chess.com Coming Soon',
+    primaryHref: '#chess',
+    secondaryLabel: 'Save QR Space',
+    secondaryHref: '#chess',
+    visual: '♞',
+  },
+  {
+    eyebrow: 'MISSION OUTCOMES, DELIVERY, ENTERPRISE DEFENSE',
+    title: 'Major Projects',
+    typed: ['solve mission outages', 'modernize security stacks', 'build cyber ranges'],
+    problem: 'High-impact cyber work needs context beyond a job title or short resume bullet.',
+    solutions: [
+      'Explore enterprise remediation and defense projects.',
+      'Review DoD network architecture and cyber range work.',
+      'See how technical execution supported mission outcomes.',
+    ],
+    primaryLabel: 'View Major Projects',
+    primaryHref: '/major-projects',
+    secondaryLabel: 'Experience Matrix',
+    secondaryHref: '/professional-experience',
+    visual: 'OPS',
+  },
+]
 
 export default function Home() {
   const latestPosts = getAllBlogPosts().slice(0, 3)
@@ -93,32 +160,96 @@ export default function Home() {
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
                 With over 20 years of experience in cybersecurity and systems administration, I specialize in <strong className="text-green-500">vulnerability management</strong>, <strong className="text-green-500">incident response</strong>, and implementing compliance frameworks like <strong className="text-green-500">NIST</strong> and <strong className="text-green-500">FedRAMP</strong>.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <a href="#contact" className="inline-flex items-center gap-2 bg-green-500 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-green-400 transition-colors">
-                  <Mail size={20} />
-                  Contact Me
-                </a>
-                <Link to="/portfolio" className="inline-flex items-center gap-2 bg-green-500 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-green-400 transition-colors">
-                  <Folder size={20} />
-                  Areas of Expertise
-                </Link>
-                <Link to="/major-projects" className="inline-flex items-center gap-2 bg-green-500 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-green-400 transition-colors">
-                  <Briefcase size={20} />
-                  Major Projects
-                </Link>
-              </div>
-                            <div className="flex flex-wrap gap-4 mt-4">
-                              <Link to="/advocacy" className="inline-flex items-center gap-2 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors border border-gray-300 dark:border-gray-700">
-                                Advocacy
-                              </Link>
-                              <Link to="/professional-experience" className="inline-flex items-center gap-2 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors border border-gray-300 dark:border-gray-700">
-                                Professional Experience
-                              </Link>
-                              <Link to="/projects-in-development" className="inline-flex items-center gap-2 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors border border-gray-300 dark:border-gray-700">
-                                Projects in Development
-                              </Link>
-                            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Guided Scroll Panels */}
+      <section className="bg-white dark:bg-gray-950">
+        <div className="divide-y divide-gray-200 dark:divide-gray-800">
+          {homeFeaturePanels.map((panel, index) => (
+            <article
+              key={panel.title}
+              id={panel.primaryHref === '#chess' ? 'chess' : undefined}
+              className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8"
+            >
+              <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_50%,rgba(14,165,233,0.08),transparent_28%),linear-gradient(rgba(14,165,233,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(14,165,233,0.045)_1px,transparent_1px)] bg-[size:auto,42px_42px,42px_42px]" />
+              <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.62fr_0.38fr] lg:items-center">
+                <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+                  <p className="mb-5 font-mono text-sm font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">
+                    {panel.eyebrow}
+                  </p>
+                  <h2 className="mb-5 text-5xl font-black tracking-tight text-slate-950 dark:text-white">
+                    {panel.title}
+                  </h2>
+                  <p className="mb-6 text-xl text-gray-600 dark:text-gray-300">
+                    I’m here to{' '}
+                    <span className="font-bold text-green-500">
+                      <TypedText
+                        phrases={panel.typed}
+                        typeSpeed={48}
+                        backSpeed={28}
+                        backDelay={1500}
+                        startDelay={index * 250}
+                        loop
+                        cursorChar="|"
+                      />
+                    </span>
+                  </p>
+
+                  <div className="mb-6">
+                    <h3 className="mb-2 text-lg font-black text-orange-500">Problem:</h3>
+                    <p className="text-xl leading-relaxed text-gray-600 dark:text-gray-300">{panel.problem}</p>
+                  </div>
+
+                  <div className="mb-10">
+                    <h3 className="mb-4 text-lg font-black">Solutions:</h3>
+                    <ul className="space-y-3">
+                      {panel.solutions.map((solution) => (
+                        <li key={solution} className="flex gap-3 text-lg text-gray-600 dark:text-gray-300">
+                          <Check className="mt-1 shrink-0 text-green-500" size={20} />
+                          <span>{solution}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="flex flex-wrap gap-4">
+                    <Link
+                      to={panel.primaryHref}
+                      className="inline-flex items-center gap-2 rounded-lg border border-slate-950 bg-slate-950 px-6 py-3 font-bold text-white transition hover:bg-green-500 hover:text-slate-950 dark:border-green-500 dark:bg-green-500 dark:text-slate-950 dark:hover:bg-green-400"
+                    >
+                      {panel.primaryLabel}
+                      <ArrowRight size={18} />
+                    </Link>
+                    <Link
+                      to={panel.secondaryHref}
+                      className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-6 py-3 font-bold text-slate-950 transition hover:border-green-500 hover:text-green-500 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
+                    >
+                      {panel.secondaryLabel}
+                    </Link>
+                  </div>
+                </div>
+
+                <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
+                  <div className="relative mx-auto flex aspect-square max-w-md items-center justify-center rounded-[2rem] border border-gray-200 bg-slate-50 shadow-2xl shadow-slate-950/10 dark:border-gray-800 dark:bg-gray-900">
+                    <div className="absolute inset-6 rounded-[1.5rem] border border-sky-500/20" />
+                    <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_30%_25%,rgba(34,197,94,0.18),transparent_30%),radial-gradient(circle_at_70%_75%,rgba(14,165,233,0.16),transparent_30%)]" />
+                    <div className="relative flex h-44 w-44 items-center justify-center rounded-3xl border border-slate-950 bg-white text-4xl font-black text-slate-950 shadow-xl dark:border-green-500/40 dark:bg-slate-950 dark:text-green-400">
+                      {panel.title === 'Play Me in Chess' ? (
+                        <div className="text-center">
+                          <Trophy className="mx-auto mb-3 text-green-500" size={42} />
+                          <span className="block text-xl">QR / USER</span>
+                        </div>
+                      ) : (
+                        panel.visual
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -171,80 +302,6 @@ export default function Home() {
                 </span>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About Me Section */}
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800/50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12">
-            <span className="text-green-500">About</span> me
-          </h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Results-driven Cybersecurity and Systems Administration Professional with over 20 years of experience securing and optimizing IT infrastructures in highly regulated environments, including government and defense sectors.
-              </p>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Expertise in Linux (RHEL, CentOS), cloud platforms (AWS, Azure), and automation tools (Ansible, Bash, Terraform) to enhance system efficiency and security posture. Proven track record in vulnerability management, incident response, and implementing compliance frameworks like NIST, FedRAMP, and ISO standards.
-              </p>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Adept at designing and managing scalable cloud-native environments, containerized applications (Docker, Kubernetes), and enterprise monitoring solutions (Splunk, ELK). Recognized for leadership in cross-functional teams, technical documentation, and delivering solutions that reduce risk and support mission-critical operations.
-              </p>
-            </div>
-            <div>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <MapPin className="text-green-500 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <span className="font-semibold">Location:</span> Montgomery, AL
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Phone className="text-green-500 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <span className="font-semibold">Phone:</span> 334-652-1366
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Flag className="text-green-500 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <span className="font-semibold">Citizenship:</span> United States of America
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Shield className="text-green-500 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <span className="font-semibold">Clearance:</span> Top Secret SSBI
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Briefcase className="text-green-500 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <span className="font-semibold">Employment:</span> Owner of One Circle Solutions, Managed Security Services Provider
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <GraduationCap className="text-green-500 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <span className="font-semibold">Education:</span> Trenholm Technical College
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Download className="text-green-500 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <a
-                      href="/resume/Eddie_Barlow_Resume.pdf"
-                      download
-                      className="font-semibold text-green-500 hover:text-green-400 transition-colors"
-                    >
-                      Download Resume
-                    </a>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>

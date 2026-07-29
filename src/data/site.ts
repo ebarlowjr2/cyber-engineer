@@ -11,12 +11,13 @@ export type SocialLink = {
 
 export const navLinks: NavLink[] = [
   { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
   { href: '/portfolio', label: 'Areas of Expertise' },
+  { href: '/projects-in-development', label: 'The Forge' },
   { href: '/professional-experience', label: 'Experience' },
   { href: '/major-projects', label: 'Major Projects' },
   { href: '/ebooks', label: 'eBooks' },
   { href: '/advocacy', label: 'Advocacy' },
-  { href: '/projects-in-development', label: 'Projects in Dev' },
   { href: '/active-projects', label: 'Active Projects' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
