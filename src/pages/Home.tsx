@@ -46,13 +46,13 @@ const homeFeaturePanels = [
     typed: ['practice strategic thinking', 'sharpen pattern recognition', 'make the next move'],
     problem: 'Cybersecurity and chess both reward patience, pattern recognition, and calm decision-making under pressure.',
     solutions: [
-      'Chess.com username coming soon.',
-      'QR code slot reserved for quick challenges.',
+      'Chess.com username: ebeeeze.',
+      'Scan the QR code to friend me and play sometime.',
       'Friendly games welcome; brilliant sacrifices not guaranteed.',
     ],
-    primaryLabel: 'Chess.com Coming Soon',
-    primaryHref: '#chess',
-    secondaryLabel: 'Save QR Space',
+    primaryLabel: 'Open Chess.com',
+    primaryHref: 'https://www.chess.com/member/ebeeeze',
+    secondaryLabel: 'Scan QR Code',
     secondaryHref: '#chess',
     visual: '♞',
   },
@@ -215,13 +215,25 @@ export default function Home() {
                   </div>
 
                   <div className="flex flex-wrap gap-4">
-                    <Link
-                      to={panel.primaryHref}
-                      className="inline-flex items-center gap-2 rounded-lg border border-slate-950 bg-slate-950 px-6 py-3 font-bold text-white transition hover:bg-green-500 hover:text-slate-950 dark:border-green-500 dark:bg-green-500 dark:text-slate-950 dark:hover:bg-green-400"
-                    >
-                      {panel.primaryLabel}
-                      <ArrowRight size={18} />
-                    </Link>
+                    {panel.primaryHref.startsWith('http') ? (
+                      <a
+                        href={panel.primaryHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-lg border border-slate-950 bg-slate-950 px-6 py-3 font-bold text-white transition hover:bg-green-500 hover:text-slate-950 dark:border-green-500 dark:bg-green-500 dark:text-slate-950 dark:hover:bg-green-400"
+                      >
+                        {panel.primaryLabel}
+                        <ArrowRight size={18} />
+                      </a>
+                    ) : (
+                      <Link
+                        to={panel.primaryHref}
+                        className="inline-flex items-center gap-2 rounded-lg border border-slate-950 bg-slate-950 px-6 py-3 font-bold text-white transition hover:bg-green-500 hover:text-slate-950 dark:border-green-500 dark:bg-green-500 dark:text-slate-950 dark:hover:bg-green-400"
+                      >
+                        {panel.primaryLabel}
+                        <ArrowRight size={18} />
+                      </Link>
+                    )}
                     <Link
                       to={panel.secondaryHref}
                       className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-6 py-3 font-bold text-slate-950 transition hover:border-green-500 hover:text-green-500 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
@@ -237,9 +249,14 @@ export default function Home() {
                     <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_30%_25%,rgba(34,197,94,0.18),transparent_30%),radial-gradient(circle_at_70%_75%,rgba(14,165,233,0.16),transparent_30%)]" />
                     <div className="relative flex h-44 w-44 items-center justify-center rounded-3xl border border-slate-950 bg-white text-4xl font-black text-slate-950 shadow-xl dark:border-green-500/40 dark:bg-slate-950 dark:text-green-400">
                       {panel.title === 'Play Me in Chess' ? (
-                        <div className="text-center">
-                          <Trophy className="mx-auto mb-3 text-green-500" size={42} />
-                          <span className="block text-xl">QR / USER</span>
+                        <div className="w-full p-3 text-center">
+                          <img
+                            src="/images/social/chess-com-ebeeeze.jpg"
+                            alt="Chess.com friend QR code for ebeeeze"
+                            className="mx-auto mb-4 max-h-64 rounded-2xl object-contain"
+                          />
+                          <Trophy className="mx-auto mb-2 text-green-500" size={28} />
+                          <span className="block text-xl">ebeeeze</span>
                         </div>
                       ) : (
                         panel.visual
