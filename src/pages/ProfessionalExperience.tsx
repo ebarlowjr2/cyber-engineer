@@ -3,7 +3,7 @@ import { ArrowLeft, Briefcase, ChevronDown, ChevronUp, Cpu, MapPin, Radar, Shiel
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PageLayout } from '../components/PageLayout'
-import { experience } from '../data/resume'
+import { certifications, experience, stats, techStack } from '../data/resume'
 
 function getRoleId(title: string, company: string) {
   return `${title}-${company}`.toLowerCase().replace(/[^a-z0-9]+/g, '-')
@@ -44,19 +44,105 @@ export default function ProfessionalExperience() {
                   <h2 className="text-xl font-bold">Expandable Role Cards</h2>
                 </div>
               </div>
-              <div className="grid grid-cols-3 gap-3 text-center">
-                {[
-                  ['20+', 'Years IT'],
-                  ['18+', 'Cyber'],
-                  [String(experience.length), 'Roles'],
-                ].map(([value, label]) => (
-                  <div key={label} className="rounded-xl bg-gray-100 p-4 dark:bg-gray-800">
-                    <p className="text-2xl font-black text-green-500">{value}</p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">{label}</p>
+              <div className="grid grid-cols-2 gap-3 text-center sm:grid-cols-4">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="rounded-xl bg-gray-100 p-4 dark:bg-gray-800">
+                    <stat.icon className="mx-auto mb-2 text-green-500" size={24} />
+                    <p className="text-2xl font-black text-green-500">{stat.value}</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">{stat.label}</p>
                   </div>
                 ))}
+                <div className="rounded-xl bg-gray-100 p-4 dark:bg-gray-800">
+                  <Briefcase className="mx-auto mb-2 text-green-500" size={24} />
+                  <p className="text-2xl font-black text-green-500">{experience.length}</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">Roles Mapped</p>
+                </div>
+                <div className="rounded-xl bg-gray-100 p-4 dark:bg-gray-800">
+                  <ShieldCheck className="mx-auto mb-2 text-green-500" size={24} />
+                  <p className="text-2xl font-black text-green-500">{certifications.length}</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">Certifications</p>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-8">
+            <p className="font-mono text-sm text-green-500">Credential Stack</p>
+            <h2 className="text-4xl font-black tracking-tight">Certifications</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {certifications.map((cert, index) => (
+              <article
+                key={cert.title}
+                className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg shadow-gray-950/5 transition hover:border-green-500 hover:shadow-green-500/10 dark:border-gray-800 dark:bg-gray-900"
+              >
+                <div className="relative overflow-hidden bg-gray-950 p-5">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,197,94,0.32),transparent_40%),linear-gradient(135deg,rgba(15,23,42,0.18),rgba(15,23,42,0.96))]" />
+                  <div className="relative flex items-center justify-between">
+                    <span className="rounded-full border border-green-500/40 bg-green-500/10 px-3 py-1 font-mono text-xs text-green-300">
+                      CERT_{String(index + 1).padStart(2, '0')}
+                    </span>
+                    <ShieldCheck className="text-green-400" size={24} />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="mb-2 text-xl font-black">{cert.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300">{cert.subtitle}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-8">
+            <p className="font-mono text-sm text-green-500">Operational Toolkit</p>
+            <h2 className="text-4xl font-black tracking-tight">Core Tech Stack</h2>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            {techStack.map((stack, index) => (
+              <article
+                key={stack.title}
+                className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg shadow-gray-950/5 transition hover:border-green-500 hover:shadow-green-500/10 dark:border-gray-800 dark:bg-gray-900"
+              >
+                <div className="grid sm:grid-cols-[0.34fr_0.66fr]">
+                  <div className="relative min-h-44 overflow-hidden bg-gray-950 p-6">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,197,94,0.35),transparent_35%),linear-gradient(135deg,rgba(15,23,42,0.15),rgba(15,23,42,0.96))]" />
+                    <div className="absolute inset-x-6 top-6 h-px bg-green-500/40" />
+                    <div className="absolute inset-y-6 left-6 w-px bg-green-500/40" />
+                    <div className="relative flex h-full min-h-32 flex-col justify-between">
+                      <span className="w-fit rounded-full border border-green-500/40 bg-green-500/10 px-3 py-1 font-mono text-xs text-green-300">
+                        STACK_{String(index + 1).padStart(2, '0')}
+                      </span>
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-green-500/30 bg-green-500/15">
+                        <stack.icon className="text-green-400" size={30} />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-6">
+                    <h3 className="mb-4 text-2xl font-black tracking-tight">{stack.title}</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {stack.items.map((item) => (
+                        <span
+                          key={item}
+                          className="rounded-full bg-green-500/15 px-3 py-1 text-sm font-medium text-green-600 dark:text-green-400"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

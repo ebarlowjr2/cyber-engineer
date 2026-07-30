@@ -4,7 +4,6 @@ import TypedText from '../components/TypedText'
 import { Link } from 'react-router-dom'
 import { PageLayout } from '../components/PageLayout'
 import { ContactForm } from '../components/ContactForm'
-import { certifications, stats, techStack } from '../data/resume'
 import { getAllBlogPosts } from '../lib/blog'
 
 const homeFeaturePanels = [
@@ -119,7 +118,7 @@ export default function Home() {
                   I'm Eddie L. Barlow.
                 </p>
                 <p className="text-xl text-gray-600 dark:text-gray-300">
-                  I'm building secure systems, cyber programs, and resilient infrastructure.
+                  I build secure systems, cyber programs, and resilient infrastructure.
                 </p>
               </div>
             </div>
@@ -325,74 +324,6 @@ export default function Home() {
                   <ArrowRight size={15} className="transition group-hover:translate-x-1" />
                 </span>
               </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12">
-            <span className="text-green-500">Stats</span>
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 text-center border border-gray-200 dark:border-gray-700 hover:border-green-500 transition-colors"
-              >
-                <stat.icon className="text-green-500 mx-auto mb-4" size={40} />
-                <h3 className="text-sm text-gray-500 dark:text-gray-400 mb-2">{stat.label}</h3>
-                <div className="text-4xl font-bold">{stat.value}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Certifications Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800/50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12">
-            <span className="text-green-500">Certifications</span>
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {certifications.map((cert) => (
-              <div
-                key={cert.title}
-                className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-green-500 transition-colors"
-              >
-                <Shield className="text-green-500 mb-4" size={32} />
-                <h3 className="font-bold text-lg mb-2">{cert.title}</h3>
-                <p className="text-gray-500 dark:text-gray-400 text-sm">{cert.subtitle}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Core Tech Stack Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12">
-            <span className="text-green-500">Core</span> tech stack
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {techStack.map((stack) => (
-              <div key={stack.title}>
-                <div className="flex items-center gap-2 mb-4">
-                  <stack.icon className="text-green-500" size={24} />
-                  <h3 className="text-xl font-bold">{stack.title}</h3>
-                </div>
-                <div className="space-y-2">
-                  {stack.items.map((item) => (
-                    <div key={item} className="text-gray-600 dark:text-gray-300">
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
             ))}
           </div>
         </div>
