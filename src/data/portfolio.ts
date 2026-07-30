@@ -80,6 +80,18 @@ export const majorProjects = [
     linkLabel: 'Learn More About JRSS →',
   },
   {
+    title: 'Air Force Network (AFNET) Enterprise Migration',
+    icon: Network,
+    summary: [
+      'Served as a technical lead supporting the Air Force Network (AFNET) enterprise migration effort, a major cyberspace modernization milestone that moved Air Force user accounts and workstations into a centrally managed, standardized network architecture aligned with the Department of Defense Joint Information Environment (JIE) vision.',
+      'Contributed technical leadership across enterprise migration planning, implementation coordination, infrastructure standardization, and risk reduction as disparate Air Force networks were consolidated into a more defensible AFNET operating model. The effort supported improved situational awareness, scalability, command and control, and consistency across Air Force network operations.',
+      'The AFNET migration milestone consolidated 646,000 email boxes and 12,318 servers across 275 sites, reducing fragmentation from legacy unit-specific networks while improving cybersecurity, operational maintainability, and warfighter access to information services across the Air Force enterprise.',
+    ],
+    tags: ['AFNET', 'JIE', 'Enterprise Migration', 'Network Modernization'],
+    link: 'https://www.af.mil/News/Article-Display/Article/475200/cyberspace-milestone-reached-for-air-force-network/',
+    linkLabel: 'Learn More About AFNET →',
+  },
+  {
     title: "Prince George's County Cyber Lab Development",
     icon: Lock,
     summary: [
