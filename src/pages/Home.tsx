@@ -1,5 +1,5 @@
 import '../App.css'
-import { ArrowRight, Check, Mail, MapPin, Phone, Shield, Github, Instagram, Twitter, Linkedin, Trophy } from 'lucide-react'
+import { ArrowRight, Check, Download, Mail, MapPin, Phone, Shield, Github, Instagram, Twitter, Linkedin, Trophy } from 'lucide-react'
 import TypedText from '../components/TypedText'
 import { Link } from 'react-router-dom'
 import { PageLayout } from '../components/PageLayout'
@@ -9,20 +9,20 @@ import { getAllBlogPosts } from '../lib/blog'
 
 const homeFeaturePanels = [
   {
-    eyebrow: 'COMMUNITY, POLICY, CYBER IMPACT',
-    title: 'Advocacy',
-    typed: ['mentor future defenders', 'translate cyber risk', 'build safer communities'],
-    problem: 'Cybersecurity can feel inaccessible to students, small businesses, and non-technical leaders.',
+    eyebrow: 'MISSION OUTCOMES, DELIVERY, ENTERPRISE DEFENSE',
+    title: 'Major Projects',
+    typed: ['solve mission outages', 'modernize security stacks', 'build cyber ranges'],
+    problem: 'High-impact cyber work needs context beyond a job title or short resume bullet.',
     solutions: [
-      'Make cyber concepts practical and approachable.',
-      'Support education, mentorship, and community readiness.',
-      'Connect technical security decisions to real-world outcomes.',
+      'Explore enterprise remediation and defense projects.',
+      'Review DoD network architecture and cyber range work.',
+      'See how technical execution supported mission outcomes.',
     ],
-    primaryLabel: 'Explore Advocacy',
-    primaryHref: '/advocacy',
-    secondaryLabel: 'Contact Me',
-    secondaryHref: '/contact',
-    visual: 'ADV',
+    primaryLabel: 'View Major Projects',
+    primaryHref: '/major-projects',
+    secondaryLabel: 'Experience Matrix',
+    secondaryHref: '/professional-experience',
+    visual: 'OPS',
   },
   {
     eyebrow: 'SYSTEMS, AI, SECURITY FRAMEWORKS',
@@ -55,22 +55,6 @@ const homeFeaturePanels = [
     secondaryLabel: 'Scan QR Code',
     secondaryHref: '#chess',
     visual: '♞',
-  },
-  {
-    eyebrow: 'MISSION OUTCOMES, DELIVERY, ENTERPRISE DEFENSE',
-    title: 'Major Projects',
-    typed: ['solve mission outages', 'modernize security stacks', 'build cyber ranges'],
-    problem: 'High-impact cyber work needs context beyond a job title or short resume bullet.',
-    solutions: [
-      'Explore enterprise remediation and defense projects.',
-      'Review DoD network architecture and cyber range work.',
-      'See how technical execution supported mission outcomes.',
-    ],
-    primaryLabel: 'View Major Projects',
-    primaryHref: '/major-projects',
-    secondaryLabel: 'Experience Matrix',
-    secondaryHref: '/professional-experience',
-    visual: 'OPS',
   },
 ]
 
@@ -160,6 +144,23 @@ export default function Home() {
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
                 With over 20 years of experience in cybersecurity and systems administration, I specialize in <strong className="text-green-500">vulnerability management</strong>, <strong className="text-green-500">incident response</strong>, and implementing compliance frameworks like <strong className="text-green-500">NIST</strong> and <strong className="text-green-500">FedRAMP</strong>.
               </p>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 rounded-lg bg-green-500 px-6 py-3 font-semibold text-gray-900 transition-colors hover:bg-green-400"
+                >
+                  <Mail size={20} />
+                  Contact Me
+                </a>
+                <a
+                  href="/resume/Eddie_Barlow_Resume.pdf"
+                  download
+                  className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-900 transition-colors hover:border-green-500 hover:text-green-500 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
+                >
+                  <Download size={20} />
+                  Download Resume
+                </a>
+              </div>
           </div>
         </div>
       </section>
@@ -170,7 +171,7 @@ export default function Home() {
           {homeFeaturePanels.map((panel, index) => (
             <article
               key={panel.title}
-              id={panel.primaryHref === '#chess' ? 'chess' : undefined}
+              id={panel.title === 'Play Me in Chess' ? 'chess' : undefined}
               className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8"
             >
               <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_50%,rgba(14,165,233,0.08),transparent_28%),linear-gradient(rgba(14,165,233,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(14,165,233,0.045)_1px,transparent_1px)] bg-[size:auto,42px_42px,42px_42px]" />
