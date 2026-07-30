@@ -247,13 +247,19 @@ export default function Home() {
                   <div className="relative mx-auto flex aspect-square max-w-md items-center justify-center rounded-[2rem] border border-gray-200 bg-slate-50 shadow-2xl shadow-slate-950/10 dark:border-gray-800 dark:bg-gray-900">
                     <div className="absolute inset-6 rounded-[1.5rem] border border-sky-500/20" />
                     <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_30%_25%,rgba(34,197,94,0.18),transparent_30%),radial-gradient(circle_at_70%_75%,rgba(14,165,233,0.16),transparent_30%)]" />
-                    <div className="relative flex h-44 w-44 items-center justify-center rounded-3xl border border-slate-950 bg-white text-4xl font-black text-slate-950 shadow-xl dark:border-green-500/40 dark:bg-slate-950 dark:text-green-400">
+                    <div
+                      className={`relative flex items-center justify-center border border-slate-950 bg-white font-black text-slate-950 shadow-xl dark:border-green-500/40 dark:bg-slate-950 dark:text-green-400 ${
+                        panel.title === 'Play Me in Chess'
+                          ? 'h-80 w-72 rounded-[1.75rem] p-3 sm:h-96 sm:w-80'
+                          : 'h-44 w-44 rounded-3xl text-4xl'
+                      }`}
+                    >
                       {panel.title === 'Play Me in Chess' ? (
-                        <div className="w-full p-3 text-center">
+                        <div className="flex h-full w-full flex-col items-center justify-center text-center">
                           <img
                             src="/images/social/chess-com-ebeeeze.jpg"
                             alt="Chess.com friend QR code for ebeeeze"
-                            className="mx-auto mb-4 max-h-64 rounded-2xl object-contain"
+                            className="mx-auto mb-4 h-full max-h-72 w-full rounded-2xl object-cover object-center sm:max-h-80"
                           />
                           <Trophy className="mx-auto mb-2 text-green-500" size={28} />
                           <span className="block text-xl">ebeeeze</span>
