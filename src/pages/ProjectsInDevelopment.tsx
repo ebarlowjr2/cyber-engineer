@@ -22,9 +22,14 @@ const projectVisuals: Record<string, { category: string; image?: string; accent:
     accent: 'from-amber-400 via-green-500 to-cyan-400',
     tags: ['Cyber Hygiene', 'Identity', 'Operations'],
   },
+  'Nuclear Command Center': {
+    category: 'Energy Intelligence',
+    accent: 'from-lime-400 via-sky-500 to-cyan-400',
+    tags: ['Geospatial Data', 'React/Next.js', 'Energy Sector'],
+  },
 }
 
-const forgeFilters = ['All', 'Systems', 'Education', 'Security Framework']
+const forgeFilters = ['All', 'Systems', 'Education', 'Security Framework', 'Energy Intelligence']
 
 export default function ProjectsInDevelopment() {
   return (
@@ -38,8 +43,9 @@ export default function ProjectsInDevelopment() {
             The <span className="text-sky-600 dark:text-sky-400">Forge</span>
           </h1>
           <p className="max-w-3xl text-xl leading-relaxed text-slate-600 dark:text-gray-300">
-            From mission-ready operating systems to space-powered STEM learning and practical cybersecurity frameworks,
-            this archive features systems built for traceability, resilience, and real-world impact.
+            From mission-ready operating systems to space-powered STEM learning, practical cybersecurity frameworks, and
+            energy intelligence platforms, this archive features systems built for traceability, resilience, and
+            real-world impact.
           </p>
         </div>
       </section>

@@ -15,6 +15,7 @@ import ActiveProjects from './pages/ActiveProjects'
 import CarinaOS from './pages/projects/CarinaOS'
 import StarkidCommand from './pages/projects/StarkidCommand'
 import OrganicSecurityFramework from './pages/projects/OrganicSecurityFramework'
+import NuclearCommandCenter from './pages/projects/NuclearCommandCenter'
 import SecretGate from './pages/SecretGate'
 import InterviewChecksheet from './pages/InterviewChecksheet'
 import ScrollToTop from './components/ScrollToTop'
@@ -41,6 +42,7 @@ function App() {
         <Route path="/projects/carina-os" element={<CarinaOS />} />
         <Route path="/projects/starkid-command" element={<StarkidCommand />} />
         <Route path="/projects/organic-security-framework" element={<OrganicSecurityFramework />} />
+        <Route path="/projects/nuclear-command-center" element={<NuclearCommandCenter />} />
         <Route path="/danger-zone" element={<SecretGate />} />
         <Route path="/interview-checksheet" element={<InterviewChecksheet />} />
       </Routes>

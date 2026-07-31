@@ -1,4 +1,4 @@
-import { Cloud, Code, Cpu, Lock, Monitor, Rocket, Shield, Zap } from 'lucide-react'
+import { Atom, Cloud, Code, Cpu, Lock, Monitor, Rocket, Shield, Zap } from 'lucide-react'
 import type { ComponentType } from 'react'
 
 export type IconType = ComponentType<{ size?: number; className?: string }>
@@ -36,6 +36,17 @@ export const featuredProjects = [
     technologies: ['Security Framework', 'Cyber Hygiene', 'Identity', 'Monitoring', 'Response Readiness'],
     expectedRelease: 'Q4 2026',
     detailPage: '/projects/organic-security-framework',
+  },
+  {
+    icon: Atom,
+    title: 'Nuclear Command Center',
+    status: 'In Development',
+    progress: 60,
+    description:
+      'A modern nuclear energy intelligence platform that centralizes reactor data, infrastructure visibility, and industry insights in one interactive command-center application.',
+    technologies: ['React/Next.js', 'Interactive Mapping', 'Geospatial Data', 'API Integration', 'AI-Assisted Development'],
+    expectedRelease: 'Q3 2026',
+    detailPage: '/projects/nuclear-command-center',
   },
 ]
 
