@@ -1,7 +1,9 @@
 import '../../App.css'
-import { ArrowLeft, Atom, Database, Globe2, Map, RadioTower, Search, Sparkles } from 'lucide-react'
+import { ArrowLeft, Atom, Database, ExternalLink, Globe2, Map, RadioTower, Search, Sparkles } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { PageLayout } from '../../components/PageLayout'
+
+const liveUrl = 'https://nuclear-central-command.vercel.app/'
 
 const platformCapabilities = [
   {
@@ -72,6 +74,23 @@ export default function NuclearCommandCenter() {
                 Designed and developed a modern nuclear energy intelligence platform that centralizes reactor data,
                 infrastructure visibility, and industry insights in one interactive command-center application.
               </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a
+                  href={liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-green-500 px-6 py-3 font-bold text-gray-950 transition hover:bg-green-400"
+                >
+                  Launch Live Site
+                  <ExternalLink size={18} />
+                </a>
+                <Link
+                  to="/projects-in-development"
+                  className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-6 py-3 font-bold text-gray-900 transition hover:border-green-500 hover:text-green-500 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
+                >
+                  View The Forge
+                </Link>
+              </div>
             </div>
 
             <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white p-6 shadow-2xl shadow-green-500/10 dark:border-gray-800 dark:bg-gray-900">

@@ -1,8 +1,10 @@
 import '../App.css'
-import { ArrowRight, Github, Mail, Sparkles } from 'lucide-react'
+import { ArrowRight, ExternalLink, Github, Mail, Sparkles } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { PageLayout } from '../components/PageLayout'
 import { featuredProjects } from '../data/projects'
+
+const nuclearCommandCenterUrl = 'https://nuclear-central-command.vercel.app/'
 
 const projectVisuals: Record<string, { category: string; image?: string; accent: string; tags: string[] }> = {
   'CARINA OS': {
@@ -74,12 +76,11 @@ export default function ProjectsInDevelopment() {
             const Icon = project.icon
 
             return (
-              <Link
+              <article
                 key={project.title}
-                to={project.detailPage}
                 className="group block overflow-hidden rounded-xl border border-gray-200 bg-slate-50 shadow-xl shadow-gray-950/5 transition hover:-translate-y-1 hover:border-sky-500 hover:shadow-sky-500/10 dark:border-gray-800 dark:bg-gray-900"
               >
-                <article className="grid gap-0 lg:grid-cols-[0.54fr_0.46fr]">
+                <div className="grid gap-0 lg:grid-cols-[0.54fr_0.46fr]">
                   <div className="relative min-h-80 p-6 sm:p-10">
                     <div className={`absolute inset-0 bg-gradient-to-br ${visual.accent} opacity-10`} />
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(14,165,233,0.16),transparent_28%),linear-gradient(rgba(15,23,42,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.04)_1px,transparent_1px)] bg-[size:auto,34px_34px,34px_34px]" />
@@ -137,18 +138,32 @@ export default function ProjectsInDevelopment() {
                     </div>
 
                     <div className="flex flex-wrap items-center gap-5">
-                      <span className="inline-flex items-center gap-2 rounded bg-slate-950 px-6 py-3 font-bold text-white transition group-hover:bg-sky-600 dark:bg-green-500 dark:text-gray-950 dark:group-hover:bg-green-400">
+                      <Link
+                        to={project.detailPage}
+                        className="inline-flex items-center gap-2 rounded bg-slate-950 px-6 py-3 font-bold text-white transition hover:bg-sky-600 dark:bg-green-500 dark:text-gray-950 dark:hover:bg-green-400"
+                      >
                         See Details
                         <ArrowRight size={18} className="transition group-hover:translate-x-1" />
-                      </span>
+                      </Link>
+                      {project.title === 'Nuclear Command Center' ? (
+                        <a
+                          href={nuclearCommandCenterUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded border border-sky-500/40 bg-white px-6 py-3 font-bold text-sky-600 transition hover:border-green-500 hover:text-green-500 dark:bg-gray-900 dark:text-sky-400"
+                        >
+                          Live Link
+                          <ExternalLink size={18} />
+                        </a>
+                      ) : null}
                       <span className="inline-flex items-center gap-2 font-mono text-sm font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
                         <Sparkles size={16} />
                         {project.status} · {project.progress}%
                       </span>
                     </div>
                   </div>
-                </article>
-              </Link>
+                </div>
+              </article>
             )
           })}
         </div>
