@@ -13,7 +13,8 @@ type Frontmatter = Omit<BlogPost, 'content'>
 
 const blogModules = import.meta.glob('/content/blog/*.md', {
   eager: true,
-  as: 'raw',
+  query: '?raw',
+  import: 'default',
 })
 
 function deriveSlug(path: string) {
