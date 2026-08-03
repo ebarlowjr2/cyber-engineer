@@ -95,7 +95,7 @@ export default function Home() {
             </div>
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <h1 className="text-5xl font-bold md:text-7xl">
-                Hey <span className="text-green-500">friend!</span>
+                Cybersecurity <span className="text-green-500">Engineering Leadership</span>
               </h1>
               <Link
                 to="/contact"
