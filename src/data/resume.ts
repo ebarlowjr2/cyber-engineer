@@ -175,4 +175,22 @@ export const experience = [
       'Developed automation scripts to enforce secure configurations and compliance baselines',
     ],
   },
+  {
+    title: 'Systems Administrator',
+    company: 'National Cash Register (NCR)',
+    location: 'Remote',
+    dates: 'January 2007 - May 2010',
+    bullets: [
+      'Performed routine maintenance and troubleshooting on servers and point-of-sale systems, helping maintain 99.9% uptime for retail and business clients',
+      'Installed, configured, and secured Windows and Linux servers, tailoring solutions to specific client requirements',
+      'Conducted field installations of POS systems, integrating hardware, peripherals, and network configurations to support operational needs',
+      'Implemented security measures on servers and POS systems, including firewalls, endpoint protection, and PCI DSS-aligned controls',
+      'Delivered on-site technical support and problem resolution for a diverse client base, often under tight deadlines',
+      'Upgraded and optimized server and POS hardware, including memory, processors, and storage components, to enhance performance',
+      'Maintained network connectivity for distributed retail environments by configuring routers, switches, and access points',
+      'Managed data backup and recovery operations to support business continuity after hardware failures or cyber incidents',
+      'Trained end users on proper use and maintenance of POS systems and peripherals, reducing support tickets by 25%',
+      'Documented maintenance logs, installation procedures, and incident reports for clients and management',
+    ],
+  },
 ]
