@@ -1,4 +1,4 @@
-import { Award, Calendar, Cloud, Code, Database, Lock, Network, Server, Shield } from 'lucide-react'
+import { Award, Calendar, Cloud, Database, Lock, Network, Server, Shield } from 'lucide-react'
 import type { ComponentType } from 'react'
 
 export type IconType = ComponentType<{ size?: number; className?: string }>
@@ -55,44 +55,103 @@ export const certifications = [
 
 export const techStack = [
   {
-    icon: Server,
-    title: 'Operating Systems',
-    items: ['RHEL', 'CentOS', 'Ubuntu Server', 'Windows Server'],
+    icon: Shield,
+    title: 'Security and Monitoring',
+    items: [
+      'Splunk',
+      'ELK Stack',
+      'Wazuh',
+      'SentinelOne',
+      'ArcSight',
+      'Trellix/McAfee HBSS',
+      'Armis',
+      'Nagios',
+      'Cacti',
+      'Netcool',
+      'IDS/IPS',
+      'SIEM',
+      'EDR',
+      'XDR',
+    ],
+  },
+  {
+    icon: Lock,
+    title: 'Vulnerability and Penetration Testing',
+    items: [
+      'ACAS/Tenable',
+      'Nessus',
+      'Rapid7 InsightVM',
+      'Qualys',
+      'OpenVAS',
+      'Nmap',
+      'Burp Suite',
+      'OWASP ZAP',
+      'HP WebInspect',
+      'Metasploit',
+      'Kali Linux',
+      'Wireshark',
+      'tcpdump',
+    ],
   },
   {
     icon: Cloud,
     title: 'Cloud Platforms',
-    items: ['AWS', 'Azure', 'Google Cloud', 'Oracle Cloud'],
-  },
-  {
-    icon: Code,
-    title: 'DevOps & Automation',
-    items: ['Ansible', 'Docker', 'Terraform', 'Bash Scripting'],
-  },
-  {
-    icon: Lock,
-    title: 'Security Tools',
-    items: ['Splunk', 'Nessus', 'Qualys', 'SentinelOne'],
-  },
-  {
-    icon: Network,
-    title: 'Network Security',
-    items: ['Firewalls', 'IDS/IPS', 'EDR/XDR', 'SIEM'],
-  },
-  {
-    icon: Database,
-    title: 'Monitoring Tools',
-    items: ['ELK Stack', 'Nagios', 'ServiceNow', 'JIRA'],
+    items: [
+      'AWS EC2',
+      'AWS ELB',
+      'AWS CloudWatch',
+      'AWS EMR',
+      'Microsoft Azure',
+      'Google Cloud Platform',
+      'Google Security Command Center',
+      'Oracle Cloud Infrastructure',
+    ],
   },
   {
     icon: Server,
-    title: 'Configuration',
-    items: ['Apache', 'Git', 'Puppet', 'Chef'],
+    title: 'Operating Systems and Virtualization',
+    items: [
+      'Red Hat Enterprise Linux',
+      'CentOS',
+      'Oracle Linux',
+      'Ubuntu Server',
+      'SUSE Linux Enterprise Server',
+      'Microsoft Windows Server',
+      'VMware',
+    ],
   },
   {
-    icon: Shield,
-    title: 'Compliance',
-    items: ['NIST 800-53', 'FedRAMP', 'STIGs', 'RMF'],
+    icon: Network,
+    title: 'Enterprise Infrastructure',
+    items: [
+      'Active Directory',
+      'Group Policy',
+      'IAM',
+      'PKI and digital certificates',
+      'DNS',
+      'DHCP',
+      'WSUS',
+      'Firewalls',
+      'VPNs',
+      'Apache',
+      'JSON',
+      'ServiceNow',
+      'JIRA',
+      'Confluence',
+    ],
+  },
+  {
+    icon: Database,
+    title: 'Digital Forensics and Incident Response',
+    items: [
+      'Endpoint artifact analysis',
+      'Cloud and authentication log analysis',
+      'Timeline reconstruction',
+      'Evidence documentation',
+      'Threat hunting',
+      'Compromise assessment',
+      'Malware analysis',
+    ],
   },
 ]
 
