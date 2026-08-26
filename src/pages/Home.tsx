@@ -49,7 +49,7 @@ function HomeHitCounter() {
     void updateGlobalCounter()
   }, [])
 
-  const displayCount = hitCount === null ? '...' : hitCount.toLocaleString('en-US')
+  const displayCount = counterStatus === 'offline' ? 'Offline' : hitCount === null ? '...' : hitCount.toLocaleString('en-US')
   const statusLabel = counterStatus === 'live' ? 'GLOBAL' : counterStatus === 'offline' ? 'OFFLINE' : 'SYNCING'
 
   return (
