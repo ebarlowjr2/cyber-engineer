@@ -1,10 +1,56 @@
 import '../App.css'
-import { ArrowRight, Check, Download, Mail, MapPin, Phone, Shield, Github, Instagram, Twitter, Linkedin, Trophy } from 'lucide-react'
+import { Activity, ArrowRight, Check, Download, Mail, MapPin, Phone, Shield, Github, Instagram, Twitter, Linkedin, Trophy } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import TypedText from '../components/TypedText'
 import { Link } from 'react-router-dom'
 import { PageLayout } from '../components/PageLayout'
 import { ContactForm } from '../components/ContactForm'
 import { getAllBlogPosts } from '../lib/blog'
+
+function HomeHitCounter() {
+  const [hitCount, setHitCount] = useState<number | null>(null)
+
+  useEffect(() => {
+    const storageKey = 'eb-cyber-home-hit-count'
+    const sessionKey = 'eb-cyber-home-hit-counted-this-session'
+
+    try {
+      const storedCount = Number.parseInt(window.localStorage.getItem(storageKey) || '0', 10)
+      const safeStoredCount = Number.isNaN(storedCount) ? 0 : storedCount
+      const alreadyCounted = window.sessionStorage.getItem(sessionKey) === 'true'
+      const nextCount = alreadyCounted ? safeStoredCount : safeStoredCount + 1
+
+      if (!alreadyCounted) {
+        window.localStorage.setItem(storageKey, String(nextCount))
+        window.sessionStorage.setItem(sessionKey, 'true')
+      }
+
+      setHitCount(nextCount)
+    } catch {
+      setHitCount(1)
+    }
+  }, [])
+
+  const displayCount = hitCount === null ? '...' : hitCount.toString().padStart(6, '0')
+
+  return (
+    <div className="mt-8 w-full max-w-md overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-green-500/5 dark:border-green-500/20 dark:bg-slate-950/70">
+      <div className="flex items-center justify-between border-b border-slate-200 bg-slate-950 px-4 py-3 dark:border-green-500/20">
+        <span className="font-mono text-xs font-bold uppercase tracking-[0.24em] text-green-300">Home Signal Counter</span>
+        <Activity className="text-green-300" size={18} />
+      </div>
+      <div className="grid grid-cols-[1fr_auto] items-center gap-4 p-4">
+        <div>
+          <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Visits from this browser</p>
+          <p className="font-mono text-3xl font-black tracking-[0.18em] text-slate-950 dark:text-green-300">{displayCount}</p>
+        </div>
+        <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-green-500/30 bg-green-500/10">
+          <span className="h-3 w-3 rounded-full bg-green-500 shadow-[0_0_20px_rgba(34,197,94,0.95)]" />
+        </div>
+      </div>
+    </div>
+  )
+}
 
 const homeFeaturePanels = [
   {
@@ -160,6 +206,7 @@ export default function Home() {
                   Download Resume
                 </a>
               </div>
+              <HomeHitCounter />
           </div>
         </div>
       </section>
