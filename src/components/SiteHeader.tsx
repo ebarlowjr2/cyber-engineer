@@ -2,6 +2,7 @@ import type { LucideIcon } from 'lucide-react'
 import { Bot, Github, Instagram, Linkedin, Twitter } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { ThemeToggle } from './ThemeToggle'
+import { ResumeVisitCounter } from './ResumeVisitCounter'
 import { MobileNav } from './MobileNav'
 import { socialLinks } from '../data/site'
 
@@ -52,6 +53,7 @@ export function SiteHeader() {
             </div>
 
             <div className="hidden md:flex items-center gap-4">
+              <ResumeVisitCounter />
               <ThemeToggle />
               {socialLinks.map((link) => {
                 const Icon = socialIconMap[link.label] ?? Github

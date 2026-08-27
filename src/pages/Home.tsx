@@ -1,78 +1,10 @@
 import '../App.css'
-import { Activity, ArrowRight, Check, Download, Mail, MapPin, Phone, Shield, Github, Instagram, Twitter, Linkedin, Trophy } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { ArrowRight, Check, Download, Mail, MapPin, Phone, Shield, Github, Instagram, Twitter, Linkedin, Trophy } from 'lucide-react'
 import TypedText from '../components/TypedText'
 import { Link } from 'react-router-dom'
 import { PageLayout } from '../components/PageLayout'
 import { ContactForm } from '../components/ContactForm'
 import { getAllBlogPosts } from '../lib/blog'
-
-function HomeHitCounter() {
-  const [hitCount, setHitCount] = useState<number | null>(null)
-  const [counterStatus, setCounterStatus] = useState<'loading' | 'live' | 'offline'>('loading')
-
-  useEffect(() => {
-    const counterBaseUrl = 'https://countapi.mileshilliard.com/api/v1'
-    const counterKey = 'ebthecybergod-digital-resume-home-visits'
-    const sessionKey = 'eb-cyber-global-home-hit-counted-this-session'
-
-    async function updateGlobalCounter() {
-      try {
-        const alreadyCounted = window.sessionStorage.getItem(sessionKey) === 'true'
-        const endpoint = alreadyCounted ? 'get' : 'hit'
-        const response = await fetch(`${counterBaseUrl}/${endpoint}/${counterKey}`, {
-          cache: 'no-store',
-        })
-
-        if (!response.ok) {
-          throw new Error('Counter request failed')
-        }
-
-        const data = await response.json() as { value?: string | number }
-        const nextCount = Number.parseInt(String(data.value ?? '0'), 10)
-
-        if (Number.isNaN(nextCount)) {
-          throw new Error('Counter response was invalid')
-        }
-
-        if (!alreadyCounted) {
-          window.sessionStorage.setItem(sessionKey, 'true')
-        }
-
-        setHitCount(nextCount)
-        setCounterStatus('live')
-      } catch {
-        setCounterStatus('offline')
-      }
-    }
-
-    void updateGlobalCounter()
-  }, [])
-
-  const displayCount = counterStatus === 'offline' ? 'Offline' : hitCount === null ? '...' : hitCount.toLocaleString('en-US')
-  const statusLabel = counterStatus === 'live' ? 'GLOBAL' : counterStatus === 'offline' ? 'OFFLINE' : 'SYNCING'
-
-  return (
-    <div className="mt-8 w-full max-w-md overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-green-500/5 dark:border-green-500/20 dark:bg-slate-950/70">
-      <div className="flex items-center justify-between border-b border-slate-200 bg-slate-950 px-4 py-3 dark:border-green-500/20">
-        <span className="font-mono text-xs font-bold uppercase tracking-[0.24em] text-green-300">Home Signal Counter</span>
-        <span className="inline-flex items-center gap-2 font-mono text-xs font-bold text-green-300">
-          <Activity size={18} />
-          {statusLabel}
-        </span>
-      </div>
-      <div className="grid grid-cols-[1fr_auto] items-center gap-4 p-4">
-        <div>
-          <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Visits to this digital resume</p>
-          <p className="font-mono text-3xl font-black tracking-[0.12em] text-slate-950 dark:text-green-300">{displayCount}</p>
-        </div>
-        <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-green-500/30 bg-green-500/10">
-          <span className="h-3 w-3 rounded-full bg-green-500 shadow-[0_0_20px_rgba(34,197,94,0.95)]" />
-        </div>
-      </div>
-    </div>
-  )
-}
 
 const homeFeaturePanels = [
   {
@@ -228,10 +160,63 @@ export default function Home() {
                   Download Resume
                 </a>
               </div>
-              <HomeHitCounter />
           </div>
         </div>
       </section>
+
+      {/* Intelligence Briefs Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-100 dark:bg-gray-950/60">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="mb-5 font-mono text-sm font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">
+                &gt; SYSTEM_LOGS
+              </p>
+              <h2 className="text-4xl font-black tracking-tight text-slate-900 dark:text-white">
+                Intelligence <span className="text-green-500">Briefs</span>
+              </h2>
+            </div>
+            <Link
+              to="/blog"
+              className="inline-flex w-fit items-center gap-2 rounded border border-slate-200 bg-white px-6 py-4 font-bold text-slate-900 shadow-sm transition hover:border-green-500 hover:text-green-500 dark:border-gray-800 dark:bg-gray-900 dark:text-white"
+            >
+              See Full Blog
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            {latestPosts.map((post) => (
+              <Link
+                key={post.slug}
+                to={`/blog/${post.slug}`}
+                className="group relative min-h-72 overflow-hidden rounded border border-slate-200 bg-white p-7 shadow-xl shadow-slate-900/5 transition hover:-translate-y-1 hover:border-sky-500 dark:border-gray-800 dark:bg-gray-900"
+              >
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-sky-500 via-green-400 to-cyan-400" />
+                <div className="absolute inset-x-6 bottom-0 h-1 bg-gradient-to-r from-slate-800 via-sky-500 to-green-400 opacity-80 dark:from-gray-700" />
+                <p className="mb-4 font-mono text-sm font-bold text-slate-500 dark:text-gray-400">
+                  {new Date(post.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit',
+                  })}
+                </p>
+                <h3 className="mb-5 text-2xl font-black leading-tight text-slate-900 transition group-hover:text-sky-600 dark:text-white dark:group-hover:text-sky-400">
+                  {post.title}
+                </h3>
+                <p className="mb-10 line-clamp-3 text-lg leading-relaxed text-slate-600 dark:text-gray-300">
+                  {post.excerpt}
+                </p>
+                <span className="absolute bottom-7 left-7 inline-flex items-center gap-2 font-mono text-sm font-bold uppercase text-sky-600 dark:text-sky-400">
+                  Read Log
+                  <ArrowRight size={15} className="transition group-hover:translate-x-1" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* Guided Scroll Panels */}
       <section className="bg-white dark:bg-gray-950">
@@ -342,59 +327,6 @@ export default function Home() {
               </div>
             </article>
           ))}
-        </div>
-      </section>
-
-      {/* Intelligence Briefs Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-100 dark:bg-gray-950/60">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="mb-5 font-mono text-sm font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">
-                &gt; SYSTEM_LOGS
-              </p>
-              <h2 className="text-4xl font-black tracking-tight text-slate-900 dark:text-white">
-                Intelligence <span className="text-green-500">Briefs</span>
-              </h2>
-            </div>
-            <Link
-              to="/blog"
-              className="inline-flex w-fit items-center gap-2 rounded border border-slate-200 bg-white px-6 py-4 font-bold text-slate-900 shadow-sm transition hover:border-green-500 hover:text-green-500 dark:border-gray-800 dark:bg-gray-900 dark:text-white"
-            >
-              See Full Blog
-              <ArrowRight size={16} />
-            </Link>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            {latestPosts.map((post) => (
-              <Link
-                key={post.slug}
-                to={`/blog/${post.slug}`}
-                className="group relative min-h-72 overflow-hidden rounded border border-slate-200 bg-white p-7 shadow-xl shadow-slate-900/5 transition hover:-translate-y-1 hover:border-sky-500 dark:border-gray-800 dark:bg-gray-900"
-              >
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-sky-500 via-green-400 to-cyan-400" />
-                <div className="absolute inset-x-6 bottom-0 h-1 bg-gradient-to-r from-slate-800 via-sky-500 to-green-400 opacity-80 dark:from-gray-700" />
-                <p className="mb-4 font-mono text-sm font-bold text-slate-500 dark:text-gray-400">
-                  {new Date(post.date).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: '2-digit',
-                    day: '2-digit',
-                  })}
-                </p>
-                <h3 className="mb-5 text-2xl font-black leading-tight text-slate-900 transition group-hover:text-sky-600 dark:text-white dark:group-hover:text-sky-400">
-                  {post.title}
-                </h3>
-                <p className="mb-10 line-clamp-3 text-lg leading-relaxed text-slate-600 dark:text-gray-300">
-                  {post.excerpt}
-                </p>
-                <span className="absolute bottom-7 left-7 inline-flex items-center gap-2 font-mono text-sm font-bold uppercase text-sky-600 dark:text-sky-400">
-                  Read Log
-                  <ArrowRight size={15} className="transition group-hover:translate-x-1" />
-                </span>
-              </Link>
-            ))}
-          </div>
         </div>
       </section>
 
