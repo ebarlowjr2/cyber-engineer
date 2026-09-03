@@ -1,5 +1,5 @@
 import '../App.css'
-import { Calendar, Clock, ArrowRight } from 'lucide-react'
+import { Calendar, Clock, ArrowRight, Image as ImageIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { PageLayout } from '../components/PageLayout'
 import { getAllBlogPosts } from '../lib/blog'
@@ -17,10 +17,10 @@ export default function Blog() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-6">
-            Cyber Security <span className="text-green-500">Blog</span>
+            Technical <span className="text-green-500">Blog</span>
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-            Insights, tutorials, and thoughts on cybersecurity, cloud infrastructure, and the ever-evolving threat landscape. Stay informed with the latest security trends and best practices.
+            Field notes, tutorials, and practical thoughts across cybersecurity, Linux, AI, cloud, nuclear technology, space systems, and the technical topics that keep me curious.
           </p>
         </div>
       </section>
@@ -28,38 +28,55 @@ export default function Blog() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800/50">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {blogPosts.map((post) => (
-                          <article key={post.slug} className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden hover:border-green-500 transition-colors group">
-                            <div className="aspect-video bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
-                              <span className="text-4xl text-green-500 font-bold">{post.category.charAt(0)}</span>
-                            </div>
-                            <div className="p-6">
-                              <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-3">
-                                <span className="inline-flex items-center gap-1">
-                                  <Calendar size={14} />
-                                  {formatDate(post.date)}
-                                </span>
-                                <span className="inline-flex items-center gap-1">
-                                  <Clock size={14} />
-                                  {post.readTime}
-                                </span>
-                              </div>
-                              <span className="inline-block px-2 py-1 bg-green-500/20 text-green-600 dark:text-green-400 rounded text-xs font-medium mb-3">
-                                {post.category}
-                              </span>
-                              <h2 className="text-xl font-bold mb-3 group-hover:text-green-500 transition-colors">
-                                {post.title}
-                              </h2>
-                              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                                {post.excerpt}
-                              </p>
-                              <Link to={`/blog/${post.slug}`} className="inline-flex items-center gap-2 text-green-500 font-medium hover:text-green-400 transition-colors">
-                                Read More
-                                <ArrowRight size={16} />
-                              </Link>
-                            </div>
-                          </article>
-                        ))}
+            {blogPosts.map((post) => (
+              <article
+                key={post.slug}
+                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-950/5 transition hover:-translate-y-1 hover:border-green-500 hover:shadow-green-500/10 dark:border-gray-800 dark:bg-gray-900"
+              >
+                <Link to={`/blog/${post.slug}`} className="block">
+                  <div className="relative aspect-video overflow-hidden bg-slate-900">
+                    <img
+                      src={post.thumbnail}
+                      alt={post.thumbnailAlt}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/15 to-transparent" />
+                    <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-slate-950/70 px-3 py-1 text-xs font-bold uppercase tracking-wider text-green-300 backdrop-blur">
+                      <ImageIcon size={14} />
+                      {post.category}
+                    </div>
+                    {post.thumbnailCredit ? (
+                      <span className="absolute bottom-3 right-3 rounded bg-slate-950/70 px-2 py-1 text-[10px] font-semibold text-white/70 backdrop-blur">
+                        {post.thumbnailCredit}
+                      </span>
+                    ) : null}
+                  </div>
+                </Link>
+                <div className="p-6">
+                  <div className="mb-3 flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                    <span className="inline-flex items-center gap-1">
+                      <Calendar size={14} />
+                      {formatDate(post.date)}
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                      <Clock size={14} />
+                      {post.readTime}
+                    </span>
+                  </div>
+                  <h2 className="mb-3 text-xl font-black leading-tight transition-colors group-hover:text-green-500">
+                    <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+                  </h2>
+                  <p className="mb-5 text-gray-600 dark:text-gray-300">
+                    {post.excerpt}
+                  </p>
+                  <Link to={`/blog/${post.slug}`} className="inline-flex items-center gap-2 font-mono text-sm font-bold uppercase text-green-600 transition-colors hover:text-green-500 dark:text-green-400">
+                    Read More
+                    <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

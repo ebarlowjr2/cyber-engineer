@@ -48,7 +48,7 @@ export function SiteHeader() {
               <Link to="/projects-in-development" className="hover:text-green-500 transition-colors">The Forge</Link>
               <Link to="/professional-experience" className="hover:text-green-500 transition-colors">Experience</Link>
               <Link to="/major-projects" className="hover:text-green-500 transition-colors">Major Projects</Link>
-              <Link to="/blog" className="hover:text-green-500 transition-colors">AI Blog</Link>
+              <Link to="/blog" className="hover:text-green-500 transition-colors">Blog</Link>
               <Link to="/ebooks" className="hover:text-green-500 transition-colors">eBooks</Link>
             </div>
 
