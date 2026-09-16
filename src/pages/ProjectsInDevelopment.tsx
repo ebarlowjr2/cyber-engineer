@@ -15,7 +15,7 @@ const projectVisuals: Record<string, { category: string; image?: string; accent:
   },
   'StarKid Command': {
     category: 'Education',
-    image: '/images/projects/starkid-command-1.png',
+    image: '/images/projects/starkid-command-forge.jpg',
     accent: 'from-sky-500 via-indigo-400 to-green-500',
     tags: ['STEM', 'Space Data', 'AI Missions'],
   },
