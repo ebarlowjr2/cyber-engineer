@@ -54,12 +54,15 @@ export const expertiseAreas = [
     title: 'Compliance Audits & Reporting',
     description: 'I translate technical controls into audit-ready evidence, build POA&Ms, and support continuous monitoring for compliance assessments.',
   },
+
 ]
 
 export const majorProjects = [
   {
     title: 'Mission-Critical Air Force HBSS Outage Resolution',
+    slug: 'air-force-hbss-outage-resolution',
     icon: Shield,
+    shortDescription: 'Restored Air Force-wide HBSS endpoint protection after a mission-critical Linux server outage degraded cybersecurity readiness across the enterprise.',
     summary: [
       'Resolved a mission-critical enterprise outage affecting over 90% of Linux servers across the U.S. Air Force caused by improper tuning of McAfee HBSS VirusScan Enterprise (VSE). Diagnosed and corrected the configuration at the 26th Network Operations Squadron (26th NOS), restoring full endpoint protection functionality and preventing widespread degradation of cybersecurity readiness.',
       'After implementing the fix locally, the solution was rapidly adopted across all Air Force Network Operations Centers (AFNETs) and disseminated through the 24th Air Force, becoming the official remediation standard.',
@@ -69,7 +72,9 @@ export const majorProjects = [
   },
   {
     title: 'Joint Regional Security Stacks (JRSS) IL6 Deployment',
+    slug: 'jrss-il6-deployment',
     icon: Network,
+    shortDescription: 'Led secure IL6 JRSS deployment work that modernized classified DoD network defense with unified firewall, IPS, proxy, and routing services.',
     summary: [
       'Served as the Lead Cybersecurity Engineer for the deployment of the Joint Regional Security Stacks (JRSS) into the Impact Level 6 (IL6) enclave of the Department of Defense (DoD) network — a pivotal modernization effort under the Joint Information Environment (JIE) initiative. Oversaw the secure integration of firewall, IPS, web proxy, and routing services into a unified security architecture designed to consolidate and harden network defenses across multiple combatant commands.',
       'Led cross-functional teams across DISA, 24th Air Force, and AFINC to validate configurations, apply STIG-compliant baselines, and ensure full interoperability with classified systems and existing enclave security policies. Authored and executed comprehensive test plans and migration runbooks, mitigating risks during transition and maintaining continuous mission operations.',
@@ -81,7 +86,9 @@ export const majorProjects = [
   },
   {
     title: 'Air Force Network (AFNET) Enterprise Migration',
+    slug: 'afnet-enterprise-migration',
     icon: Network,
+    shortDescription: 'Supported a major Air Force cyberspace modernization effort consolidating networks, accounts, servers, and sites into a standardized enterprise model.',
     summary: [
       'Served as a technical lead supporting the Air Force Network (AFNET) enterprise migration effort, a major cyberspace modernization milestone that moved Air Force user accounts and workstations into a centrally managed, standardized network architecture aligned with the Department of Defense Joint Information Environment (JIE) vision.',
       'Contributed technical leadership across enterprise migration planning, implementation coordination, infrastructure standardization, and risk reduction as disparate Air Force networks were consolidated into a more defensible AFNET operating model. The effort supported improved situational awareness, scalability, command and control, and consistency across Air Force network operations.',
@@ -93,7 +100,9 @@ export const majorProjects = [
   },
   {
     title: "Prince George's County Cyber Lab Development",
+    slug: 'prince-georges-county-cyber-lab',
     icon: Lock,
+    shortDescription: 'Designed an AI-assisted cyber range that blends enterprise infrastructure, threat emulation, and hands-on workforce development labs.',
     summary: [
       'Served as the Principal Engineer for the design and development of the Prince George\'s County Cyber Lab — a next-generation, AI-driven cybersecurity training environment engineered to bridge the gap between academic simulation and enterprise-grade infrastructure.',
       'Led the end-to-end architecture of the lab, integrating real-world enterprise systems, network segmentation, threat emulation, and AI-assisted analysis tools to create a fully functional cyber range supporting defensive and offensive training scenarios. Designed progressive, role-based labs that evolve from foundational security concepts to complex, real-world incident response and threat-hunting exercises.',
@@ -103,7 +112,9 @@ export const majorProjects = [
   },
   {
     title: 'Air Force Intranet Control (AFINC) Weapon System',
+    slug: 'afinc-weapon-system',
     icon: AlertTriangle,
+    shortDescription: 'Contributed architecture and security engineering for the Air Force cyber weapon system defending traffic into and out of the enterprise network.',
     summary: [
       'Served as the Lead Cybersecurity Architect for the Air Force Intranet Control (AFINC) Weapon System — the first-ever cyberspace weapon system formally designated by the U.S. Air Force and a cornerstone capability of the Air Force Network Operations (AFNETOPS) mission. The AFINC Weapon System is responsible for operating, defending, and controlling the flow of all network traffic into and out of the Air Force\'s enterprise network, serving as the primary gateway protecting the .mil and .gov domains.',
       'Led architectural design, security engineering, and compliance validation across the system\'s core components, including boundary defense, proxy services, IDS/IPS integration, and traffic management. Collaborated closely with DISA, 24th Air Force, and U.S. Cyber Command to align system configurations with evolving DoD directives and the Cybersecurity Service Provider (CSSP) framework.',
@@ -113,4 +124,19 @@ export const majorProjects = [
     link: 'https://www.hanscom.af.mil/News/Article-Display/Article/846805/first-cyberspace-weapon-system-attains-full-operational-capability-status/',
     linkLabel: 'Learn More About AFINC →',
   },
+  {
+    title: 'USPS Enterprise USB Whitelisting and DLP Rollout',
+    slug: 'usps-enterprise-usb-whitelisting-dlp',
+    icon: Lock,
+    shortDescription:
+      'Led cybersecurity execution for a nationwide USPS DLP rollout that blocked unauthorized USB storage across the enterprise while preserving approved business operations.',
+    summary: [
+      'Led cybersecurity efforts for a United States Postal Service enterprise data loss prevention initiative to block unapproved USB storage across a nationwide operating environment supporting 30,972 retail offices and approximately 780,000 total workers.',
+      'Partnered with the Post Office CTO organization to gather requirements, define operational constraints, and establish an approved hardware baseline using Armis device intelligence before enforcement began.',
+      'Built the operational rollout model by coordinating daily bridge lines, creating a help desk intake and escalation process, and aligning communications across cybersecurity, infrastructure, endpoint support, and business stakeholders.',
+      'Scheduled and executed the enterprise-wide USB control enforcement using SentinelOne, enabling approved device access while reducing removable-media data loss risk across the Postal Service network.',
+    ],
+    tags: ['USPS', 'DLP', 'USB Control', 'SentinelOne', 'Armis'],
+  },
+
 ]

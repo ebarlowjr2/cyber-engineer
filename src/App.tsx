@@ -8,6 +8,7 @@ import Advocacy from './pages/Advocacy'
 import ProfessionalExperience from './pages/ProfessionalExperience'
 import ProjectsInDevelopment from './pages/ProjectsInDevelopment'
 import MajorProjects from './pages/MajorProjects'
+import MajorProjectDetail from './pages/MajorProjectDetail'
 import Ebooks from './pages/Ebooks'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
@@ -34,6 +35,7 @@ function App() {
         <Route path="/advocacy" element={<Advocacy />} />
         <Route path="/professional-experience" element={<ProfessionalExperience />} />
         <Route path="/major-projects" element={<MajorProjects />} />
+        <Route path="/major-projects/:slug" element={<MajorProjectDetail />} />
         <Route path="/ebooks" element={<Ebooks />} />
         <Route path="/projects-in-development" element={<ProjectsInDevelopment />} />
                                 <Route path="/blog" element={<Blog />} />
