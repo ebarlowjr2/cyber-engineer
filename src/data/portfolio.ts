@@ -1,4 +1,4 @@
-import { AlertTriangle, Eye, FileCheck, Lock, Network, Shield } from 'lucide-react'
+import { AlertTriangle, CloudCog, Eye, FileCheck, Lock, Network, Shield } from 'lucide-react'
 import type { ComponentType } from 'react'
 
 export type IconType = ComponentType<{ size?: number; className?: string }>
@@ -137,6 +137,22 @@ export const majorProjects = [
       'Scheduled and executed the enterprise-wide USB control enforcement using SentinelOne, enabling approved device access while reducing removable-media data loss risk across the Postal Service network.',
     ],
     tags: ['USPS', 'DLP', 'USB Control', 'SentinelOne', 'Armis'],
+  },
+  {
+    title: 'Air Force ERP Common Services OCI Modernization',
+    slug: 'air-force-erp-common-services-oci-modernization',
+    icon: CloudCog,
+    shortDescription:
+      'Led process development and technical integration planning to translate legacy on-premises Air Force ERP capabilities into secure Oracle Cloud Infrastructure alternatives.',
+    summary: [
+      'Served as the Lead Process Developer and Technical Integration Subject Matter Expert for the Air Force Enterprise Resource Planning Common Services (ERP CS) modernization effort, helping shape the transition from legacy on-premises technologies to shared services within Oracle Cloud Infrastructure (OCI) on Cloud One.',
+      'Developed a cloud-focused, Department of Defense-style Analysis of Alternatives (AoA) process that gave program leaders a repeatable method for evaluating legacy capabilities against OCI-native and cloud-compatible options. The approach considered mission fit, cybersecurity, integration dependencies, operational risk, sustainment, and migration feasibility instead of treating cloud adoption as a one-for-one technology replacement.',
+      'Translated technical requirements and legacy service dependencies into actionable cloud alternatives, serving as an integration bridge among program leadership, cybersecurity teams, application owners, infrastructure engineers, and mission partners. This work helped stakeholders make defensible modernization decisions while preserving mission continuity and supporting continuous Authority to Operate readiness.',
+      'The broader ERP CS platform provides standardized OCI hosting, application support, and layered cybersecurity services for major Air Force mission applications including DEAMS, AFIPPS, and MRO. My contribution established the process and technical decision framework needed to align those shared cloud capabilities with complex legacy workloads.',
+    ],
+    tags: ['Air Force ERP CS', 'Oracle Cloud', 'Cloud One', 'AoA', 'Technical Integration'],
+    link: 'https://sam.gov/workspace/contract/opp/1eb34015cf254a1ca0c2f4a6f79c84b2/view',
+    linkLabel: 'View ERP CS Program Source',
   },
 
 ]
