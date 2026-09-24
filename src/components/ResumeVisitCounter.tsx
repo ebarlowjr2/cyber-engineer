@@ -47,13 +47,12 @@ export function ResumeVisitCounter() {
   const statusLabel = counterStatus === 'live' ? 'Global' : counterStatus === 'offline' ? 'Offline' : 'Syncing'
 
   return (
-    <div className="hidden min-w-36 rounded-xl border border-green-500/20 bg-slate-950 px-3 py-2 text-white shadow-lg shadow-green-500/5 xl:block" aria-live="polite">
-      <div className="mb-1 flex items-center justify-between gap-2">
-        <span className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-green-300">{statusLabel}</span>
-        <Activity className="text-green-300" size={14} />
+    <div className="hidden items-center gap-2 rounded-md border border-green-400/20 bg-green-400/5 px-2.5 py-2 text-white min-[1380px]:inline-flex" aria-live="polite" title="Visits to this digital resume">
+      <Activity className="text-green-300" size={14} />
+      <div className="flex items-baseline gap-1.5 font-mono">
+        <span className="text-[9px] font-bold uppercase tracking-[0.16em] text-slate-500">{statusLabel}</span>
+        <span className="text-xs font-black tracking-[0.08em] text-green-300">{displayCount}</span>
       </div>
-      <p className="text-[11px] font-semibold leading-tight text-slate-400">Visits to this digital resume</p>
-      <p className="font-mono text-lg font-black leading-tight tracking-[0.1em] text-green-300">{displayCount}</p>
     </div>
   )
 }
