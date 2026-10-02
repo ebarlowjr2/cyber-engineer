@@ -9,6 +9,7 @@ slug: "spectre-btr-linux-remediation-field-guide"
 thumbnail: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
 thumbnailAlt: "Close-up of processor circuitry representing speculative execution and branch prediction"
 thumbnailCredit: "Photo via Unsplash"
+socialImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&h=630&q=85"
 ---
 
 # Spectre-BTR: When Deleted Code Still Haunts the CPU

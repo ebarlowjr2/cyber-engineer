@@ -9,6 +9,7 @@ export interface BlogPost {
   thumbnail: string
   thumbnailAlt: string
   thumbnailCredit?: string
+  socialImage?: string
   content: string
 }
 
@@ -135,6 +136,7 @@ function normalizePost(path: string, raw: string): BlogPost {
     thumbnail: frontmatter.thumbnail ?? fallbackThumbnail.thumbnail,
     thumbnailAlt: frontmatter.thumbnailAlt ?? fallbackThumbnail.thumbnailAlt,
     thumbnailCredit: frontmatter.thumbnailCredit ?? fallbackThumbnail.thumbnailCredit,
+    socialImage: frontmatter.socialImage,
     content: content.trim(),
   }
 }

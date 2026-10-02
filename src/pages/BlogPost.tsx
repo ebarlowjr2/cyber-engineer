@@ -1,10 +1,35 @@
 import '../App.css'
 import { Calendar, Clock, ArrowLeft, User, Terminal, ShieldCheck } from 'lucide-react'
+import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { PageLayout } from '../components/PageLayout'
 import { getBlogPost } from '../lib/blog'
 import ReactMarkdown, { type Components } from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+
+const siteUrl = 'https://www.ebthecybergod.com'
+const defaultTitle = 'Eddie Barlow | Senior Cyber Security Engineer'
+const defaultDescription = 'Eddie Barlow — Senior Cyber Security Engineer. Cybersecurity, cloud, RMF, automation, and mission-ready engineering.'
+const defaultImage = `${siteUrl}/og/og-image.png`
+
+function setMetaContent(selector: string, content: string) {
+  document.querySelector<HTMLMetaElement>(selector)?.setAttribute('content', content)
+}
+
+function resetSiteMetadata() {
+  document.title = defaultTitle
+  setMetaContent('meta[name="description"]', defaultDescription)
+  setMetaContent('meta[property="og:type"]', 'website')
+  setMetaContent('meta[property="og:title"]', defaultTitle)
+  setMetaContent('meta[property="og:description"]', defaultDescription)
+  setMetaContent('meta[property="og:url"]', `${siteUrl}/`)
+  setMetaContent('meta[property="og:image"]', defaultImage)
+  setMetaContent('meta[property="og:image:alt"]', defaultTitle)
+  setMetaContent('meta[name="twitter:title"]', defaultTitle)
+  setMetaContent('meta[name="twitter:description"]', defaultDescription)
+  setMetaContent('meta[name="twitter:image"]', defaultImage)
+  document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.remove()
+}
 
 function formatDate(dateString: string) {
   const date = new Date(dateString)
@@ -75,6 +100,34 @@ const markdownComponents: Components = {
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>()
   const post = slug ? getBlogPost(slug) : undefined
+
+  useEffect(() => {
+    if (!post) return
+
+    const canonicalUrl = `${siteUrl}/blog/${post.slug}`
+    const socialImage = post.socialImage ?? post.thumbnail
+    const socialImageUrl = socialImage.startsWith('http') ? socialImage : `${siteUrl}${socialImage}`
+    const pageTitle = `${post.title} | Eddie Barlow`
+
+    document.title = pageTitle
+    setMetaContent('meta[name="description"]', post.excerpt)
+    setMetaContent('meta[property="og:type"]', 'article')
+    setMetaContent('meta[property="og:title"]', post.title)
+    setMetaContent('meta[property="og:description"]', post.excerpt)
+    setMetaContent('meta[property="og:url"]', canonicalUrl)
+    setMetaContent('meta[property="og:image"]', socialImageUrl)
+    setMetaContent('meta[property="og:image:alt"]', post.thumbnailAlt)
+    setMetaContent('meta[name="twitter:title"]', post.title)
+    setMetaContent('meta[name="twitter:description"]', post.excerpt)
+    setMetaContent('meta[name="twitter:image"]', socialImageUrl)
+
+    const canonical = document.createElement('link')
+    canonical.rel = 'canonical'
+    canonical.href = canonicalUrl
+    document.head.appendChild(canonical)
+
+    return resetSiteMetadata
+  }, [post])
 
   if (!post) {
     return (
